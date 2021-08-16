@@ -1,0 +1,91 @@
+﻿@using EntityLayer.Concrete
+@model  List<Content>
+
+@{ ViewBag.Title = "GetAllContent";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
+
+
+<div class="section-body mt-3">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        @using (Html.BeginForm("GetAllContent", "Content", FormMethod.Post))
+                        {
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="p" placeholder="Burada Ara">
+                            </div>
+                            <p class="mb-0">Arama Sonucu : </p>
+                            @*<strong class="font-12">Yaklaşık 16.853 sonuç (0.13 saniye)</strong>*@
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section-body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#News" aria-expanded="false">Tüm Sonuçlar</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Images" aria-expanded="true">Resimler</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Video" aria-expanded="false">Videolar</a></li>
+
+                </ul>
+                <div class="tab-content mt-3">
+                    <div role="tabpanel" class="tab-pane vivify fadeIn" id="News" aria-expanded="true">
+                        @foreach (var item in Model)
+                        {
+                            <div class="card">
+                                <div class="card-body">
+                                    <article class="media">
+                                        <div class="mr-3">
+                                            <img class="w150" src="@item.Writer.WriterImage" width="50" height="100" alt="">
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="content">
+                                                <p class="h5">@item.Writer.WriterName @item.Writer.WriterSurname <small class="float-right text-muted">@item.ContentDate.ToLongDateString()</small></p>
+                                                <p>@item.ContentValue</p>
+                                            </div>
+                                            <nav class="d-flex text-muted">
+                                                <a href="#" class="icon mr-3"><i class="fe fe-repeat"></i></a>
+                                                <a href="#" class="icon mr-3"><i class="fe fe-twitter"></i> 24</a>
+                                                <a href="#" class="icon mr-3"><i class="fe fe-heart"></i> 43</a>
+                                                @*<a href="#" class="text-muted ml-auto">5 notes</a>*@
+                                            </nav>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane vivify fadeIn" id="Images" aria-expanded="true">
+                        <div class="card">
+                            <div class="card-body text-center py-5">
+                                <img src="~/AdminLT/assets/images/search.svg" class="width360 mb-3" />
+                                <h4>Resim Bulunamadı</h4>
+                                <span>Test sonuçlarını görüntülemek için farklı bir filtre seçin</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane vivify fadeIn" id="Video" aria-expanded="true">
+                        <div class="card">
+                            <div class="card-body text-center py-5">
+                                <img src="~/AdminLT/assets/images/search.svg" class="width360  mb-3" />
+                                <h4>Video Bulunamadı</h4>
+                                <span>Test sonuçlarını görüntülemek için farklı bir filtre seçin</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

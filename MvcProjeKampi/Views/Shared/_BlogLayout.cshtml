@@ -1,0 +1,546 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Site Metas -->
+<title>Bulut Tekno</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Site Icons -->
+<link rel="shortcut icon" href="~/BlogTECH/~/BlogTECH/images/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="~/BlogTECH/images/apple-touch-icon.png">
+
+<!-- Design fonts -->
+<link href="~/BlogTECH/https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+<!-- Bootstrap core CSS -->
+<link href="~/BlogTECH/css/bootstrap.css" rel="stylesheet">
+
+<!-- FontAwesome Icons core CSS -->
+<link href="~/BlogTECH/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="~/BlogTECH/style.css" rel="stylesheet">
+
+<!-- Responsive styles for this template -->
+<link href="~/BlogTECH/css/responsive.css" rel="stylesheet">
+
+<!-- Colors for this template -->
+<link href="~/BlogTECH/css/colors.css" rel="stylesheet">
+
+<!-- Version Tech CSS for this template -->
+<link href="~/BlogTECH/css/version/tech.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="~/BlogTECH/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="~/BlogTECH/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+
+    <div id="wrapper">
+        <header class="tech-header header">
+            <div class="container-fluid">
+                <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="Home/HomePage/"><span class="text-white" style="font-size:40px; font-family:Arial">Bulut Tekno</span></a>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Home/HomePage/">Anasayfa</a>
+                            </li>
+                            <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">
+                                <a class="nav-link dropdown-toggle" href="~/BlogTECH/#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Haberler</a>
+                                <ul class="dropdown-menu megamenu" aria-labelledby="dropdown01">
+                                    <li>
+                                        <div class="container">
+                                            <div class="mega-menu-content clearfix">
+                                                <div class="tab">
+                                                    <button class="tablinks active" onclick="openCategory(event, 'cat01')">Bilim</button>
+                                                    <button class="tablinks" onclick="openCategory(event, 'cat02')">Teknoloji</button>
+                                                    <button class="tablinks" onclick="openCategory(event, 'cat03')">Sosyal Medya</button>
+                                                    <button class="tablinks" onclick="openCategory(event, 'cat04')">Araba Haberleri</button>
+                                                    <button class="tablinks" onclick="openCategory(event, 'cat05')">Evrensel</button>
+                                                </div>
+
+                                                <div class="tab-details clearfix">
+                                                    <div id="cat01" class="tabcontent active">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_01.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Bilim</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Tırnaklarınız için en iyi 10+ bakım tavsiyesi</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_02.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Bilim</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Güzelliğinizin sırrı el yapımı sabun</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_03.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Bilim</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Çamurdan yapılan yüz maskesinin faydaları</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_04.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Bilim</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Mum lezzetinin eşsiz sıcaklığıyla rahatlayın</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+                                                        </div><!-- end row -->
+                                                    </div>
+                                                    <div id="cat02" class="tabcontent">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_05.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Teklonoji</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">2017 yaz pul burada tasarım modelleri olacak</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_06.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Teknoloji</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Sizin için en uygun renk hangisidir?</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_07.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Teknoloji</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Modaya göz kulak olmak için bu sitelere abone olun</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_08.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Teknoloji</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Renk kombinasyonu ile bu yılın en trendleri</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+                                                        </div><!-- end row -->
+                                                    </div>
+                                                    <div id="cat03" class="tabcontent">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_09.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Sosyal Medya</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">İstanbul'un mimarlarını sizin için ziyaret ettim</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_10.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Sosyal Medya</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Hollanda'da el yapımı yemek hazırlandı</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_11.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Sosyal Medya</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Peribacalarını ziyaret etmenizi öneririm.</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_12.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Sosyal Medya</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Dünyanın en güzel limanlarından biri</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+                                                        </div><!-- end row -->
+                                                    </div>
+                                                    <div id="cat04" class="tabcontent">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_13.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Araba Haberleri</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">En güzel mağaza tasarımlarından oluşan bir koleksiyon</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_14.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Araba Haberleri</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Amerika ve Kanada'nın en güzel şarap evleri</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_15.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Araba Haberleri</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Duvarlarınızı renklendirmenin en profesyonel yolları</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_16.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Araba Haberleri</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Şık dolap tasarımları ve mobilyalar</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+                                                        </div><!-- end row -->
+                                                    </div>
+                                                    <div id="cat05" class="tabcontent">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_17.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Evrensel</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Balıkla hazırlanan balıklı ızgara sebze</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_18.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Evrensel</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Dünyanın en iyi ve temiz et restoranları</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_19.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Evrensel</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Kızarmış dana eti ve sebze yemeği</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                                                            <img src="~/BlogTECH/upload/tech_menu_20.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Evrensel</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Lezzetli makarna sosları ve tarifleri</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+                                                        </div><!-- end row -->
+                                                    </div>
+                                                </div><!-- end tab-details -->
+                                            </div><!-- end mega-menu-content -->
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/BlogTECH/tech-category-01.html">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/BlogTECH/tech-category-02.html">Videolar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/BlogTECH/tech-category-03.html">Yorumlar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/BlogTECH/tech-contact.html">Hakkımızda</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Default/Headings/">Sözlük</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Home/Contact/">İletişim</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav mr-2">
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/BlogTECH/#"><i class="fa fa-rss"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/BlogTECH/#"><i class="fa fa-android"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/BlogTECH/#"><i class="fa fa-apple"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/Login/WriterRegister/">Kayıt Ol</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/Login/WriterLogin/">Giriş Yap</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div><!-- end container-fluid -->
+        </header><!-- end market-header -->
+        <div class="contanier-fluid">
+          @RenderBody()
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="widget">
+                            <div class="footer-text text-left">
+                                <a href="/Home/HomePage"><span class="text-white" style="font-size:40px;">Bulut Tekno</span></a>
+                                <p>Bulut Tekno, pazarlama, haber makalelerini paylaştığımız bir teknoloji blogudur.</p>
+                                <div class="social">
+                                    <a href="~/BlogTECH/#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="~/BlogTECH/#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="~/BlogTECH/#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
+                                    <a href="~/BlogTECH/#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+                                    <a href="~/BlogTECH/#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                                </div>
+
+                                <hr class="invis">
+
+                                <div class="newsletter-widget text-left">
+                                    <form class="form-inline">
+                                        <input type="text" class="form-control" placeholder="E posta adresinizi Girin">
+                                        <button type="submit" class="btn btn-primary">GÖNDER</button>
+                                    </form>
+                                </div><!-- end newsletter -->
+                            </div><!-- end footer-text -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="widget">
+                            <h2 class="widget-title">Popüler Kategoriler</h2>
+                            <div class="link-widget">
+                                <ul>
+                                    <li><a href="~/BlogTECH/#">Pazarlama <span>(21)</span></a></li>
+                                    <li><a href="~/BlogTECH/#">SEO Hizmeti <span>(15)</span></a></li>
+                                    <li><a href="~/BlogTECH/#">Dijital Ajans <span>(31)</span></a></li>
+                                    <li><a href="~/BlogTECH/#">Para Kazanın <span>(22)</span></a></li>
+                                    <li><a href="~/BlogTECH/#">Bloglama <span>(66)</span></a></li>
+                                </ul>
+                            </div><!-- end link-widget -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
+                        <div class="widget">
+                            <h2 class="widget-title">Telif Hakları</h2>
+                            <div class="link-widget">
+                                <ul>
+                                    <li><a href="~/BlogTECH/#">Hakkımızda</a></li>
+                                    <li><a href="~/BlogTECH/#">Reklam</a></li>
+                                    <li><a href="~/BlogTECH/#">Bizim için Yaz</a></li>
+                                    <li><a href="~/BlogTECH/#">Marka</a></li>
+                                    <li><a href="~/BlogTECH/#">Lisans & Yardım</a></li>
+                                </ul>
+                            </div><!-- end link-widget -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <br>
+                        <div class="copyright">&copy; Bulut Tekno.</div>
+                    </div>
+                </div>
+            </div><!-- end container -->
+        </footer><!-- end footer -->
+
+        <div class="dmtop">Scroll to Top</div>
+
+    </div><!-- end wrapper -->
+    <!-- Core JavaScript
+    ================================================== -->
+    <script src="~/BlogTECH/js/jquery.min.js"></script>
+    <script src="~/BlogTECH/js/tether.min.js"></script>
+    <script src="~/BlogTECH/js/bootstrap.min.js"></script>
+    <script src="~/BlogTECH/js/custom.js"></script>
+
+</body>
+</html>
+
