@@ -1,58 +1,74 @@
-﻿@{ ViewBag.Title = "HomePage";
+﻿@using EntityLayer.Concrete
+@model List<Heading>
+
+@{ ViewBag.Title = "HomePage";
     Layout = "~/Views/Shared/_BlogLayout.cshtml"; }
-
-
 
 <section class="section first-section">
     <div class="container-fluid">
         <div class="masonry-blog clearfix">
-            <div class="first-slot">
-                <div class="masonry-box post-media">
-                    <img src="~/BlogTECH/upload/a.jpg" style="width:788px; height:370px;" alt="" class="img-fluid">
-                    <div class="shadoweffect">
-                        <div class="shadow-desc">
-                            <div class="blog-meta">
-                                <span class="bg-orange"><a href="~/BlogTECH/tech-category-01.html" title="">Teknoloji</a></span>
-                                <h4><a href="~/BlogTECH/tech-single.html" title="">Gerçek el yapımı ofis mobilyalarına merhaba deyin! Temiz ve güzel tasarım</a></h4>
-                                <small><a href="~/BlogTECH/tech-single.html" title="">24 Temmuz, 2021</a></small>
-                                <small><a href="~/BlogTECH/tech-author.html" title="">Amanda Tarafından</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end shadow-desc -->
-                    </div><!-- end shadow -->
-                </div><!-- end post-media -->
-            </div><!-- end first-side -->
+            @foreach (var item in Model)
+            {
 
-            <div class="second-slot">
-                <div class="masonry-box post-media">
-                    <img src="~/BlogTECH/upload/b.jpg" style="width:394px; height:370px;" alt="" class="img-fluid">
-                    <div class="shadoweffect">
-                        <div class="shadow-desc">
-                            <div class="blog-meta">
-                                <span class="bg-orange"><a href="~/BlogTECH/tech-category-01.html" title="">Araçlar</a></span>
-                                <h4><a href="~/BlogTECH/tech-single.html" title="">Web barındırma seçerken hata yapmayın</a></h4>
-                                <small><a href="~/BlogTECH/tech-single.html" title="">03 Temmuz, 2021</a></small>
-                                <small><a href="~/BlogTECH/tech-author.html" title="">Jessica Tarafından</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end shadow-desc -->
-                    </div><!-- end shadow -->
-                </div><!-- end post-media -->
-            </div><!-- end second-side -->
+                if (item.HeadingID == 23)
+                {
+                    <div class="first-slot">
+                        <div class="masonry-box post-media">
+                            <img src="@item.ImageUrl" style="width:788px; height:370px;" alt="" class="img-fluid">
+                            <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-orange"><a href="~/BlogTECH/tech-category-01.html" title="">@item.Category.CategoryName</a></span>
+                                        <h4><a href="/Home/BlogDetails/@item.HeadingID" title="">@item.HeadingName</a></h4>
+                                        <small><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingDate.ToShortDateString()</a></small>
+                                        <small><a href="~/BlogTECH/tech-author.html" title="">@item.Writer.WriterName</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                            </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end first-side -->
+                }
 
-            <div class="last-slot">
-                <div class="masonry-box post-media">
-                    <img src="~/BlogTECH/upload/c.jpg" style="width:394px; height:370px;" alt="" class="img-fluid">
-                    <div class="shadoweffect">
-                        <div class="shadow-desc">
-                            <div class="blog-meta">
-                                <span class="bg-orange"><a href="~/BlogTECH/tech-category-01.html" title="">Teknoloji</a></span>
-                                <h4><a href="~/BlogTECH/tech-single.html" title="">En güvenilir Galaxy Note 8 görüntüleri sızdırıldı</a></h4>
-                                <small><a href="~/BlogTECH/tech-single.html" title="">01 Temmuz, 2021</a></small>
-                                <small><a href="~/BlogTECH/tech-author.html" title="">Jessica Tarafından</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end shadow-desc -->
-                    </div><!-- end shadow -->
-                </div><!-- end post-media -->
-            </div><!-- end second-side -->
+                if (item.HeadingID == 24)
+                {
+                    <div class="second-slot">
+                        <div class="masonry-box post-media">
+                            <img src="@item.ImageUrl" style="width:788px; height:370px;" alt="" class="img-fluid">
+                            <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-orange"><a href="~/BlogTECH/tech-category-01.html" title="">@item.Category.CategoryName</a></span>
+                                        <h4><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingName</a></h4>
+                                        <small><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingDate.ToShortDateString()</a></small>
+                                        <small><a href="~/BlogTECH/tech-author.html" title="">@item.Writer.WriterName</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                            </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end second-side -->
+                }
+
+                if (item.HeadingID == 25)
+                {
+                    <div class="last-slot">
+                        <div class="masonry-box post-media">
+                            <img src="@item.ImageUrl" style="width:788px; height:370px;" alt="" class="img-fluid">
+                            <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-orange"><a href="~/BlogTECH/tech-category-01.html" title="">@item.Category.CategoryName</a></span>
+                                        <h4><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingName</a></h4>
+                                        <small><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingDate.ToShortDateString()</a></small>
+                                        <small><a href="~/BlogTECH/tech-author.html" title="">@item.Writer.WriterName</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                            </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end second-side -->
+                }
+
+
+            }
         </div><!-- end masonry -->
     </div>
 </section>
@@ -137,7 +153,7 @@
                             <div class="col-lg-10 offset-lg-1">
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
-                                        <img src="~/BlogTECH/upload/banner_02.jpg"  alt="" class="img-fluid">
+                                        <img src="~/BlogTECH/upload/banner_02.jpg" alt="" class="img-fluid">
                                     </div><!-- end banner-img -->
                                 </div><!-- end banner -->
                             </div><!-- end col -->

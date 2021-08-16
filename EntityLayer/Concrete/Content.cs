@@ -14,7 +14,14 @@ namespace EntityLayer.Concrete
         [StringLength(1000)]
         public string ContentValue { get; set; }
         public DateTime ContentDate { get; set; }
-     
+
+        [StringLength(200)]
+        public string ImageUrl1 { get; set; }
+        [StringLength(200)]
+        public string ImageUrl2 { get; set; }
+        [StringLength(200)]
+        public string ImageUrl3 { get; set; }
+
         //content yazar : bu yazı kim tarafından yazıldı
         //content başlık: bu yazı hangi başlığa yazıldı
 

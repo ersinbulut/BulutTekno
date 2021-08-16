@@ -130,6 +130,18 @@
     <Compile Include="Migrations\202108120542533_mig_Admin_Class_Poroperty_Add.designer.cs">
       <DependentUpon>202108120542533_mig_Admin_Class_Poroperty_Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108162117133_mig_heading_propadd.cs" />
+    <Compile Include="Migrations\202108162117133_mig_heading_propadd.designer.cs">
+      <DependentUpon>202108162117133_mig_heading_propadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108162120132_mig_content_propadd.cs" />
+    <Compile Include="Migrations\202108162120132_mig_content_propadd.designer.cs">
+      <DependentUpon>202108162120132_mig_content_propadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108162125201_mig_heading_propedit.cs" />
+    <Compile Include="Migrations\202108162125201_mig_heading_propedit.designer.cs">
+      <DependentUpon>202108162125201_mig_heading_propedit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -185,6 +197,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108120542533_mig_Admin_Class_Poroperty_Add.resx">
       <DependentUpon>202108120542533_mig_Admin_Class_Poroperty_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108162117133_mig_heading_propadd.resx">
+      <DependentUpon>202108162117133_mig_heading_propadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108162120132_mig_content_propadd.resx">
+      <DependentUpon>202108162120132_mig_content_propadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108162125201_mig_heading_propedit.resx">
+      <DependentUpon>202108162125201_mig_heading_propedit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -11,11 +11,11 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int HeadingID { get; set; }
-        [StringLength(50)]
+        [StringLength(200)]
         public string HeadingName { get; set; }
         public DateTime HeadingDate { get; set; }
-
-
+        [StringLength(200)]
+        public string ImageUrl { get; set; }
         public bool HeadingStatus { get; set; }
 
         public int CategoryID { get; set; }
