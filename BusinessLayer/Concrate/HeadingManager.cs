@@ -28,6 +28,11 @@ namespace BusinessLayer.Concrate
             return _headingDal.List();
         }
 
+        public List<Heading> GetList(string p)
+        {
+            return _headingDal.List(x => x.HeadingName.Contains(p));
+        }
+
         public List<Heading> GetListByWriter(int id)
         {
             return _headingDal.List(x => x.WriterID == id);

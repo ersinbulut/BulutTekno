@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
-    [AllowAnonymous]
+    //[AllowAnonymous]
     public class DefaultController : Controller
     {
         HeadingManager hm = new HeadingManager(new EfHeadingDal());

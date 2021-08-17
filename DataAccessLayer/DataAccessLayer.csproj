@@ -54,6 +54,7 @@
     <Compile Include="Abstract\IAboutDal.cs" />
     <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\ICommentDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="EntityFramework\EfAboutDal.cs" />
     <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="EntityFramework\EfCommentDal.cs" />
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
@@ -146,6 +148,14 @@
     <Compile Include="Migrations\202108170555297_mig_headingadd.designer.cs">
       <DependentUpon>202108170555297_mig_headingadd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108171702077_mig_comment_table_add.cs" />
+    <Compile Include="Migrations\202108171702077_mig_comment_table_add.designer.cs">
+      <DependentUpon>202108171702077_mig_comment_table_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108171741311_mig_commentedit.cs" />
+    <Compile Include="Migrations\202108171741311_mig_commentedit.designer.cs">
+      <DependentUpon>202108171741311_mig_commentedit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -213,6 +223,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108170555297_mig_headingadd.resx">
       <DependentUpon>202108170555297_mig_headingadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108171702077_mig_comment_table_add.resx">
+      <DependentUpon>202108171702077_mig_comment_table_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108171741311_mig_commentedit.resx">
+      <DependentUpon>202108171741311_mig_commentedit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

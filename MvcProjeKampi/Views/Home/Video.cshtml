@@ -1,0 +1,254 @@
+﻿@using EntityLayer.Concrete
+@model List<Heading>
+@{
+    ViewBag.Title = "Video";
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <div class="page-wrapper">
+                    <div class="blog-custom-build">
+                        @foreach (var item in Model)
+                        {
+                            <div class="blog-box">
+                                <div class="post-media">
+                                    <a href="~/BlogTECH/tech-single.html" title="">
+                                        <img src="@item.ImageUrl" alt="" style="width:800px; height:460px;" class="img-fluid">
+                                        <div class="hovereffect">
+                                            <span class="videohover"></span>
+                                        </div>
+                                        <!-- end hover -->
+                                    </a>
+                                </div>
+                                <!-- end media -->
+                                <div class="blog-meta big-meta text-center">
+                                    <div class="post-sharing">
+                                        <ul class="list-inline">
+                                            <li><a href="~/BlogTECH/#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
+                                            <li><a href="~/BlogTECH/#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
+                                            <li><a href="~/BlogTECH/#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
+                                        </ul>
+                                    </div><!-- end post-sharing -->
+                                    <h4><a href="/Home/BlogDetails/@item.HeadingID" title="">@item.HeadingName</a></h4>
+                                    <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enimcerat elicerat eli nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                    <small><a href="~/BlogTECH/tech-category.html" title="">@item.Category.CategoryName</a></small>
+                                    <small><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingDate.ToLongDateString()</a></small>
+                                    <small><a href="~/BlogTECH/tech-author.html" title="">@item.Writer.WriterName @item.Writer.WriterSurname Tarafından</a></small>
+                                    <small><a href="~/BlogTECH/#" title=""><i class="fa fa-eye"></i> 1114</a></small>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+                        }
+                        <hr class="invis">
+
+                    </div><!-- end blog-custom-build -->
+                </div><!-- end page-wrapper -->
+
+                <hr class="invis">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end col -->
+
+            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                <div class="sidebar">
+                    <div class="widget">
+                        <div class="banner-spot clearfix">
+                            <div class="banner-img">
+                                <img src="~/BlogTECH/upload/banner_07.jpg" alt="" class="img-fluid">
+                            </div><!-- end banner-img -->
+                        </div><!-- end banner -->
+                    </div><!-- end widget -->
+
+                    <div class="widget">
+                        <h2 class="widget-title">Trend Videolar</h2>
+                        <div class="trend-videos">
+                            <div class="blog-box">
+                                <div class="post-media">
+                                    <a href="~/BlogTECH/tech-single.html" title="">
+                                        <img src="~/BlogTECH/upload/tech_video_01.jpg" alt="" class="img-fluid">
+                                        <div class="hovereffect">
+                                            <span class="videohover"></span>
+                                        </div><!-- end hover -->
+                                    </a>
+                                </div><!-- end media -->
+                                <div class="blog-meta">
+                                    <h4><a href="~/BlogTECH/tech-single.html" title="">Sizin için en iyi 10 dizüstü bilgisayar sunumlarını hazırladık</a></h4>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+
+                            <hr class="invis">
+
+                            <div class="blog-box">
+                                <div class="post-media">
+                                    <a href="~/BlogTECH/tech-single.html" title="">
+                                        <img src="~/BlogTECH/upload/tech_video_02.jpg" alt="" class="img-fluid">
+                                        <div class="hovereffect">
+                                            <span class="videohover"></span>
+                                        </div><!-- end hover -->
+                                    </a>
+                                </div><!-- end media -->
+                                <div class="blog-meta">
+                                    <h4><a href="~/BlogTECH/tech-single.html" title="">ABC Design Studio - Vlog'un konuğuyuz</a></h4>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+
+                            <hr class="invis">
+
+                            <div class="blog-box">
+                                <div class="post-media">
+                                    <a href="~/BlogTECH/tech-single.html" title="">
+                                        <img src="~/BlogTECH/upload/tech_video_03.jpg" alt="" class="img-fluid">
+                                        <div class="hovereffect">
+                                            <span class="videohover"></span>
+                                        </div><!-- end hover -->
+                                    </a>
+                                </div><!-- end media -->
+                                <div class="blog-meta">
+                                    <h4><a href="~/BlogTECH/tech-single.html" title="">Hem kan basıncı monitörü hem de akıllı saat</a></h4>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+                        </div><!-- end videos -->
+                    </div><!-- end widget -->
+
+                    <div class="widget">
+                        <h2 class="widget-title">Popüler Mesajlar</h2>
+                        <div class="blog-list-widget">
+                            <div class="list-group">
+                                <a href="~/BlogTECH/tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="w-100 justify-content-between">
+                                        <img src="~/BlogTECH/upload/tech_blog_08.jpg" alt="" class="img-fluid float-left">
+                                        <h5 class="mb-1">İhtiyacınız olan 5 güzel binalar</h5>
+                                        <small>12 Ocak, 2021</small>
+                                    </div>
+                                </a>
+
+                                <a href="~/BlogTECH/tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="w-100 justify-content-between">
+                                        <img src="~/BlogTECH/upload/tech_blog_01.jpg" alt="" class="img-fluid float-left">
+                                        <h5 class="mb-1">Bir giriş yapalım</h5>
+                                        <small>11 Ocak, 2021</small>
+                                    </div>
+                                </a>
+
+                                <a href="~/BlogTECH/tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="w-100 last-item justify-content-between">
+                                        <img src="~/BlogTECH/upload/tech_blog_03.jpg" alt="" class="img-fluid float-left">
+                                        <h5 class="mb-1">En güzelini gördün mü?</h5>
+                                        <small>07 Ocak, 2021</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><!-- end blog-list -->
+                    </div><!-- end widget -->
+
+                    <div class="widget">
+                        <h2 class="widget-title">Son Yorumlar</h2>
+                        <div class="blog-list-widget">
+                            <div class="list-group">
+                                <a href="~/BlogTECH/tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="w-100 justify-content-between">
+                                        <img src="~/BlogTECH/upload/tech_blog_02.jpg" alt="" class="img-fluid float-left">
+                                        <h5 class="mb-1">Muzlu çikolatalı kek tarifi</h5>
+                                        <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                </a>
+
+                                <a href="~/BlogTECH/tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="w-100 justify-content-between">
+                                        <img src="~/BlogTECH/upload/tech_blog_03.jpg" alt="" class="img-fluid float-left">
+                                        <h5 class="mb-1">Organik seçmenin 10 pratik yolu</h5>
+                                        <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                </a>
+
+                                <a href="~/BlogTECH/tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="w-100 last-item justify-content-between">
+                                        <img src="~/BlogTECH/upload/tech_blog_07.jpg" alt="" class="img-fluid float-left">
+                                        <h5 class="mb-1">Ev yapımı mantı yapıyoruz</h5>
+                                        <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><!-- end blog-list -->
+                    </div><!-- end widget -->
+
+                    <div class="widget">
+                        <h2 class="widget-title">Bizi Takip Edin</h2>
+
+                        <div class="row text-center">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="~/BlogTECH/#" class="social-button facebook-button">
+                                    <i class="fa fa-facebook"></i>
+                                    <p>27k</p>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="~/BlogTECH/#" class="social-button twitter-button">
+                                    <i class="fa fa-twitter"></i>
+                                    <p>98k</p>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="~/BlogTECH/#" class="social-button google-button">
+                                    <i class="fa fa-google-plus"></i>
+                                    <p>17k</p>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="~/BlogTECH/#" class="social-button youtube-button">
+                                    <i class="fa fa-youtube"></i>
+                                    <p>22k</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div><!-- end widget -->
+
+                    <div class="widget">
+                        <div class="banner-spot clearfix">
+                            <div class="banner-img">
+                                <img src="~/BlogTECH/upload/banner_03.jpg" alt="" class="img-fluid">
+                            </div><!-- end banner-img -->
+                        </div><!-- end banner -->
+                    </div><!-- end widget -->
+                </div><!-- end sidebar -->
+            </div><!-- end col -->
+        </div>
+    </div><!-- end container -->
+</section>
+

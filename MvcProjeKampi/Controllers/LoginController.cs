@@ -68,14 +68,47 @@ namespace MvcProjeKampi.Controllers
                 //{
                 FormsAuthentication.SetAuthCookie(writeruserinfo.WriterMail, false);
                 Session["WriterMail"] = writeruserinfo.WriterMail;
+                TempData["dogru"] = "bilgiler dogru";
                 return RedirectToAction("MyContent", "WriterPanelContent");
                 //}
 
             }
             else
             {
+                TempData["yanlis"] = "bilgiler yanlış";
                 return RedirectToAction("WriterLogin");
             }
+        }
+
+        [HttpGet]
+        public ActionResult RegisterLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult RegisterLogin(Writer p)
+        {
+            wm.WriterAdd(p);
+            TempData["mesaj"] = "Kayıt işlemi başarılı";
+            return View();
+            ////Context c = new Context();
+            //// var adminuserinfo = c.Admins.FirstOrDefault(x=>x.AdminUserName == p.AdminUserName && x.AdminUserPassword == p.AdminUserPassword);
+            ////var writeruserinfo = wm.GetList().FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword == p.WriterPassword);
+            //var writeruserinfo = wlm.GetWriter(p.WriterMail, p.WriterPassword);
+
+            //if (writeruserinfo != null)
+            //{
+            //    FormsAuthentication.SetAuthCookie(writeruserinfo.WriterMail, false);
+            //    Session["WriterMail"] = writeruserinfo.WriterMail;
+            //    wm.WriterAdd(writeruserinfo);
+            //    return RedirectToAction("WriterLogin", "Login");
+            //}
+            //else
+            //{
+            //    ModelState.AddModelError("RegisterUserError", "Kullanıcı Oluşturma Hatası...");
+            //    return View();
+            //}
         }
 
         public ActionResult LogOut()

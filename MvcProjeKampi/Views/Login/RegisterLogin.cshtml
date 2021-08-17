@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="tr">
+<head>
+    <title>Bulut Tekno</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/AdminLTE/login-form-20/css/style.css">
+
+</head>
+<body class="img js-fullheight" style="background-image: url(/AdminLTE/login-form-20/images/bg.jpg);">
+    @if (TempData["mesaj"] != null)
+    {
+        <div class="alert alert-success alert-dismissable" style="float:right;">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4>	<i class="icon fa fa-check"></i> Başarılı!</h4>
+            Kayıt işlemi başarıyla gerçekleşti.
+        </div><br />
+    }
+ 
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Bulut Tekno Yazar Kaydı</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        <h3 class="mb-4 text-center">Bir hesabın yok mu?</h3>
+                        @using (Html.BeginForm("RegisterLogin", "Login", FormMethod.Post))
+                        {
+                            <div class="form-group">
+                                <input type="text" name="WriterName" class="form-control" placeholder="Adınız" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="WriterSurname" class="form-control" placeholder="Soyadınız" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="WriterMail" class="form-control" placeholder="Eposta adresiniz" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="WriterPassword" class="form-control" placeholder="******" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Kaydol</button>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/AdminLTE/login-form-20/js/jquery.min.js"></script>
+    <script src="~/AdminLTE/login-form-20/js/popper.js"></script>
+    <script src="~/AdminLTE/login-form-20/js/bootstrap.min.js"></script>
+    <script src="~/AdminLTE/login-form-20/js/main.js"></script>
+
+</body>
+</html>
+
+

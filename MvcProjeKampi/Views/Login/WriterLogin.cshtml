@@ -5,9 +5,9 @@
 
 
 <!doctype html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <title>Mvc Proje Kampı</title>
+    <title>Bulut Tekno</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -19,6 +19,23 @@
 
 </head>
 <body class="img js-fullheight" style="background-image: url(/AdminLTE/login-form-20/images/bg.jpg);">
+    @if (TempData["dogru"] != null)
+    {
+        <div class="alert alert-success alert-dismissable" style="float:right;">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4>	<i class="icon fa fa-check"></i> Başarılı!</h4>
+            Giriş işlemi başarılı
+        </div><br />
+    }
+    @if (TempData["yanlis"] != null)
+    {
+        <div class="alert alert-danger alert-dismissable" style="float:right;">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="false">×</button>
+            <h4>	<i class="icon fa fa-close"></i> Hatalı Giriş!</h4>
+            Bilgilerinizi kontrol edip tekrar deneyin.
+        </div><br />
+    }
+
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">

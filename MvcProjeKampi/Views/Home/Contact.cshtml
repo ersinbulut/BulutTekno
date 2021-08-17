@@ -1,6 +1,19 @@
-﻿@{ ViewBag.Title = "Contact";
+﻿
+
+@{ ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/_BlogLayout.cshtml"; }
 
+
+
+@if (TempData["Dogru"] != null)
+{
+    <div class="alert alert-success alert-dismissable" style="float:right; width:250px; margin-top:60px;">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h4>	<i class="icon fa fa-check"></i> Başarılı!</h4>
+        Mesajınız iletildi
+    </div>
+    <br />
+}
 
 <div class="page-title lb single-wrapper">
     <div class="container">
@@ -27,13 +40,16 @@
                         <div class="col-lg-5">
                             <h4>Biz Kimiz ?</h4>
                             <p>Bulut Tekno, el yapımı, kamera yapımı fotoğraf içeriği, dünyanın dört bir yanındaki bağımsız kreatiflerden moda stilleri için kişisel bir blogdur.</p>
+                            <h4>Hakkımızda</h4>
+                            <p>  Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
                         </div>
+                         
                         <div class="col-lg-7">
-                            <form class="form-wrapper">
-                                <input type="text" class="form-control" placeholder="Adınız">
-                                <input type="text" class="form-control" placeholder="Eposta adresiniz">
-                                <input type="text" class="form-control" placeholder="Konu">
-                                <textarea class="form-control" placeholder="Mesajınız.."></textarea>
+                            <form action="/Home/SendMessage/" method="post" class="form-wrapper">
+                                <input type="text" class="form-control" name="UserName" placeholder="Adınız">
+                                <input type="text" class="form-control" name="UserMail" placeholder="Eposta adresiniz">
+                                <input type="text" class="form-control" name="Subject" placeholder="Konu">
+                                <textarea class="form-control" name="Mesaj" placeholder="Mesajınız.."></textarea>
                                 <button type="submit" class="btn btn-primary">GÖNDER <i class="fa fa-envelope-open-o"></i></button>
                             </form>
                         </div>
