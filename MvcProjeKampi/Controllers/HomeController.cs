@@ -44,7 +44,7 @@ namespace MvcProjeKampi.Controllers
         }
         public ActionResult BlogDetails(int id)
         {
-            var headingValue = contentmanager.GetByID(id);
+            var headingValue = contentmanager.GetListByHeadingID(id);
             return View(headingValue);
         }
     }

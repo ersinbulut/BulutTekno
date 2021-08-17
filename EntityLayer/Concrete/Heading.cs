@@ -17,6 +17,7 @@ namespace EntityLayer.Concrete
         [StringLength(200)]
         public string ImageUrl { get; set; }
         public bool HeadingStatus { get; set; }
+        public bool Slider { get; set; }
 
         public int CategoryID { get; set; }
         public virtual Category Category { get; set; }

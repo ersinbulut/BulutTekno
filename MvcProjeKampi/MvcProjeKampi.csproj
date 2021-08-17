@@ -2235,6 +2235,13 @@
     <Content Include="BlogTECH\upload\j.jpg" />
     <Content Include="BlogTECH\upload\k.jpg" />
     <Content Include="BlogTECH\upload\l.jpg" />
+    <Content Include="BlogTECH\upload\m.jpg" />
+    <Content Include="BlogTECH\upload\n.jpg" />
+    <Content Include="BlogTECH\upload\o.jpg" />
+    <Content Include="BlogTECH\upload\p.jpg" />
+    <Content Include="BlogTECH\upload\r.jpg" />
+    <Content Include="BlogTECH\upload\s.jpg" />
+    <Content Include="BlogTECH\upload\t.jpg" />
     <Content Include="BlogTECH\upload\tech_01.jpg" />
     <Content Include="BlogTECH\upload\tech_02.jpg" />
     <Content Include="BlogTECH\upload\tech_03.jpg" />
@@ -2271,7 +2278,12 @@
     <Content Include="BlogTECH\upload\tech_video_01.jpg" />
     <Content Include="BlogTECH\upload\tech_video_02.jpg" />
     <Content Include="BlogTECH\upload\tech_video_03.jpg" />
+    <Content Include="BlogTECH\upload\v.jpg" />
+    <Content Include="BlogTECH\upload\y.jpg" />
+    <Content Include="BlogTECH\upload\z.jpg" />
+    <Content Include="BlogTECH\upload\ö.jpg" />
     <Content Include="BlogTECH\upload\ı.jpg" />
+    <Content Include="BlogTECH\upload\ş.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

@@ -142,6 +142,10 @@
     <Compile Include="Migrations\202108162125201_mig_heading_propedit.designer.cs">
       <DependentUpon>202108162125201_mig_heading_propedit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108170555297_mig_headingadd.cs" />
+    <Compile Include="Migrations\202108170555297_mig_headingadd.designer.cs">
+      <DependentUpon>202108170555297_mig_headingadd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -206,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108162125201_mig_heading_propedit.resx">
       <DependentUpon>202108162125201_mig_heading_propedit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108170555297_mig_headingadd.resx">
+      <DependentUpon>202108170555297_mig_headingadd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

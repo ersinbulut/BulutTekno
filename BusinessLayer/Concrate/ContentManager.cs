@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrate;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace BusinessLayer.Concrate
 {
     public class ContentManager : IContentService
     {
+        Context db = new Context();
         IContentDal _contentDal;
 
         public ContentManager(IContentDal contentDal)
@@ -38,6 +40,11 @@ namespace BusinessLayer.Concrate
             return _contentDal.Get(x => x.ContentID == id);
         }
 
+        public Content GetByID1(int id)
+        {
+            return _contentDal.Get(x => x.HeadingID == id);
+        }
+
         public List<Content> GetList(string p)
         {
             return _contentDal.List(x=>x.ContentValue.Contains(p));
@@ -52,5 +59,7 @@ namespace BusinessLayer.Concrate
         {
             return _contentDal.List(x => x.WriterID ==id);
         }
+
+     
     }
 }

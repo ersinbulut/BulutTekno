@@ -4,70 +4,72 @@
 @{ ViewBag.Title = "HomePage";
     Layout = "~/Views/Shared/_BlogLayout.cshtml"; }
 
+
+
 <section class="section first-section">
     <div class="container-fluid">
         <div class="masonry-blog clearfix">
             @foreach (var item in Model)
             {
-
-                if (item.HeadingID == 23)
+                if (item.Slider == true)
                 {
-                    <div class="first-slot">
-                        <div class="masonry-box post-media">
-                            <img src="@item.ImageUrl" style="width:788px; height:370px;" alt="" class="img-fluid">
-                            <div class="shadoweffect">
-                                <div class="shadow-desc">
-                                    <div class="blog-meta">
-                                        <span class="bg-orange"><a href="~/BlogTECH/tech-category-01.html" title="">@item.Category.CategoryName</a></span>
-                                        <h4><a href="/Home/BlogDetails/@item.HeadingID" title="">@item.HeadingName</a></h4>
-                                        <small><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingDate.ToShortDateString()</a></small>
-                                        <small><a href="~/BlogTECH/tech-author.html" title="">@item.Writer.WriterName</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end shadow-desc -->
-                            </div><!-- end shadow -->
-                        </div><!-- end post-media -->
-                    </div><!-- end first-side -->
+                    if (item.HeadingID == 23)
+                    {
+                        <div class="first-slot">
+                            <div class="masonry-box post-media">
+                                <img src="@item.ImageUrl" style="width:788px; height:370px;" alt="" class="img-fluid">
+                                <div class="shadoweffect">
+                                    <div class="shadow-desc">
+                                        <div class="blog-meta">
+                                            <span class="bg-orange"><a href="~/BlogTECH/tech-category-01.html" title="">@item.Category.CategoryName</a></span>
+                                            <h4><a href="/Home/BlogDetails/@item.HeadingID" title="">@item.HeadingName</a></h4>
+                                            <small><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingDate.ToShortDateString()</a></small>
+                                            <small><a href="~/BlogTECH/tech-author.html" title="">@item.Writer.WriterName</a></small>
+                                        </div><!-- end meta -->
+                                    </div><!-- end shadow-desc -->
+                                </div><!-- end shadow -->
+                            </div><!-- end post-media -->
+                        </div><!-- end first-side -->
+                    }
+
+                    if (item.HeadingID == 24)
+                    {
+                        <div class="second-slot">
+                            <div class="masonry-box post-media">
+                                <img src="@item.ImageUrl" style="width:788px; height:370px;" alt="" class="img-fluid">
+                                <div class="shadoweffect">
+                                    <div class="shadow-desc">
+                                        <div class="blog-meta">
+                                            <span class="bg-orange"><a href="~/BlogTECH/tech-category-01.html" title="">@item.Category.CategoryName</a></span>
+                                            <h4><a href="/Home/BlogDetails/@item.HeadingID" title="">@item.HeadingName</a></h4>
+                                            <small><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingDate.ToShortDateString()</a></small>
+                                            <small><a href="~/BlogTECH/tech-author.html" title="">@item.Writer.WriterName</a></small>
+                                        </div><!-- end meta -->
+                                    </div><!-- end shadow-desc -->
+                                </div><!-- end shadow -->
+                            </div><!-- end post-media -->
+                        </div><!-- end second-side -->
+                    }
+
+                    if (item.HeadingID == 25)
+                    {
+                        <div class="last-slot">
+                            <div class="masonry-box post-media">
+                                <img src="@item.ImageUrl" style="width:788px; height:370px;" alt="" class="img-fluid">
+                                <div class="shadoweffect">
+                                    <div class="shadow-desc">
+                                        <div class="blog-meta">
+                                            <span class="bg-orange"><a href="~/BlogTECH/tech-category-01.html" title="">@item.Category.CategoryName</a></span>
+                                            <h4><a href="/Home/BlogDetails/@item.HeadingID" title="">@item.HeadingName</a></h4>
+                                            <small><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingDate.ToShortDateString()</a></small>
+                                            <small><a href="~/BlogTECH/tech-author.html" title="">@item.Writer.WriterName</a></small>
+                                        </div><!-- end meta -->
+                                    </div><!-- end shadow-desc -->
+                                </div><!-- end shadow -->
+                            </div><!-- end post-media -->
+                        </div><!-- end second-side -->
+                    }
                 }
-
-                if (item.HeadingID == 24)
-                {
-                    <div class="second-slot">
-                        <div class="masonry-box post-media">
-                            <img src="@item.ImageUrl" style="width:788px; height:370px;" alt="" class="img-fluid">
-                            <div class="shadoweffect">
-                                <div class="shadow-desc">
-                                    <div class="blog-meta">
-                                        <span class="bg-orange"><a href="~/BlogTECH/tech-category-01.html" title="">@item.Category.CategoryName</a></span>
-                                        <h4><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingName</a></h4>
-                                        <small><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingDate.ToShortDateString()</a></small>
-                                        <small><a href="~/BlogTECH/tech-author.html" title="">@item.Writer.WriterName</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end shadow-desc -->
-                            </div><!-- end shadow -->
-                        </div><!-- end post-media -->
-                    </div><!-- end second-side -->
-                }
-
-                if (item.HeadingID == 25)
-                {
-                    <div class="last-slot">
-                        <div class="masonry-box post-media">
-                            <img src="@item.ImageUrl" style="width:788px; height:370px;" alt="" class="img-fluid">
-                            <div class="shadoweffect">
-                                <div class="shadow-desc">
-                                    <div class="blog-meta">
-                                        <span class="bg-orange"><a href="~/BlogTECH/tech-category-01.html" title="">@item.Category.CategoryName</a></span>
-                                        <h4><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingName</a></h4>
-                                        <small><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingDate.ToShortDateString()</a></small>
-                                        <small><a href="~/BlogTECH/tech-author.html" title="">@item.Writer.WriterName</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end shadow-desc -->
-                            </div><!-- end shadow -->
-                        </div><!-- end post-media -->
-                    </div><!-- end second-side -->
-                }
-
-
             }
         </div><!-- end masonry -->
     </div>
@@ -76,6 +78,7 @@
 <section class="section">
     <div class="container">
         <div class="row">
+
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="page-wrapper">
                     <div class="blog-top clearfix">
@@ -83,71 +86,29 @@
                     </div><!-- end blog-top -->
 
                     <div class="blog-list clearfix">
-                        <div class="blog-box row">
-                            <div class="col-md-4">
-                                <div class="post-media">
-                                    <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/d.jpg" style="width:600px;height:215px;" alt="" class="img-fluid">
-                                        <div class="hovereffect"></div>
-                                    </a>
-                                </div><!-- end media -->
-                            </div><!-- end col -->
+                        @foreach (var item in Model.Skip(0).Take(3))
+                        {
+                            <div class="blog-box row">
+                                <div class="col-md-4">
+                                    <div class="post-media">
+                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                            <img src="@item.ImageUrl" style="width:600px;height:215px;" alt="" class="img-fluid">
+                                            <div class="hovereffect"></div>
+                                        </a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
 
-                            <div class="blog-meta big-meta col-md-8">
-                                <h4><a href="~/BlogTECH/tech-single.html" title="">En iyi 10 telefon uygulaması ve 2017 mobil tasarım ödülleri</a></h4>
-                                <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                <small class="firstsmall"><a class="bg-orange" href="~/BlogTECH/tech-category-01.html" title="">Araçlar</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title="">21 Temmuz, 2021</a></small>
-                                <small><a href="~/BlogTECH/tech-author.html" title="">Matilda Tarafından</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title=""><i class="fa fa-eye"></i> 1114</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-
-                        <hr class="invis">
-
-                        <div class="blog-box row">
-                            <div class="col-md-4">
-                                <div class="post-media">
-                                    <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/e.jpg" style="width:600px;height:215px;" alt="" class="img-fluid">
-                                        <div class="hovereffect"></div>
-                                    </a>
-                                </div><!-- end media -->
-                            </div><!-- end col -->
-
-                            <div class="blog-meta big-meta col-md-8">
-                                <h4><a href="~/BlogTECH/tech-single.html" title="">Hem kulaklık hem de usb kullanabileceğiniz bir cihaz</a></h4>
-                                <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                <small class="firstsmall"><a class="bg-orange" href="~/BlogTECH/tech-category-01.html" title="">Teknoloji</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title="">21 Temmuz, 2021</a></small>
-                                <small><a href="~/BlogTECH/tech-author.html" title="">Matilda Tarafından</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title=""><i class="fa fa-eye"></i> 4412</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-
-                        <hr class="invis">
-
-                        <div class="blog-box row">
-                            <div class="col-md-4">
-                                <div class="post-media">
-                                    <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/f.jpg" style="width:600px;height:215px;" alt="" class="img-fluid">
-                                        <div class="hovereffect"></div>
-                                    </a>
-                                </div><!-- end media -->
-                            </div><!-- end col -->
-
-                            <div class="blog-meta big-meta col-md-8">
-                                <h4><a href="~/BlogTECH/tech-single.html" title="">ABC bilgisayardan iki yeni dizüstü bilgisayar modeli</a></h4>
-                                <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                <small class="firstsmall"><a class="bg-orange" href="~/BlogTECH/tech-category-01.html" title="">Geliştirme</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title="">20 Temmuz, 2021</a></small>
-                                <small><a href="~/BlogTECH/tech-author.html" title="">Matilda Tarafından</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title=""><i class="fa fa-eye"></i> 2313</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-
-                        <hr class="invis">
+                                <div class="blog-meta big-meta col-md-8">
+                                    <h4><a href="/Home/BlogDetails/@item.HeadingID" title="">@item.HeadingName</a></h4>
+                                    <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                    <small class="firstsmall"><a class="bg-orange" href="~/BlogTECH/tech-category-01.html" title="">@item.Category.CategoryName</a></small>
+                                    <small><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingDate.ToLongDateString()</a></small>
+                                    <small><a href="~/BlogTECH/tech-author.html" title="">@item.Writer.WriterName @item.Writer.WriterSurname Tarafından</a></small>
+                                    <small><a href="~/BlogTECH/tech-single.html" title=""><i class="fa fa-eye"></i> 1114</a></small>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+                            <hr class="invis">
+                        }
 
                         <div class="row">
                             <div class="col-lg-10 offset-lg-1">
@@ -161,157 +122,31 @@
 
                         <hr class="invis">
 
-                        <div class="blog-box row">
-                            <div class="col-md-4">
-                                <div class="post-media">
-                                    <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/g.jpg" style="width:600px;height:215px;" alt="" class="img-fluid">
-                                        <div class="hovereffect"></div>
-                                    </a>
-                                </div><!-- end media -->
-                            </div><!-- end col -->
+                        @foreach (var item in Model.Skip(3).Take(7))
+                        {
+                            <div class="blog-box row">
+                                <div class="col-md-4">
+                                    <div class="post-media">
+                                        <a href="~/BlogTECH/tech-single.html" title="">
+                                            <img src="@item.ImageUrl" style="width:600px;height:215px;" alt="" class="img-fluid">
+                                            <div class="hovereffect"></div>
+                                        </a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
 
-                            <div class="blog-meta big-meta col-md-8">
-                                <h4><a href="~/BlogTECH/tech-single.html" title="">Cep telefonlarınızda doğanın fotoğraflarını çekmek için uygulamalar</a></h4>
-                                <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                <small class="firstsmall"><a class="bg-orange" href="~/BlogTECH/tech-category-01.html" title="">Tasarım</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title="">19 Temmuz, 2021</a></small>
-                                <small><a href="~/BlogTECH/tech-author.html" title="">Matilda Tarafından</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title=""><i class="fa fa-eye"></i> 4441</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
+                                <div class="blog-meta big-meta col-md-8">
+                                    <h4><a href="/Home/BlogDetails/@item.HeadingID" title="">@item.HeadingName</a></h4>
+                                    <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                    <small class="firstsmall"><a class="bg-orange" href="~/BlogTECH/tech-category-01.html" title="">@item.Category.CategoryName</a></small>
+                                    <small><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingDate.ToLongDateString()</a></small>
+                                    <small><a href="~/BlogTECH/tech-author.html" title="">@item.Writer.WriterName @item.Writer.WriterSurname Tarafından</a></small>
+                                    <small><a href="~/BlogTECH/tech-single.html" title=""><i class="fa fa-eye"></i> 1114</a></small>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+                            <hr class="invis">
+                        }
 
-                        <hr class="invis">
 
-                        <div class="blog-box row">
-                            <div class="col-md-4">
-                                <div class="post-media">
-                                    <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/h.jpg" style="width:600px;height:215px;" alt="" class="img-fluid">
-                                        <div class="hovereffect"></div>
-                                    </a>
-                                </div><!-- end media -->
-                            </div><!-- end col -->
-
-                            <div class="blog-meta big-meta col-md-8">
-                                <h4><a href="~/BlogTECH/tech-single.html" title="">Akıllı saatlerde renkli kayış modellerine merhaba deyin</a></h4>
-                                <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                <small class="firstsmall"><a class="bg-orange" href="~/BlogTECH/tech-category-01.html" title="">Malzeme</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title="">18 Temmuz, 2021</a></small>
-                                <small><a href="~/BlogTECH/tech-author.html" title="">Matilda Tarafından</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title=""><i class="fa fa-eye"></i> 33312</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-
-                        <hr class="invis">
-
-                        <div class="blog-box row">
-                            <div class="col-md-4">
-                                <div class="post-media">
-                                    <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/ı.jpg" style="width:600px;height:215px;" alt="" class="img-fluid">
-                                        <div class="hovereffect"></div>
-                                    </a>
-                                </div><!-- end media -->
-                            </div><!-- end col -->
-
-                            <div class="blog-meta big-meta col-md-8">
-                                <h4><a href="~/BlogTECH/tech-single.html" title="">Eski cep telefonlarınızı farklı şekillerde değerlendirmeye ne dersin?</a></h4>
-                                <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                <small class="firstsmall"><a class="bg-orange" href="~/BlogTECH/tech-category-01.html" title="">Araçlar</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title="">17 Temmuz, 2021</a></small>
-                                <small><a href="~/BlogTECH/tech-author.html" title="">Matilda Tarafından</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title=""><i class="fa fa-eye"></i> 4440</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-
-                        <hr class="invis">
-
-                        <div class="blog-box row">
-                            <div class="col-md-4">
-                                <div class="post-media">
-                                    <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/i.jpg" style="width:600px;height:215px;" alt="" class="img-fluid">
-                                        <div class="hovereffect"></div>
-                                    </a>
-                                </div><!-- end media -->
-                            </div><!-- end col -->
-
-                            <div class="blog-meta big-meta col-md-8">
-                                <h4><a href="~/BlogTECH/tech-single.html" title="">Bilgisayarda kahve içmek ruhu dindiriyor</a></h4>
-                                <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                <small class="firstsmall"><a class="bg-orange" href="~/BlogTECH/tech-category-01.html" title="">Teknoloji</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title="">16 Temmuz, 2021</a></small>
-                                <small><a href="~/BlogTECH/tech-author.html" title="">Matilda Tarafından</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title=""><i class="fa fa-eye"></i> 4412</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-
-                        <hr class="invis">
-
-                        <div class="blog-box row">
-                            <div class="col-md-4">
-                                <div class="post-media">
-                                    <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/j.jpg" style="width:600px;height:215px;" alt="" class="img-fluid">
-                                        <div class="hovereffect"></div>
-                                    </a>
-                                </div><!-- end media -->
-                            </div><!-- end col -->
-
-                            <div class="blog-meta big-meta col-md-8">
-                                <h4><a href="~/BlogTECH/tech-single.html" title="">Cep telefonunuz için yeni bir kasa satın almayı düşünüyorsanız, bu makaleyi okuduğunuzdan emin olun</a></h4>
-                                <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                <small class="firstsmall"><a class="bg-orange" href="~/BlogTECH/tech-category-01.html" title="">Değerlendirme</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title="">15 Temmuz, 2021</a></small>
-                                <small><a href="~/BlogTECH/tech-author.html" title="">Matilda Tarafından</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title=""><i class="fa fa-eye"></i> 44123</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-
-                        <hr class="invis">
-
-                        <div class="blog-box row">
-                            <div class="col-md-4">
-                                <div class="post-media">
-                                    <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/k.jpg" style="width:600px;height:215px;" alt="" class="img-fluid">
-                                        <div class="hovereffect"></div>
-                                    </a>
-                                </div><!-- end media -->
-                            </div><!-- end col -->
-
-                            <div class="blog-meta big-meta col-md-8">
-                                <h4><a href="~/BlogTECH/tech-single.html" title="">Renkli bir kulaklıkla yazın tadını çıkarın</a></h4>
-                                <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                <small class="firstsmall"><a class="bg-orange" href="~/BlogTECH/tech-category-01.html" title="">Teknoloji</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title="">14 Temmuz, 2021</a></small>
-                                <small><a href="~/BlogTECH/tech-author.html" title="">Matilda Tarafından</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title=""><i class="fa fa-eye"></i> 2214</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-
-                        <hr class="invis">
-
-                        <div class="blog-box row">
-                            <div class="col-md-4">
-                                <div class="post-media">
-                                    <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/l.jpg" style="width:600px;height:215px;" alt="" class="img-fluid">
-                                        <div class="hovereffect"></div>
-                                    </a>
-                                </div><!-- end media -->
-                            </div><!-- end col -->
-
-                            <div class="blog-meta big-meta col-md-8">
-                                <h4><a href="~/BlogTECH/tech-single.html" title="">Google yepyeni bir algoritma geliştirdi. Tüm bilginizi unutun!</a></h4>
-                                <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                <small class="firstsmall"><a class="bg-orange" href="~/BlogTECH/tech-category-01.html" title="">Araçlar</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title="">13 Temmuz, 2021</a></small>
-                                <small><a href="~/BlogTECH/tech-author.html" title="">Matilda Tarafından</a></small>
-                                <small><a href="~/BlogTECH/tech-single.html" title=""><i class="fa fa-eye"></i> 3331</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
                     </div><!-- end blog-list -->
                 </div><!-- end page-wrapper -->
 
@@ -332,6 +167,8 @@
                     </div><!-- end col -->
                 </div><!-- end row -->
             </div><!-- end col -->
+
+
 
             <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                 <div class="sidebar">
