@@ -12,7 +12,7 @@ using System.Web.Security;
 
 namespace MvcProjeKampi.Controllers
 {
-    [AllowAnonymous]
+    //[AllowAnonymous]
     public class LoginController : Controller
     {
         AdminManager adm = new AdminManager(new EfAdminDal());
@@ -116,6 +116,13 @@ namespace MvcProjeKampi.Controllers
             FormsAuthentication.SignOut();
             Session.Abandon();
             return RedirectToAction("Headings", "Default");
+        }
+
+        public ActionResult AdminLogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index");
         }
 
         //[HttpGet]
