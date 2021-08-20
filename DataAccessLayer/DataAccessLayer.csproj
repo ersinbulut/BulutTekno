@@ -61,6 +61,7 @@
     <Compile Include="Abstract\IImageFileDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\IToDoListDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrate\Context.cs" />
     <Compile Include="Concrate\Repositories\CategoryRepository.cs" />
@@ -75,71 +76,8 @@
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
     <Compile Include="EntityFramework\EfImageFileDal.cs" />
     <Compile Include="EntityFramework\EfMessageDal.cs" />
+    <Compile Include="EntityFramework\EfToDoListDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
-    <Compile Include="Migrations\202108091423548_mig1.cs" />
-    <Compile Include="Migrations\202108091423548_mig1.designer.cs">
-      <DependentUpon>202108091423548_mig1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108101256543_mig_writer_edit.cs" />
-    <Compile Include="Migrations\202108101256543_mig_writer_edit.designer.cs">
-      <DependentUpon>202108101256543_mig_writer_edit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108101707330_mig_writertitle_add.cs" />
-    <Compile Include="Migrations\202108101707330_mig_writertitle_add.designer.cs">
-      <DependentUpon>202108101707330_mig_writertitle_add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108101837066_mig_imagesizechange.cs" />
-    <Compile Include="Migrations\202108101837066_mig_imagesizechange.designer.cs">
-      <DependentUpon>202108101837066_mig_imagesizechange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108110649140_mig_writer_addstatus.cs" />
-    <Compile Include="Migrations\202108110649140_mig_writer_addstatus.designer.cs">
-      <DependentUpon>202108110649140_mig_writer_addstatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108110757585_mig_contentstatusadd.cs" />
-    <Compile Include="Migrations\202108110757585_mig_contentstatusadd.designer.cs">
-      <DependentUpon>202108110757585_mig_contentstatusadd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108110802059_mig_headingstatusadd.cs" />
-    <Compile Include="Migrations\202108110802059_mig_headingstatusadd.designer.cs">
-      <DependentUpon>202108110802059_mig_headingstatusadd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108111033358_mig_contactpropertyedit.cs" />
-    <Compile Include="Migrations\202108111033358_mig_contactpropertyedit.designer.cs">
-      <DependentUpon>202108111033358_mig_contactpropertyedit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108111203000_mig_add_message_class.cs" />
-    <Compile Include="Migrations\202108111203000_mig_add_message_class.designer.cs">
-      <DependentUpon>202108111203000_mig_add_message_class.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108111505524_mig_ContactaddDate.cs" />
-    <Compile Include="Migrations\202108111505524_mig_ContactaddDate.designer.cs">
-      <DependentUpon>202108111505524_mig_ContactaddDate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108111620329_mig_addimage_file.cs" />
-    <Compile Include="Migrations\202108111620329_mig_addimage_file.designer.cs">
-      <DependentUpon>202108111620329_mig_addimage_file.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108111854001_mig_Admin_table.cs" />
-    <Compile Include="Migrations\202108111854001_mig_Admin_table.designer.cs">
-      <DependentUpon>202108111854001_mig_Admin_table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108112101108_mig_addaboutstatus.cs" />
-    <Compile Include="Migrations\202108112101108_mig_addaboutstatus.designer.cs">
-      <DependentUpon>202108112101108_mig_addaboutstatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108120542533_mig_Admin_Class_Poroperty_Add.cs" />
-    <Compile Include="Migrations\202108120542533_mig_Admin_Class_Poroperty_Add.designer.cs">
-      <DependentUpon>202108120542533_mig_Admin_Class_Poroperty_Add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108162117133_mig_heading_propadd.cs" />
-    <Compile Include="Migrations\202108162117133_mig_heading_propadd.designer.cs">
-      <DependentUpon>202108162117133_mig_heading_propadd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108162120132_mig_content_propadd.cs" />
-    <Compile Include="Migrations\202108162120132_mig_content_propadd.designer.cs">
-      <DependentUpon>202108162120132_mig_content_propadd.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202108162125201_mig_heading_propedit.cs" />
     <Compile Include="Migrations\202108162125201_mig_heading_propedit.designer.cs">
       <DependentUpon>202108162125201_mig_heading_propedit.cs</DependentUpon>
@@ -160,6 +98,14 @@
     <Compile Include="Migrations\202108200838254_mig_adminedit.designer.cs">
       <DependentUpon>202108200838254_mig_adminedit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108201406570_mig_ToDoListTableAdd.cs" />
+    <Compile Include="Migrations\202108201406570_mig_ToDoListTableAdd.designer.cs">
+      <DependentUpon>202108201406570_mig_ToDoListTableAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108201518188_mig_ToDoListTableEdit.cs" />
+    <Compile Include="Migrations\202108201518188_mig_ToDoListTableEdit.designer.cs">
+      <DependentUpon>202108201518188_mig_ToDoListTableEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -174,54 +120,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202108091423548_mig1.resx">
-      <DependentUpon>202108091423548_mig1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108101256543_mig_writer_edit.resx">
-      <DependentUpon>202108101256543_mig_writer_edit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108101707330_mig_writertitle_add.resx">
-      <DependentUpon>202108101707330_mig_writertitle_add.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108101837066_mig_imagesizechange.resx">
-      <DependentUpon>202108101837066_mig_imagesizechange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108110649140_mig_writer_addstatus.resx">
-      <DependentUpon>202108110649140_mig_writer_addstatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108110757585_mig_contentstatusadd.resx">
-      <DependentUpon>202108110757585_mig_contentstatusadd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108110802059_mig_headingstatusadd.resx">
-      <DependentUpon>202108110802059_mig_headingstatusadd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108111033358_mig_contactpropertyedit.resx">
-      <DependentUpon>202108111033358_mig_contactpropertyedit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108111203000_mig_add_message_class.resx">
-      <DependentUpon>202108111203000_mig_add_message_class.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108111505524_mig_ContactaddDate.resx">
-      <DependentUpon>202108111505524_mig_ContactaddDate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108111620329_mig_addimage_file.resx">
-      <DependentUpon>202108111620329_mig_addimage_file.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108111854001_mig_Admin_table.resx">
-      <DependentUpon>202108111854001_mig_Admin_table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108112101108_mig_addaboutstatus.resx">
-      <DependentUpon>202108112101108_mig_addaboutstatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108120542533_mig_Admin_Class_Poroperty_Add.resx">
-      <DependentUpon>202108120542533_mig_Admin_Class_Poroperty_Add.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108162117133_mig_heading_propadd.resx">
-      <DependentUpon>202108162117133_mig_heading_propadd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108162120132_mig_content_propadd.resx">
-      <DependentUpon>202108162120132_mig_content_propadd.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108162125201_mig_heading_propedit.resx">
       <DependentUpon>202108162125201_mig_heading_propedit.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108200838254_mig_adminedit.resx">
       <DependentUpon>202108200838254_mig_adminedit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108201406570_mig_ToDoListTableAdd.resx">
+      <DependentUpon>202108201406570_mig_ToDoListTableAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108201518188_mig_ToDoListTableEdit.resx">
+      <DependentUpon>202108201518188_mig_ToDoListTableEdit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

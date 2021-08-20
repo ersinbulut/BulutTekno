@@ -150,6 +150,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminContentController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminGalleryController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHeadingController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminMessageController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminTalentController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminTestController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminWriterController.cs" />
@@ -2781,6 +2782,11 @@
     <Content Include="Areas\Admin\Views\AdminGallery\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminTest\ToDoList.cshtml" />
     <Content Include="Areas\Admin\Views\AdminTest\SweetAlert.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminMessage\Inbox.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminMessage\Sendbox.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminMessage\GetInBoxMessageDetails.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminMessage\GetSendBoxMessageDetails.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminMessage\NewMessage.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2807,7 +2813,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
-    <Content Include="Views\Shared\_Deneme.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Category\GetCategoryList.cshtml" />
     <Content Include="Views\Category\AddCategory.cshtml" />

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BusinessLayer.Concrate;
+using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +11,7 @@ namespace MvcProjeKampi.Areas.Admin.Controllers
 {
     public class AdminTestController : Controller
     {
+        ToDoListManager tdlm = new ToDoListManager(new EfToDoListDal());
         // GET: Admin/AdminTest
         public ActionResult Index()
         {
@@ -20,12 +24,22 @@ namespace MvcProjeKampi.Areas.Admin.Controllers
 
         public ActionResult ToDoList()
         {
-            return View();
+            var todolistvalues = tdlm.GetList();/*.OrderByDescending(x=>x.ToDoID).FirstOrDefault()*/
+            return View(todolistvalues);
         }
 
         public ActionResult SweetAlert()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult ToDoListAdd(ToDoList toDoList)
+        {
+            toDoList.ToDoDate = DateTime.Parse(DateTime.Now.ToLongDateString());
+            //toDoList.ToDoStatus = true;
+            toDoList.ImageUrl = "a.jpg";
+            tdlm.ToDoListAdd(toDoList);
+            return RedirectToAction("ToDoList");
         }
     }
 }

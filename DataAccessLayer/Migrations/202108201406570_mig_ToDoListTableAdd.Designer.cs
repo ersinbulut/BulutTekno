@@ -7,13 +7,13 @@ namespace DataAccessLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class mig_addimage_file : IMigrationMetadata
+    public sealed partial class mig_ToDoListTableAdd : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(mig_addimage_file));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(mig_ToDoListTableAdd));
         
         string IMigrationMetadata.Id
         {
-            get { return "202108111620329_mig_addimage_file"; }
+            get { return "202108201406570_mig_ToDoListTableAdd"; }
         }
         
         string IMigrationMetadata.Source

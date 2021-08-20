@@ -3,16 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class mig_contentstatusadd : DbMigration
+    public partial class mig_ToDoListTableEdit : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Contents", "ContentStatus", c => c.Boolean(nullable: false));
+            AlterColumn("dbo.ToDoLists", "Priority", c => c.String(maxLength: 100));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Contents", "ContentStatus");
+            AlterColumn("dbo.ToDoLists", "Priority", c => c.String(maxLength: 10));
         }
     }
 }

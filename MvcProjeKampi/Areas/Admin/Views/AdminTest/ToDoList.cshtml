@@ -1,4 +1,5 @@
-﻿
+﻿@using EntityLayer.Concrete
+@model List<ToDoList>
 @{
     ViewBag.Title = "ToDoList";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -28,221 +29,39 @@
                             <table class="table table-hover table-striped table-vcenter mb-0 text-nowrap">
                                 <thead>
                                     <tr>
-                                        <th></th>
+                                        <th>Yapılacak İş</th>
                                         <th class="w150 text-right">Tarih</th>
                                         <th class="w100">Öncelik</th>
                                         <th class="w80"><i class="icon-user"></i></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">Başlıklarda Arama kutucuğu </span> Content(İçerik) te kullanıldı.
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-danger ml-0 mr-0">Yüksek</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">Yazar Görselleri Düzenlenecek </span>
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-warning ml-0 mr-0">Düşük</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">Grafikler</span>
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-warning ml-0 mr-0">Düşük</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">Vitrin Teması </span>
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-danger ml-0 mr-0">Yüksek</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">Gelen kutusunda arama </span>
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-danger ml-0 mr-0">Düşük</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">Yetkilendirmeler </span>
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-danger ml-0 mr-0">Yüksek</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">Hata sayfasını layouttan ayrılacak </span>
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-warning ml-0 mr-0">Düşük</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">Sözlük ve vitrin ayrılacak </span>
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-danger ml-0 mr-0">Yüksek</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">Herhangi bir tablo raporlanacak</span>
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-danger ml-0 mr-0">Yüksek</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">Proje dosyaları sunucuya taşınacak </span>
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-danger ml-0 mr-0">Yüksek</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">Alan adı alınacak </span>
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-danger ml-0 mr-0">Yüksek</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">Proje canlıya taşınacak </span>
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-danger ml-0 mr-0">Yüksek</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">Url de ID yerine isim gelsin </span>
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-danger ml-0 mr-0">Yüksek</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">Iframe ekleme </span>
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-danger ml-0 mr-0">Yüksek</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">SweetAlert </span>
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-warning ml-0 mr-0">Düşük</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
-                                                <span class="custom-control-label">Admin Çıkış Yap </span>
-                                            </label>
-                                        </td>
-                                        <td class="text-right">Ağustos 11-2021</td>
-                                        <td><span class="tag tag-warning ml-0 mr-0">Düşük</span></td>
-                                        <td>
-                                            <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">NG</span>
-                                        </td>
-                                    </tr>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <label class="custom-control custom-checkbox">
+                                                    @*@if (item.ToDoStatus == true)
+                                                        {
+                                                            <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
+                                                        }
+                                                        else
+                                                        {
+                                                            <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1">
+                                                        }*@
+
+                                                    <input type="checkbox" class="custom-control-input" id="@item.ToDoID" checked="@item.ToDoStatus">
+
+                                                    <span class="custom-control-label">@item.Content </span>
+                                                </label>
+                                            </td>
+                                            <td class="text-right">@item.ToDoDate.ToLongDateString()</td>
+                                            <td><span class="tag tag-danger ml-0 mr-0">@item.Priority</span></td>
+                                            <td>
+                                                <span class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">BT</span>
+                                            </td>
+                                        </tr>
+                                    }
                                 </tbody>
                             </table>
                         </div>
@@ -258,60 +77,39 @@
                             <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                         </div>
                     </div>
-                    <form class="card-body">
+                    <form action="/AdminTest/ToDoListAdd/" method="post" class="card-body">
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Yapılacak <span class="text-danger">*</span></label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control">
+                                <input type="text" name="Content" class="form-control">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Öncelik <span class="text-danger">*</span></label>
                             <div class="col-md-7">
-                                <select class="form-control show-tick">
+                                <select name="Priority" class="form-control show-tick">
                                     <option>Seç</option>
                                     <option>Yüksek</option>
                                     <option>Düşük</option>
                                 </select>
                             </div>
                         </div>
-                        @*<div class="form-group row">
-                                <label class="col-md-3 col-form-label">Takım Arkadaşı SEÇ <span class="text-danger">*</span></label>
-                                <div class="col-md-7">
-                                    <select class="form-control show-tick">
-                                        <option>Select</option>
-                                        <option>John Smith</option>
-                                        <option>Claire Peters</option>
-                                        <option>Allen Collins</option>
-                                        <option>Cory Carter</option>
-                                        <option>Rochelle Barton</option>
-                                    </select>
-                                </div>
-                            </div>*@
+
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label">Açıklama <span class="text-danger">*</span></label>
+                            <label class="col-md-3 col-form-label">Durum <span class="text-danger">*</span></label>
                             <div class="col-md-7">
-                                <textarea rows="4" class="form-control no-resize" placeholder="Lütfen bir açıklama giriniz..."></textarea>
+                                <input type="checkbox" id="@Model.FirstOrDefault().ToDoID" checked="@Model.FirstOrDefault().ToDoStatus" >
                             </div>
                         </div>
-                        @*<div class="form-group row">
-                                <label class="col-md-3 col-form-label">Due <span class="text-danger">*</span></label>
-                                <div class="col-md-7">
-                                    <div class="input-daterange input-group" data-provide="datepicker">
-                                        <input type="text" class="form-control" name="start">
-                                        <span class="input-group-addon"> to </span>
-                                        <input type="text" class="form-control" name="end">
-                                    </div>
-                                </div>
-                            </div>*@
+
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label"></label>
                             <div class="col-md-7">
                                 <button type="submit" class="btn btn-primary">Ekle</button>
-                                <button type="submit" class="btn btn-outline-secondary">İptal Et</button>
                             </div>
                         </div>
                     </form>
+                    <button type="submit" class="btn btn-outline-secondary">İptal Et</button>
                 </div>
             </div>
         </div>
