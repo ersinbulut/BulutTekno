@@ -106,6 +106,10 @@
     <Compile Include="Migrations\202108201518188_mig_ToDoListTableEdit.designer.cs">
       <DependentUpon>202108201518188_mig_ToDoListTableEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108201708031_mig_writeredit.cs" />
+    <Compile Include="Migrations\202108201708031_mig_writeredit.designer.cs">
+      <DependentUpon>202108201708031_mig_writeredit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -140,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108201518188_mig_ToDoListTableEdit.resx">
       <DependentUpon>202108201518188_mig_ToDoListTableEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108201708031_mig_writeredit.resx">
+      <DependentUpon>202108201708031_mig_writeredit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

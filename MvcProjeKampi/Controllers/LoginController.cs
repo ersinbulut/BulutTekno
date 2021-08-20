@@ -38,9 +38,10 @@ namespace MvcProjeKampi.Controllers
                 //{
                     FormsAuthentication.SetAuthCookie(adminuserinfo.AdminUserName, false);
                     Session["AdminUserName"] = adminuserinfo.AdminUserName;
-                    return RedirectToAction("Index", "AdminCategory");
+                    //return RedirectToAction("Index", "AdminCategory","Admin");
+                    return RedirectToAction("Index", "Admin/AdminCategory");
                 //}
-              
+
             }
             else
             {
@@ -55,7 +56,7 @@ namespace MvcProjeKampi.Controllers
         }
 
         [HttpPost]
-        public ActionResult WriterLogin(Writer p)
+        public ActionResult WriterLogin(WriterUser p)
         {
             //Context c = new Context();
             // var adminuserinfo = c.Admins.FirstOrDefault(x=>x.AdminUserName == p.AdminUserName && x.AdminUserPassword == p.AdminUserPassword);
@@ -69,7 +70,8 @@ namespace MvcProjeKampi.Controllers
                 FormsAuthentication.SetAuthCookie(writeruserinfo.WriterMail, false);
                 Session["WriterMail"] = writeruserinfo.WriterMail;
                 TempData["dogru"] = "bilgiler dogru";
-                return RedirectToAction("MyContent", "WriterPanelContent");
+                //return RedirectToAction("MyContent", "WriterPanelContent","Writer");
+                return RedirectToAction("MyContent", "Writer/WriterPanelContent");
                 //}
 
             }
@@ -87,7 +89,7 @@ namespace MvcProjeKampi.Controllers
         }
 
         [HttpPost]
-        public ActionResult RegisterLogin(Writer p)
+        public ActionResult RegisterLogin(WriterUser p)
         {
             wm.WriterAdd(p);
             TempData["mesaj"] = "Kayıt işlemi başarılı";
@@ -115,7 +117,8 @@ namespace MvcProjeKampi.Controllers
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("Headings", "Default");
+            //return RedirectToAction("Headings", "Default");
+            return RedirectToAction("Headings", "Writer/Default");
         }
 
         public ActionResult AdminLogOut()

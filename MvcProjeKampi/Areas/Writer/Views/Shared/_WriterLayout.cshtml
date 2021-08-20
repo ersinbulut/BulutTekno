@@ -1,7 +1,6 @@
-﻿f
-@{
-    Layout = null;
-}
+﻿
+
+@{ Layout = null; }
 
 <!--alt-->
 
@@ -57,8 +56,8 @@
                     <a class="header-brand" href="/Home/HomePage/"><i class="fa fa-soccer-ball-o brand-logo"></i></a>
                     <div class="dropdown">
                         <a href="javascript:void(0)" class="nav-link user_btn"><img class="avatar" src="~/AdminLT/assets/images/user.png" alt="" data-toggle="tooltip" data-placement="right" title="User Menu" /></a>
-                        <a href="/Content/GetAllContent/" class="nav-link icon xs-hide"><i class="fa fa-search"></i></a>
-                        @*<a href="~/AdminLT/app-calendar.html" class="nav-link icon app_inbox xs-hide"><i class="fa fa-calendar"></i></a>*@
+                        @*<a href="~/AdminLT/page-search.html" class="nav-link icon xs-hide"><i class="fa fa-search"></i></a>
+                        <a href="~/AdminLT/app-calendar.html" class="nav-link icon app_inbox xs-hide"><i class="fa fa-calendar"></i></a>*@
                         <a href="~/AdminLT/app-contact.html" class="nav-link icon xs-hide"><i class="fa fa-id-card-o"></i></a>
                         <a href="~/AdminLT/app-chat.html" class="nav-link icon xs-hide"><i class="fa fa-comments-o"></i></a>
                         <a href="~/AdminLT/app-filemanager.html" class="nav-link icon app_file xs-hide"><i class="fa fa-folder-o"></i></a>
@@ -317,30 +316,15 @@
             <h5 class="brand-name">Bulut Tekno <a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
             <nav id="left-sidebar-nav" class="sidebar-nav">
                 <ul class="metismenu">
-                    <li class="g_heading">Admin Paneli</li>
-                    <li><a href="/Admin/AdminCategory/Index/"><i class="fa fa-list-ol"></i><span>Kategoriler</span></a></li>
-                    <li><a href="/Admin/AdminHeading/Index/"><i class="fa fa-calendar-check-o"></i><span>Başlıklar</span></a></li>
-                    <li><a href="/Admin/AdminContent/GetAllContent/"><i class="fas fa-newspaper"></i><span>Yazılar</span></a></li>
-                    <li><a href="/Admin/AdminWriter/Index/"><i class="fas fa-user-edit"></i><span>Yazarlar</span></a></li>
-                    <li>
-                        <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="fa fa-lock"></i><span>Grafikler</span></a>
-                        <ul>
-                            <li><a href="/Admin/AdminChart/Index/">Pie Grafik</a></li>
-                            <li><a href="/Admin/AdminChart/Index2/">Line Grafik</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="/Admin/AdminAbout/Index/"><i class="fa fa-address-book"></i><span>Hakkımızda</span></a></li>
-                    <li><a href="/Admin/AdminHeading/HeadingReport/"><i class="fa fa-folder"></i><span>Raporlar</span></a></li>
-                    <li><a href="/Admin/AdminContact/Index/"><i class="fas fa-comments"></i><span> İletişim & Mesajlar</span></a></li>
-                    <li><a href="/Admin/AdminTalent/Index/"><i class="fa fa-star"></i><span>Yetenek Kartım</span></a></li>
-                    <li><a href="/Admin/AdminAuthorization/Index/"><i class="fa fa-users"></i><span>Yetkilendirmeler</span></a></li>
-                    <li><a href="/Admin/AdminGallery/Index/"><i class="fa fa-photo"></i><span>Galeri</span></a></li>
-                    <li><a href="/Admin/AdminTest/SweetAlert/"><i class="fas fa-bell"></i><span>Sweet Alert</span></a></li>
-                    <li><a href="/Admin/AdminTest/ToDoList/"><i class="fa fa-th-list"></i><span>Yapılacaklar</span></a></li>
-                    <li><a href="/ErrorPage/Page404"><i class="fas fa-exclamation-circle"></i><span>Hata Sayfaları</span></a></li>
+                    <li class="g_heading">Yazar Paneli</li>
+                    <li><a href="/Writer/WriterPanel/WriterProfile/"><i class="fas fa-user-edit"></i><span>Profilim</span></a></li>
+                    <li><a href="/Writer/WriterPanel/MyHeading/"><i class="fas fa-book-reader"></i><span>Başlıklarım</span></a></li>
+                    <li><a href="/Writer/WriterPanel/AllHeading"><i class="fa fa-calendar-check-o"></i><span>Tüm Başlıklar</span></a></li>
+                    <li><a href="/Writer/WriterPanelMessage/InBox/"><i class="fas fa-comments"></i><span>Mesajlar</span></a></li>
+                    <li><a href="/Writer/WriterPanelContent/MyContent/"><i class="fa fa-address-book"></i><span>Yazılarım</span></a></li>
+                    <li><a href="/Writer/Default/Headings/"><i class="fa fa-folder"></i><span>Sözlük</span></a></li>
                     <li><a href="/Home/HomePage/"><i class="fas fa-walking"></i><span>Siteye Git</span></a></li>
                     <li><a href="/Login/LogOut/"><i class="fas fa-sign-out-alt"></i><span>Çıkış Yap</span></a></li>
-
                 </ul>
             </nav>
         </div>
@@ -351,7 +335,7 @@
                     <div class="page-header">
                         <div class="left">
                             <a href="javascript:void(0)" class="icon menu_toggle mr-3"><i class="fa  fa-align-left"></i></a>
-                            <h1 class="page-title">Bulut Tekno Admin Paneli</h1>
+                            <h1 class="page-title">Bulut Tekno Yazar Paneli</h1>
                         </div>
                         <div class="right">
                             <div class="input-icon xs-hide mr-4">
@@ -389,7 +373,7 @@
                                         <a class="dropdown-item" href="javascript:void(0)"><span class="float-right"><span class="badge badge-primary">6</span></span><i class="dropdown-icon fe fe-mail"></i> Gelen Kutusu</a>
                                         <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon fe fe-send"></i> Mesajlar</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="/Login/AdminLogOut/"><i class="dropdown-icon fe fe-log-out"></i> Oturumu Kapat</a>
+                                        <a class="dropdown-item" href="login.html"><i class="dropdown-icon fe fe-log-out"></i> Oturumu Kapat</a>
                                     </div>
                                 </div>
                             </div>
@@ -406,112 +390,112 @@
                     <div class="row clearfix">
 
                         @*<div class="col-12 col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Project Summary</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover table-striped text-nowrap table-vcenter mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Client Name</th>
-                                        <th>Team</th>
-                                        <th>Project</th>
-                                        <th>Project Cost</th>
-                                        <th>Payment</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>#AD1245</td>
-                                        <td>Sean Black</td>
-                                        <td>
-                                            <ul class="list-unstyled team-info sm margin-0 w150">
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar4.jpg" alt="Avatar"></li>
-                                                <li class="ml-2"><span>2+</span></li>
-                                            </ul>
-                                        </td>
-                                        <td>Angular Admin</td>
-                                        <td>$14,500</td>
-                                        <td>Done</td>
-                                        <td><span class="tag tag-success">Delivered</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>#DF1937</td>
-                                        <td>Sean Black</td>
-                                        <td>
-                                            <ul class="list-unstyled team-info sm margin-0 w150">
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar4.jpg" alt="Avatar"></li>
-                                                <li class="ml-2"><span>2+</span></li>
-                                            </ul>
-                                        </td>
-                                        <td>Angular Admin</td>
-                                        <td>$14,500</td>
-                                        <td>Pending</td>
-                                        <td><span class="tag tag-success">Delivered</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>#YU8585</td>
-                                        <td>Merri Diamond</td>
-                                        <td>
-                                            <ul class="list-unstyled team-info sm margin-0 w150">
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                            </ul>
-                                        </td>
-                                        <td>One page html Admin</td>
-                                        <td>$500</td>
-                                        <td>Done</td>
-                                        <td><span class="tag tag-orange">Submit</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>#AD1245</td>
-                                        <td>Sean Black</td>
-                                        <td>
-                                            <ul class="list-unstyled team-info sm margin-0 w150">
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar4.jpg" alt="Avatar"></li>
-                                            </ul>
-                                        </td>
-                                        <td>Wordpress One page</td>
-                                        <td>$1,500</td>
-                                        <td>Done</td>
-                                        <td><span class="tag tag-success">Delivered</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>#GH8596</td>
-                                        <td>Allen Collins</td>
-                                        <td>
-                                            <ul class="list-unstyled team-info sm margin-0 w150">
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                                                <li><img src="~/AdminLT/assets/images/xs/avatar4.jpg" alt="Avatar"></li>
-                                                <li class="ml-2"><span>2+</span></li>
-                                            </ul>
-                                        </td>
-                                        <td>VueJs Application</td>
-                                        <td>$9,500</td>
-                                        <td>Done</td>
-                                        <td><span class="tag tag-success">Delivered</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>*@
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Project Summary</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-striped text-nowrap table-vcenter mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Client Name</th>
+                                                        <th>Team</th>
+                                                        <th>Project</th>
+                                                        <th>Project Cost</th>
+                                                        <th>Payment</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>#AD1245</td>
+                                                        <td>Sean Black</td>
+                                                        <td>
+                                                            <ul class="list-unstyled team-info sm margin-0 w150">
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar1.jpg" alt="Avatar"></li>
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar2.jpg" alt="Avatar"></li>
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar3.jpg" alt="Avatar"></li>
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar4.jpg" alt="Avatar"></li>
+                                                                <li class="ml-2"><span>2+</span></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>Angular Admin</td>
+                                                        <td>$14,500</td>
+                                                        <td>Done</td>
+                                                        <td><span class="tag tag-success">Delivered</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>#DF1937</td>
+                                                        <td>Sean Black</td>
+                                                        <td>
+                                                            <ul class="list-unstyled team-info sm margin-0 w150">
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar1.jpg" alt="Avatar"></li>
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar2.jpg" alt="Avatar"></li>
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar3.jpg" alt="Avatar"></li>
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar4.jpg" alt="Avatar"></li>
+                                                                <li class="ml-2"><span>2+</span></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>Angular Admin</td>
+                                                        <td>$14,500</td>
+                                                        <td>Pending</td>
+                                                        <td><span class="tag tag-success">Delivered</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>#YU8585</td>
+                                                        <td>Merri Diamond</td>
+                                                        <td>
+                                                            <ul class="list-unstyled team-info sm margin-0 w150">
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar1.jpg" alt="Avatar"></li>
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar2.jpg" alt="Avatar"></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>One page html Admin</td>
+                                                        <td>$500</td>
+                                                        <td>Done</td>
+                                                        <td><span class="tag tag-orange">Submit</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>#AD1245</td>
+                                                        <td>Sean Black</td>
+                                                        <td>
+                                                            <ul class="list-unstyled team-info sm margin-0 w150">
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar1.jpg" alt="Avatar"></li>
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar2.jpg" alt="Avatar"></li>
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar3.jpg" alt="Avatar"></li>
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar4.jpg" alt="Avatar"></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>Wordpress One page</td>
+                                                        <td>$1,500</td>
+                                                        <td>Done</td>
+                                                        <td><span class="tag tag-success">Delivered</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>#GH8596</td>
+                                                        <td>Allen Collins</td>
+                                                        <td>
+                                                            <ul class="list-unstyled team-info sm margin-0 w150">
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar1.jpg" alt="Avatar"></li>
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar2.jpg" alt="Avatar"></li>
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar3.jpg" alt="Avatar"></li>
+                                                                <li><img src="~/AdminLT/assets/images/xs/avatar4.jpg" alt="Avatar"></li>
+                                                                <li class="ml-2"><span>2+</span></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>VueJs Application</td>
+                                                        <td>$9,500</td>
+                                                        <td>Done</td>
+                                                        <td><span class="tag tag-success">Delivered</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>*@
                     </div>
                 </div>
             </div>
@@ -536,11 +520,11 @@
     <!-- jQuery -->
     @*<script src="~/AdminLTE/plugins/jquery/jquery.min.js"></script>*@
     <!-- Bootstrap -->
-    <!--<script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+    <script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery UI -->
-    <!--<script src="~/AdminLTE/plugins/jquery-ui/jquery-ui.min.js"></script>-->
+    <script src="~/AdminLTE/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Ekko Lightbox -->
-    <!--<script src="~/AdminLTE/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>-->
+    <script src="~/AdminLTE/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
     <!-- AdminLTE App -->
     <script src="~/AdminLTE/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
@@ -568,3 +552,9 @@
 
 <!-- soccer/project/  07 Jan 2020 03:37:22 GMT -->
 </html>
+
+
+
+
+
+

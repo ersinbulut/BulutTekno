@@ -18,27 +18,27 @@ namespace BusinessLayer.Concrate
             _writerDal = writerDal;
         }
 
-        public Writer GetByID(int id)
+        public WriterUser GetByID(int id)
         {
             return _writerDal.Get(x => x.WriterID == id);
         }
 
-        public List<Writer> GetList()
+        public List<WriterUser> GetList()
         {
             return _writerDal.List();
         }
 
-        public void WriterAdd(Writer writer)
+        public void WriterAdd(WriterUser writer)
         {
             _writerDal.Insert(writer);
         }
 
-        public void WriterDelete(Writer writer)
+        public void WriterDelete(WriterUser writer)
         {
             _writerDal.Delete(writer);
         }
 
-        public void WriterUpdate(Writer writer)
+        public void WriterUpdate(WriterUser writer)
         {
             _writerDal.Update(writer);
         }

@@ -15,7 +15,7 @@ namespace DataAccessLayer.Concrate
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Content> Contents { get; set; }
         public DbSet<Heading> Headings { get; set; }
-        public DbSet<Writer> Writers { get; set; }
+        public DbSet<WriterUser> Writers { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<ImageFile> ImageFiles { get; set; }
         public DbSet<AdminUser> Admins { get; set; }

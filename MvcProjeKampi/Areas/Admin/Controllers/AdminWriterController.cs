@@ -27,7 +27,7 @@ namespace MvcProjeKampi.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult AddWriter(Writer p)
+        public ActionResult AddWriter(WriterUser p)
         {
             ValidationResult result = writervalidator.Validate(p);
             if (result.IsValid)
@@ -51,7 +51,7 @@ namespace MvcProjeKampi.Areas.Admin.Controllers
             return View(writervalue);
         }
         [HttpPost]
-        public ActionResult EditWriter(Writer p)
+        public ActionResult EditWriter(WriterUser p)
         {
             ValidationResult result = writervalidator.Validate(p);
             if (result.IsValid)

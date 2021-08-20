@@ -32,7 +32,7 @@ namespace EntityLayer.Concrete
         public virtual Heading Heading { get; set; }
 
         public int? WriterID { get; set; }
-        public virtual Writer Writer { get; set; }
+        public virtual WriterUser Writer { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
     }

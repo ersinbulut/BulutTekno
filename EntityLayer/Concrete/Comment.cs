@@ -27,7 +27,7 @@ namespace EntityLayer.Concrete
         public int ParentID { get; set; }
 
         public int WriterID { get; set; }
-        public virtual Writer Writer { get; set; }
+        public virtual WriterUser Writer { get; set; }
 
         public int? ContentID { get; set; }
         public virtual Content Content { get; set; }

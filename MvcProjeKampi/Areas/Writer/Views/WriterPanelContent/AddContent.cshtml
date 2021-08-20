@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.Content
+
+@{
+    ViewBag.Title = "AddContent";
+    Layout = "~/Areas/Writer/Views/Shared/_WriterLayout.cshtml";
+}
+
+<h1>İçerik Girişi</h1>
+<br />
+@using (Html.BeginForm("AddContent","WriterPanelContent","Writer", FormMethod.Post))
+{
+    <div class="form-group">
+        <input type="hidden" name="HeadingID" value="@ViewBag.d" />
+        @Html.Label("İçeriğinizi Yazın")
+        @Html.TextAreaFor(x => x.ContentValue, 10, 30, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ContentValue)
+        <br />
+        @Html.Label("Resim1 Yolu")
+        @Html.TextBoxFor(x => x.ImageUrl1, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ImageUrl1)
+        <br />
+        @Html.Label("Resim2 Yolu")
+        @Html.TextBoxFor(x => x.ImageUrl2, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ImageUrl2)
+        <br />
+        @Html.Label("Resim3 Yolu")
+        @Html.TextBoxFor(x => x.ImageUrl3, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ImageUrl3)
+        <br />
+
+        <button class="btn btn-info">Başlığı Oluştur</button>
+    </div>
+}
+
+
+

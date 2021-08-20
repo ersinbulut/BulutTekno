@@ -13,33 +13,33 @@ namespace DataAccessLayer.Concrate.Repositories
     public class WriterRepository : IWriterDal
     {
         Context c = new Context();
-        DbSet<Writer> _object;
-        public void Delete(Writer p)
+        DbSet<WriterUser> _object;
+        public void Delete(WriterUser p)
         {
             throw new NotImplementedException();
         }
 
-        public Writer Get(Expression<Func<Writer, bool>> filter)
+        public WriterUser Get(Expression<Func<WriterUser, bool>> filter)
         {
             throw new NotImplementedException();
         }
 
-        public void Insert(Writer p)
+        public void Insert(WriterUser p)
         {
             throw new NotImplementedException();
         }
 
-        public List<Writer> List()
+        public List<WriterUser> List()
         {
             throw new NotImplementedException();
         }
 
-        public List<Writer> List(Expression<Func<Writer, bool>> filter)
+        public List<WriterUser> List(Expression<Func<WriterUser, bool>> filter)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Writer p)
+        public void Update(WriterUser p)
         {
             throw new NotImplementedException();
         }

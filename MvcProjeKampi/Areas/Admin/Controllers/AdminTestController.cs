@@ -39,7 +39,8 @@ namespace MvcProjeKampi.Areas.Admin.Controllers
             //toDoList.ToDoStatus = true;
             toDoList.ImageUrl = "a.jpg";
             tdlm.ToDoListAdd(toDoList);
-            return RedirectToAction("ToDoList");
+            //return RedirectToAction("ToDoList");
+            return RedirectToAction("ToDoList", "Admin/AdminTest");
         }
     }
 }

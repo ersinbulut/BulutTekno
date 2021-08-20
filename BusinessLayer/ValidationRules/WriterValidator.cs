@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.ValidationRules
 {
-    public class WriterValidator : AbstractValidator<Writer>
+    public class WriterValidator : AbstractValidator<WriterUser>
     {
         public WriterValidator()
         {
