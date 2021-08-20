@@ -52,6 +52,7 @@ namespace BusinessLayer.Concrate
         public void HeadingUpdate(Heading heading)
         {
             _headingDal.Update(heading);
+          
         }
     }
 }
