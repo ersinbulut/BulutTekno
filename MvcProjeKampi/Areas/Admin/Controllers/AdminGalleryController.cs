@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Areas.Admin.Controllers
 {
+    [Authorize]
     public class AdminGalleryController : Controller
     {
         IImageFileManager ifm = new IImageFileManager(new EfImageFileDal());

@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Areas.Admin.Controllers
 {
+    [Authorize]
     public class AdminTestController : Controller
     {
         ToDoListManager tdlm = new ToDoListManager(new EfToDoListDal());

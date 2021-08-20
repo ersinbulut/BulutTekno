@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Areas.Admin.Controllers
 {
+    [Authorize]
     public class AdminMessageController : Controller
     {
         MessageManager mm = new MessageManager(new EfMessageDal());

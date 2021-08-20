@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Areas.Admin.Controllers
 {
+    [Authorize]
     public class AdminHeadingController : Controller
     {
         HeadingManager hm = new HeadingManager(new EfHeadingDal());

@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Areas.Admin.Controllers
 {
+    [Authorize]
     public class AdminAboutController : Controller
     {
         AboutManager abm = new AboutManager(new EfAboutDal());

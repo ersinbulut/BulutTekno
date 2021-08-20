@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Areas.Admin.Controllers
 {
+    [Authorize]
     public class AdminContactController : Controller
     {
         ContactManager cm = new ContactManager(new EfContactDal());

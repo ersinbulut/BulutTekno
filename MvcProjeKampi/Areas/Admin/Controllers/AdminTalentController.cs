@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Areas.Admin.Controllers
 {
+    [Authorize]
     public class AdminTalentController : Controller
     {
         // GET: Admin/AdminTalent

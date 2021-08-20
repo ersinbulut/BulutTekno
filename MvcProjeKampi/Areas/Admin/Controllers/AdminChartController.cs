@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Areas.Admin.Controllers
 {
+    [Authorize]
     public class AdminChartController : Controller
     {
         // GET: Admin/AdminChart

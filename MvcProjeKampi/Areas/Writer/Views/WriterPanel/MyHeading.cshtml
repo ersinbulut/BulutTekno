@@ -57,7 +57,7 @@
                                 Başlık Adı
                             </th>
                             <th style="width: 10%">
-                                Oluşturan Yazar
+                                Yazar
                             </th>
                             <th style="width: 8%" class="text-center">
                                 Kategori
@@ -134,21 +134,33 @@
                                     <span class="@color">@item.Category.CategoryName</span>
                                 </td>
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingID">
+                                    <a class="btn btn-primary btn-sm" href="/Writer/Content/ContentByHeading/@item.HeadingID">
                                         <i class="fas fa-folder">
                                         </i>
                                         Yazılar
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="/WriterPanel/EditHeading/@item.HeadingID">
+                                    <a class="btn btn-info btn-sm" href="/Writer/WriterPanel/EditHeading/@item.HeadingID">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Düzenle
                                     </a>
-                                    <a class="@color2" id="btn3" href="/WriterPanel/DeleteHeading/@item.HeadingID">
-                                        <i class="fas fa-trash">
-                                        </i>
-                                        @yazi
-                                    </a>
+                                    @if (yazi == "Aktif Yap")
+                                    {
+                                        <a class="@color2" id="btn3" href="/Writer/WriterPanel/ActiveHeading/@item.HeadingID">
+                                            <i class="fas fa-trash">
+                                            </i>
+                                            @yazi
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="@color2" id="btn3" href="/Writer/WriterPanel/DeleteHeading/@item.HeadingID">
+                                            <i class="fas fa-trash">
+                                            </i>
+                                            @yazi
+                                        </a>
+                                    }
+
                                 </td>
                             </tr>
                         }
@@ -163,7 +175,7 @@
 </html>
 
 
-<a href="/WriterPanel/NewHeading" class="btn btn-info">Yeni Başlık Girişi</a>
+<a href="/Writer/WriterPanel/NewHeading" class="btn btn-info">Yeni Başlık Girişi</a>
 
 
 @*<script>

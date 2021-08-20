@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Areas.Admin.Controllers
 {
+    [Authorize]
     public class AdminWriterController : Controller
     {
         WriterManager wm = new WriterManager(new EfWriterDal());

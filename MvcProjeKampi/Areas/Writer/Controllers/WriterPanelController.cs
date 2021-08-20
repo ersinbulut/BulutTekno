@@ -119,7 +119,14 @@ namespace MvcProjeKampi.Areas.Writer.Controllers
             hm.HeadingDelete(headingvalue);
             return RedirectToAction("MyHeading");
         }
-
+        public ActionResult ActiveHeading(int id)
+        {
+            var headingvalue = hm.GetByID(id);//parametre olarak gönderilen id ye göre getir
+            headingvalue.HeadingStatus = true;
+            hm.HeadingUpdate(headingvalue);
+            return RedirectToAction("MyHeading");
+        }
+        
         public ActionResult AllHeading(int p = 1)
         {
             var headings = hm.GetList().ToPagedList(p, 4);

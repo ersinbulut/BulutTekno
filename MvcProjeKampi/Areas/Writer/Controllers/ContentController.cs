@@ -6,13 +6,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MvcProjeKampi.Areas.Admin.Controllers
+namespace MvcProjeKampi.Areas.Writer.Controllers
 {
-    [Authorize]
-    public class AdminContentController : Controller
+    public class ContentController : Controller
     {
         ContentManager cm = new ContentManager(new EfContentDal());
-        // GET: Admin/AdminContent
+        // GET: Writer/Content
         public ActionResult Index()
         {
             return View();
