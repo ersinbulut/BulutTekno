@@ -6,12 +6,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MvcProjeKampi.Controllers
+namespace MvcProjeKampi.Areas.Admin.Controllers
 {
-    public class GalleryController : Controller
+    public class AdminGalleryController : Controller
     {
         IImageFileManager ifm = new IImageFileManager(new EfImageFileDal());
-        // GET: Gallery
+        // GET: Admin/AdminGallery
         public ActionResult Index()
         {
             var files = ifm.GetList();

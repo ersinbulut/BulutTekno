@@ -1,14 +1,14 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MvcProjeKampi.Controllers
+namespace MvcProjeKampi.Areas.Admin.Controllers
 {
-    public class TestController : Controller
+    public class AdminTestController : Controller
     {
-        // GET: Test
+        // GET: Admin/AdminTest
         public ActionResult Index()
         {
             return View();
@@ -18,7 +18,7 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
 
-        public ActionResult Test3()
+        public ActionResult ToDoList()
         {
             return View();
         }
@@ -27,7 +27,5 @@ namespace MvcProjeKampi.Controllers
         {
             return View();
         }
-
-
     }
 }
