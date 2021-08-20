@@ -1,13 +1,12 @@
-﻿@model EntityLayer.Concrete.Admin
-
+﻿@model EntityLayer.Concrete.AdminUser
 @{
     ViewBag.Title = "AddAdmin";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h1>Yeni Admin Eklme Sayfası</h1>
 <br />
-@using (Html.BeginForm("AddAdmin", "Authorization", FormMethod.Post))
+@using (Html.BeginForm("AddAdmin", "AdminAuthorization","Admin", FormMethod.Post))
 {
     <div class="form-group">
         @Html.Label("Admin Kullanıcı Adı")
@@ -27,5 +26,7 @@
         <button class="btn btn-primary">Ekle</button>
     </div>
 }
+
+
 
 

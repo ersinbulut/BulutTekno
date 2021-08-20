@@ -25,7 +25,7 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(Admin p)
+        public ActionResult Index(AdminUser p)
         {
             //Context c = new Context();
            // var adminuserinfo = c.Admins.FirstOrDefault(x=>x.AdminUserName == p.AdminUserName && x.AdminUserPassword == p.AdminUserPassword);

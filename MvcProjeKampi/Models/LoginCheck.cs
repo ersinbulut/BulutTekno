@@ -15,7 +15,7 @@ namespace MvcProjeKampi.Models
             c = new Context();  
         }
 
-        public bool IsLoginSuccess(Admin userModel)
+        public bool IsLoginSuccess(AdminUser userModel)
         {
             var crypto= new SimpleCrypto.PBKDF2();
             var user = c.Admins.Where(x => x.AdminUserName == userModel.AdminUserName).FirstOrDefault();

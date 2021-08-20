@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrate;
 using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace MvcProjeKampi.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult AddAdmin(Admin p)
+        public ActionResult AddAdmin(AdminUser p)
         {
             p.AdminStatus = true;
             p.AdminRole = ViewBag.vlc;
@@ -56,10 +57,26 @@ namespace MvcProjeKampi.Areas.Admin.Controllers
             return View(adminvalue);
         }
         [HttpPost]
-        public ActionResult EditAdmin(Admin p)
+        public ActionResult EditAdmin(AdminUser p)
         {
             adminmanager.AdminUpdate(p);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Active(int id)
+        {
+            var deger = adminmanager.GetByID(id);
+            deger.AdminStatus = true;
+            adminmanager.AdminUpdate(deger);
+            return RedirectToAction("Index");
+        }
+        public ActionResult DeActive(int id)
+        {
+            var deger = adminmanager.GetByID(id);
+            deger.AdminStatus = false;
+            adminmanager.AdminUpdate(deger);
+            return RedirectToAction("Index");
+        }
+
     }
 }

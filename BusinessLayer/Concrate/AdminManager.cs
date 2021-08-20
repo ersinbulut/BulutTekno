@@ -20,27 +20,27 @@ namespace BusinessLayer.Concrate
 
 
 
-        public void AdminAdd(Admin admin)
+        public void AdminAdd(AdminUser admin)
         {
             _AdminDal.Insert(admin);
         }
 
-        public void AdminDelete(Admin admin)
+        public void AdminDelete(AdminUser admin)
         {
             _AdminDal.Delete(admin);
         }
 
-        public void AdminUpdate(Admin admin)
+        public void AdminUpdate(AdminUser admin)
         {
             _AdminDal.Update(admin);
         }
 
-        public Admin GetByID(int id)
+        public AdminUser GetByID(int id)
         {
             return _AdminDal.Get(x => x.AdminID == id);
         }
 
-        public List<Admin> GetList()
+        public List<AdminUser> GetList()
         {
             return _AdminDal.List();
         }

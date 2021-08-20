@@ -1,9 +1,9 @@
 ﻿@using EntityLayer.Concrete
-@model List<Admin>
+@model List<AdminUser>
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h3>Adminler</h3>
@@ -35,8 +35,8 @@
                                             <td>@item.AdminUserName</td>
                                             <td>@item.AdminRole</td>
                                             <td>Aktif</td>
-                                            <td><a href="/AdminCategory/DeleteCategory/@item.AdminID" class="btn btn-danger">Pasif Yap</a></td>
-                                            <td><a href="/Authorization/EditAdmin/@item.AdminID" class="btn btn-warning">Yetkisini Değiştir</a></td>
+                                            <td><a href="/Admin/AdminAuthorization/DeActive/@item.AdminID" class="btn btn-danger">Pasif Yap</a></td>
+                                            <td><a href="/Admin/AdminAuthorization/EditAdmin/@item.AdminID" class="btn btn-warning">Yetkisini Değiştir</a></td>
                                         </tr>
                                     }
                                 </tbody>
@@ -45,9 +45,10 @@
                     </div>
                 </div>
             </div>
-            <a href="/Authorization/AddAdmin" class="btn btn-info">Yeni Admin Tanımla</a>
+            <a href="/Admin/AdminAuthorization/AddAdmin" class="btn btn-info">Yeni Admin Tanımla</a>
         </div>
     </div>
 </div>
+
 
 

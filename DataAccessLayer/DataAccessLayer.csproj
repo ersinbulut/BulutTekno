@@ -156,6 +156,10 @@
     <Compile Include="Migrations\202108171741311_mig_commentedit.designer.cs">
       <DependentUpon>202108171741311_mig_commentedit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108200838254_mig_adminedit.cs" />
+    <Compile Include="Migrations\202108200838254_mig_adminedit.designer.cs">
+      <DependentUpon>202108200838254_mig_adminedit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -229,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108171741311_mig_commentedit.resx">
       <DependentUpon>202108171741311_mig_commentedit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108200838254_mig_adminedit.resx">
+      <DependentUpon>202108200838254_mig_adminedit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
