@@ -4,7 +4,8 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
-
+<script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
+<script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 @{
     string color = "";
     string color1 = "";
@@ -141,7 +142,7 @@
                                         <span class="@color">@item.Category.CategoryName</span>
                                     </td>
                                     <td>
-                                        <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingID">
+                                        <a class="btn btn-primary btn-sm" href="/Admin/AdminContent/ContentByHeading/@item.HeadingID">
                                             <i class="fas fa-folder">
                                             </i>
                                             Yazılar
@@ -289,7 +290,7 @@
                                         <span class="@color">@item.Category.CategoryName</span>
                                     </td>
                                     <td>
-                                        <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingID">
+                                        <a class="btn btn-primary btn-sm" href="/Admin/AdminContent/ContentByHeading/@item.HeadingID">
                                             <i class="fas fa-folder">
                                             </i>
                                             Yazılar
@@ -303,7 +304,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a class="@color2" href="/Admin/AdminHeading//UpdateHeading/@item.HeadingID">
+                                        <a class="@color2" href="/Admin/AdminHeading/UpdateHeading/@item.HeadingID">
                                             <i class="fas fa-trash">
                                             </i>
                                             @yazi

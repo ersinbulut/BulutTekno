@@ -3,11 +3,12 @@
     ViewBag.Title = "EditHeading";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
-
+<script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
+<script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <h2>Başlık Güncelleme Sayfası</h2>
 
 
-@using (Html.BeginForm("EditHeading", "AdminHeading","Admin", FormMethod.Post))
+@using (Html.BeginForm("EditHeading", "AdminHeading", "Admin", FormMethod.Post))
 {
     <div class="form-group">
         @Html.Label("Başlık ID")

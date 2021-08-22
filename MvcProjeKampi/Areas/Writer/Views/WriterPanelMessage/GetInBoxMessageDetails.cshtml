@@ -4,7 +4,8 @@
     ViewBag.Title = "GetInBoxMessageDetails";
     Layout = "~/Areas/Writer/Views/Shared/_WriterLayout.cshtml";
 }
-
+<script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
+<script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!DOCTYPE html>
 <html>
@@ -24,16 +25,14 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                @Html.Action("MessageListMenu","WriterPanelMessage","Writer")
+                @Html.Action("MessageListMenu", "WriterPanelMessage", "Writer")
                 <!-- /.col -->
                 <div class="col-md-9">
                     <div class="card card-primary card-outline">
                         <div class="card-header">
+                            <a href="/Writer/WriterPanelMessage/Inbox/" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></a>
                             <h3 class="card-title">Mesajı Oku</h3>
-                            <div class="card-tools">
-                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
-                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
-                            </div>
+
                         </div>
                         <!-- /.card-header -->
 
@@ -50,7 +49,11 @@
                             <!-- /.mailbox-read-info -->
                             <!-- /.mailbox-controls -->
                             <div class="mailbox-read-message">
-                                <p>@Html.DisplayFor(x => x.MessageContent)</p>
+                                <p>
+                                    @Html.Raw(Model.MessageContent)
+
+                                    @Html.HiddenFor(x => x.MessageContent)
+                                </p>
                             </div>
                             <!-- /.mailbox-read-message -->
                         </div>

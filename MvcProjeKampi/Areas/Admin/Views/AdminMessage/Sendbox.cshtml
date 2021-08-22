@@ -6,6 +6,8 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
+<script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
+<script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!DOCTYPE html>
 <html>
 
@@ -70,7 +72,7 @@
                         <div class="table-responsive mailbox-messages">
                             <table class="table table-hover table-striped">
                                 <tbody>
-                                    @foreach (var item in Model)
+                                    @foreach (var item in Model.OrderByDescending(x => x.MessageID).ToList())
                                     {
                                         <tr>
                                             <td>
@@ -80,9 +82,9 @@
                                                 </div>
                                             </td>
                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Message/GetSendBoxMessageDetails/@item.MessageID">@item.ReceiverMail</a></td>
+                                            <td class="mailbox-name"><a href="/Admin/AdminMessage/GetSendBoxMessageDetails/@item.MessageID">@item.ReceiverMail</a></td>
                                             <td class="mailbox-subject">
-                                                <b>@item.Subject</b> @item.MessageContent...
+                                                <b>@item.Subject</b>  @Html.Raw(item.MessageContent.Substring(0, 3))...
                                             </td>
                                             <td class="mailbox-attachment"></td>
                                             <td class="mailbox-date">@(((DateTime)item.MessageDate).ToString("dd-MM-yyyy"))</td>

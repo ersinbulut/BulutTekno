@@ -4,10 +4,11 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-
+<script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
+<script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <h1>Yeni Başlık Ekleme</h1>
 <br />
-@using (Html.BeginForm("AddHeading", "AdminHeading","Admin", FormMethod.Post))
+@using (Html.BeginForm("AddHeading", "AdminHeading", "Admin", FormMethod.Post))
 {
     <div class="form-group">
         @Html.Label("Başlık Adı")

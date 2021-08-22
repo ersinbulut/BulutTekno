@@ -6,6 +6,8 @@
 }
 
 
+<script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
+<script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!DOCTYPE html>
 <html>
 
@@ -82,15 +84,4 @@
     </section>
 </body>
 </html>
-
-@using (Html.BeginForm("EditCategory", "AdminCategory","Admin", FormMethod.Post))
-{
-    <div class="form-group">
-        @Html.Label("Kategori ID")
-        @Html.TextBoxFor(x => x.UserMail, new { @class = "form-control" })
-        <br />
-
-        <button class="btn btn-success">Güncelle</button>
-    </div>
-}
 

@@ -5,6 +5,8 @@
     ViewBag.Title = "Inbox";
     Layout = "~/Areas/Writer/Views/Shared/_WriterLayout.cshtml";
 }
+<script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
+<script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!DOCTYPE html>
 <html>
@@ -25,7 +27,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            @Html.Action("MessageListMenu","WriterPanelMessage","Writer")
+            @Html.Action("MessageListMenu", "WriterPanelMessage", "Writer")
             <!-- /.col -->
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
@@ -70,7 +72,7 @@
                         <div class="table-responsive mailbox-messages">
                             <table class="table table-hover table-striped">
                                 <tbody>
-                                    @foreach (var item in Model)
+                                    @foreach (var item in Model.OrderByDescending(x => x.MessageID).ToList())
                                     {
                                         <tr>
                                             <td>
@@ -79,10 +81,10 @@
                                                     <label for="check1"></label>
                                                 </div>
                                             </td>
-                                            <td class="mailbox-star"><a href="/WriterPanelMessage/GetInBoxMessageDetails/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/WriterPanelMessage/GetInBoxMessageDetails/@item.MessageID">@item.SenderMail</a></td>
+                                            <td class="mailbox-star"><a href="/Writer/WriterPanelMessage/GetInBoxMessageDetails/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="/Writer/WriterPanelMessage/GetInBoxMessageDetails/@item.MessageID">@item.SenderMail</a></td>
                                             <td class="mailbox-subject">
-                                                <b>@item.Subject</b> @item.MessageContent@*.Substring(0, 30)*@
+                                                <b>@item.Subject</b> @Html.Raw(item.MessageContent)
                                             </td>
                                             <td class="mailbox-attachment"></td>
                                             <td class="mailbox-date">@(((DateTime)item.MessageDate).ToString("dd-MM-yyyy"))</td>

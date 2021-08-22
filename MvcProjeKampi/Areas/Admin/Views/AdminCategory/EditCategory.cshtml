@@ -3,11 +3,12 @@
     ViewBag.Title = "EditCategory";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
-
+<script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
+<script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <br />
 <h2>Kategori Güncelleme Sayfası</h2>
 
-@using (Html.BeginForm("EditCategory", "AdminCategory","Admin", FormMethod.Post))
+@using (Html.BeginForm("EditCategory", "AdminCategory", "Admin", FormMethod.Post))
 {
     <div class="form-group">
         @Html.Label("Kategori ID")

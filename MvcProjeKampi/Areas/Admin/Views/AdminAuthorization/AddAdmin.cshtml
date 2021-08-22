@@ -3,10 +3,11 @@
     ViewBag.Title = "AddAdmin";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
-
+<script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
+<script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <h1>Yeni Admin Eklme Sayfası</h1>
 <br />
-@using (Html.BeginForm("AddAdmin", "AdminAuthorization","Admin", FormMethod.Post))
+@using (Html.BeginForm("AddAdmin", "AdminAuthorization", "Admin", FormMethod.Post))
 {
     <div class="form-group">
         @Html.Label("Admin Kullanıcı Adı")
