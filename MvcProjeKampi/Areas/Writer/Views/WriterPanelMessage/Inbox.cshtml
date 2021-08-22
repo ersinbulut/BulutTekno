@@ -71,6 +71,16 @@
                         </div>
                         <div class="table-responsive mailbox-messages">
                             <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>*</th>
+                                        <th>Mail</th>
+                                        <th>Mesaj</th>
+                                        <th></th>
+                                        <th>Tarih</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
                                     @foreach (var item in Model.OrderByDescending(x => x.MessageID).ToList())
                                     {
@@ -84,7 +94,7 @@
                                             <td class="mailbox-star"><a href="/Writer/WriterPanelMessage/GetInBoxMessageDetails/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
                                             <td class="mailbox-name"><a href="/Writer/WriterPanelMessage/GetInBoxMessageDetails/@item.MessageID">@item.SenderMail</a></td>
                                             <td class="mailbox-subject">
-                                                <b>@item.Subject</b> @Html.Raw(item.MessageContent)
+                                                <b>@item.Subject</b> @Html.Raw(item.MessageContent.Substring(0,3))...
                                             </td>
                                             <td class="mailbox-attachment"></td>
                                             <td class="mailbox-date">@(((DateTime)item.MessageDate).ToString("dd-MM-yyyy"))</td>
