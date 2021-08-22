@@ -19,13 +19,16 @@ namespace EntityLayer.Concrete
         public bool HeadingStatus { get; set; }
         public bool Slider { get; set; }
 
-        public int CategoryID { get; set; }
+        public int? CategoryID { get; set; }
         public virtual Category Category { get; set; }
 
-        public int WriterID { get; set; }
+        public int? WriterID { get; set; }
         public virtual WriterUser Writer { get; set; }
 
         public ICollection<Content> Contents { get; set; }
+
+        public int? CommentID { get; set; }
+        public virtual Comment Comment { get; set; }
         //
         //public ICollection<Comment> Comments { get; set; }
     }

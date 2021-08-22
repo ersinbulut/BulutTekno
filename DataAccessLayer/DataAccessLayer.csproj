@@ -90,10 +90,6 @@
     <Compile Include="Migrations\202108171702077_mig_comment_table_add.designer.cs">
       <DependentUpon>202108171702077_mig_comment_table_add.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108171741311_mig_commentedit.cs" />
-    <Compile Include="Migrations\202108171741311_mig_commentedit.designer.cs">
-      <DependentUpon>202108171741311_mig_commentedit.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202108200838254_mig_adminedit.cs" />
     <Compile Include="Migrations\202108200838254_mig_adminedit.designer.cs">
       <DependentUpon>202108200838254_mig_adminedit.cs</DependentUpon>
@@ -109,6 +105,14 @@
     <Compile Include="Migrations\202108201708031_mig_writeredit.cs" />
     <Compile Include="Migrations\202108201708031_mig_writeredit.designer.cs">
       <DependentUpon>202108201708031_mig_writeredit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108202059518_mig_catedit.cs" />
+    <Compile Include="Migrations\202108202059518_mig_catedit.designer.cs">
+      <DependentUpon>202108202059518_mig_catedit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108220004248_mig_commentedit3.cs" />
+    <Compile Include="Migrations\202108220004248_mig_commentedit3.designer.cs">
+      <DependentUpon>202108220004248_mig_commentedit3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,9 +137,6 @@
     <EmbeddedResource Include="Migrations\202108171702077_mig_comment_table_add.resx">
       <DependentUpon>202108171702077_mig_comment_table_add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108171741311_mig_commentedit.resx">
-      <DependentUpon>202108171741311_mig_commentedit.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108200838254_mig_adminedit.resx">
       <DependentUpon>202108200838254_mig_adminedit.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +148,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108201708031_mig_writeredit.resx">
       <DependentUpon>202108201708031_mig_writeredit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108202059518_mig_catedit.resx">
+      <DependentUpon>202108202059518_mig_catedit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108220004248_mig_commentedit3.resx">
+      <DependentUpon>202108220004248_mig_commentedit3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

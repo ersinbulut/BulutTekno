@@ -16,6 +16,7 @@ namespace EntityLayer.Concrete
         [StringLength(200)]
         public string CategoryDesctription { get; set; }
         public bool CategoryStatus { get; set; }//
+        public int ParentID { get; set; }
 
         public ICollection<Heading> Headings { get; set; }
     }

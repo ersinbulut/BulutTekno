@@ -20,6 +20,8 @@
                                     <tr>
                                         <th>#</th>
                                         <th>ADI</th>
+                                        <th>Durum</th>
+                                        <th>Parent</th>
                                         <th>SİL</th>
                                         <th>GÜNCELLE</th>
                                         <th>BAŞLIKLAR</th>
@@ -32,7 +34,12 @@
                                             <td>@item.CategoryID</td>
                                             <td>
                                                 <h6 class="mb-0">@item.CategoryName</h6>
-
+                                            </td>
+                                            <td>
+                                                <h6 class="mb-0">@item.CategoryStatus</h6>
+                                            </td>
+                                            <td>
+                                                <h6 class="mb-0">@item.ParentID</h6>
                                             </td>
                                             <td>
                                                 <a href="/Admin/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a>

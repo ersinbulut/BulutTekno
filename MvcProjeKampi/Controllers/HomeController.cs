@@ -66,6 +66,7 @@ namespace MvcProjeKampi.Controllers
             comment.CommentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             comment.WriterID = 1;
             comment.ParentID = 1;
+            comment.ImageUrl = "https://image.flaticon.com/icons/png/512/146/146031.png";
             commentmanager.CommentAdd(comment);
             TempData["Mesaj"] = "Yorumunuz Gönderildi";
             return RedirectToAction("BlogDetails/" + comment.ContentID);
@@ -75,7 +76,12 @@ namespace MvcProjeKampi.Controllers
             var yorum = commentmanager.GetByID(id);
             return PartialView(yorum);
         }
-
+        public PartialViewResult YorumlarPartial(int id)
+        {
+            var yorum = commentmanager.GetListByContent(id);
+            return PartialView(yorum);
+        }
+        
         public JavaScriptResult MesajGoster()
         {
             string msg = "<script> alert('Yorumunuz yöneticinin onayına gönderildi en kısa zamanda yayınlanacak..'); </script>";

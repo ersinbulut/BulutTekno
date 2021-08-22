@@ -380,6 +380,8 @@
     <Content Include="AdminLTE\login-form-20\js\main.js" />
     <Content Include="AdminLTE\login-form-20\js\popper.js" />
     <Content Include="AdminLTE\login-form-20\main.html" />
+    <Content Include="AdminLTE\menu\index.html" />
+    <Content Include="AdminLTE\menu\style.css" />
     <Content Include="AdminLTE\pages\calendar.html" />
     <Content Include="AdminLTE\pages\charts\chartjs.html" />
     <Content Include="AdminLTE\pages\charts\flot.html" />
@@ -2852,6 +2854,7 @@
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\Yorumlar.cshtml" />
+    <Content Include="Views\Home\YorumlarPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\login-form-19\fonts\" />
