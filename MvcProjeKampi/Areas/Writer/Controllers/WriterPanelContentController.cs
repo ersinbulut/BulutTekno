@@ -17,13 +17,45 @@ namespace MvcProjeKampi.Areas.Writer.Controllers
         // GET: Writer/WriterPanelContent
         public ActionResult MyContent(string p)
         {
-
             p = (string)Session["WriterMail"];
             var writeridinfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
 
             var contentvalues = cm.GetListByWriter(writeridinfo);
             return View(contentvalues);
         }
+        public ActionResult MyContentDetails(int id)
+        {
+            //var contentvalues = cm.GetListByContent(id);
+            //return View(contentvalues);
+
+            //string p = (string)Session["WriterMail"];
+
+            //id = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
+            var writervalue = c.Contents.Where(x => x.ContentID == id).ToList();
+
+            return View(writervalue);
+        }
+
+        [HttpGet]
+        public ActionResult EditContent(int id)
+        {
+            ViewBag.d = id;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult EditContent(Content p)
+        {
+            string mail = (string)Session["WriterMail"];
+            var writeridinfo = c.Writers.Where(x => x.WriterMail == mail).Select(y => y.WriterID).FirstOrDefault();
+
+            p.ContentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            p.WriterID = writeridinfo;
+            p.ContentStatus = true;
+            cm.ContentAdd(p);
+            return RedirectToAction("MyContent");
+        }
+
+
         [HttpGet]
         public ActionResult AddContent(int id)
         {

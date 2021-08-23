@@ -37,9 +37,18 @@ namespace BusinessLayer.Concrate
         {
             return _commentDal.Get(x => x.ContentID == id);
         }
+        public Comment GetByID1(int id)
+        {
+            return _commentDal.Get(x => x.BlogID == id);
+        }
         public List<Comment> GetListByContent(int id)
         {
             return _commentDal.List(x => x.ContentID == id);
+        }
+
+        public List<Comment> GetListByBlog(int id)
+        {
+            return _commentDal.List(x => x.BlogID == id);
         }
 
 

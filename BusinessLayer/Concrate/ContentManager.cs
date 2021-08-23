@@ -60,6 +60,10 @@ namespace BusinessLayer.Concrate
             return _contentDal.List(x => x.WriterID ==id);
         }
 
-     
+        public List<Content> GetListByContent(int id)
+        {
+            return _contentDal.List(x => x.ContentID == id);
+        }
+
     }
 }

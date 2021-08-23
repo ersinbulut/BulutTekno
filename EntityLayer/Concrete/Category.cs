@@ -19,5 +19,6 @@ namespace EntityLayer.Concrete
         public int ParentID { get; set; }
 
         public ICollection<Heading> Headings { get; set; }
+        public ICollection<Blog> Blogs { get; set; }
     }
 }

@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
     <Compile Include="Abstract\IAdminDal.cs" />
+    <Compile Include="Abstract\IBlogDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\ICommentDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Concrate\Repositories\WriterRepository.cs" />
     <Compile Include="EntityFramework\EfAboutDal.cs" />
     <Compile Include="EntityFramework\EfAdminDal.cs" />
+    <Compile Include="EntityFramework\EfBlogDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfCommentDal.cs" />
     <Compile Include="EntityFramework\EfContactDal.cs" />
@@ -114,6 +116,14 @@
     <Compile Include="Migrations\202108220004248_mig_commentedit3.designer.cs">
       <DependentUpon>202108220004248_mig_commentedit3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108231358330_mig_contentedit.cs" />
+    <Compile Include="Migrations\202108231358330_mig_contentedit.designer.cs">
+      <DependentUpon>202108231358330_mig_contentedit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108232022596_mig_blogtableadd.cs" />
+    <Compile Include="Migrations\202108232022596_mig_blogtableadd.designer.cs">
+      <DependentUpon>202108232022596_mig_blogtableadd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -154,6 +164,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108220004248_mig_commentedit3.resx">
       <DependentUpon>202108220004248_mig_commentedit3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108231358330_mig_contentedit.resx">
+      <DependentUpon>202108231358330_mig_contentedit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108232022596_mig_blogtableadd.resx">
+      <DependentUpon>202108232022596_mig_blogtableadd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

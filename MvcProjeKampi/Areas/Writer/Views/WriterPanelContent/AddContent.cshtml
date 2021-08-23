@@ -4,15 +4,24 @@
     ViewBag.Title = "AddContent";
     Layout = "~/Areas/Writer/Views/Shared/_WriterLayout.cshtml";
 }
+<script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
+<script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+<!-- summernote -->
+<link rel="stylesheet" href="~/AdminLTE/plugins/summernote/summernote-bs4.css">
+
+<script src="~/AdminLTE/plugins/summernote/summernote.min.js"></script>
 <h1>İçerik Girişi</h1>
 <br />
-@using (Html.BeginForm("AddContent","WriterPanelContent","Writer", FormMethod.Post))
+@using (Html.BeginForm("AddContent", "WriterPanelContent", "Writer", FormMethod.Post))
 {
     <div class="form-group">
         <input type="hidden" name="HeadingID" value="@ViewBag.d" />
         @Html.Label("İçeriğinizi Yazın")
-        @Html.TextAreaFor(x => x.ContentValue, 10, 30, new { @class = "form-control" })
+        <div class="form-group">
+            <textarea id="compose-textarea" name="ContentValue" class="form-control">
+        </textarea>
+        </div>
         @Html.ValidationMessageFor(x => x.ContentValue)
         <br />
         @Html.Label("Resim1 Yolu")
@@ -33,4 +42,24 @@
 }
 
 
-
+<!-- /.content -->
+<!-- /.content-wrapper -->
+<!-- Control Sidebar -->
+<!-- /.control-sidebar -->
+<!-- ./wrapper -->
+<!-- jQuery -->
+<script src="~/AdminLTE/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="~/AdminLTE/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="~/AdminLTE/dist/js/demo.js"></script>
+<!-- Summernote -->
+<script src="~/AdminLTE/plugins/summernote/summernote-bs4.min.js"></script>
+<!-- Page Script -->
+<script>
+    $(function () {
+        //Add text editor
+        $('#compose-textarea').summernote()
+    })</script>

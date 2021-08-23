@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Concrete\About.cs" />
     <Compile Include="Concrete\AdminUser.cs" />
+    <Compile Include="Concrete\Blog.cs" />
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Comment.cs" />
     <Compile Include="Concrete\Contact.cs" />

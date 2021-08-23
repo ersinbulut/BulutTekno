@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace EntityLayer.Concrete
 {
@@ -11,7 +12,7 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int ContentID { get; set; }
-        [StringLength(1000)]
+        [AllowHtml]
         public string ContentValue { get; set; }
         public DateTime ContentDate { get; set; }
 

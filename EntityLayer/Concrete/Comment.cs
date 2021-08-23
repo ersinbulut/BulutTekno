@@ -32,5 +32,8 @@ namespace EntityLayer.Concrete
         public int? ContentID { get; set; }
         public virtual Content Content { get; set; }
 
+        public int? BlogID { get; set; }
+        public virtual Blog Blog { get; set; }
+
     }
 }

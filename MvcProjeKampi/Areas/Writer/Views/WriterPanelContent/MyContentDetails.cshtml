@@ -1,8 +1,8 @@
-﻿@using EntityLayer.Concrete
-@model  List<Content>
-
+﻿@*@using EntityLayer.Concrete
+    @model List<Content>*@
+@model EntityLayer.Concrete.Content
 @{
-    ViewBag.Title = "MyContent";
+    ViewBag.Title = "MyContentDetails";
     Layout = "~/Areas/Writer/Views/Shared/_WriterLayout.cshtml";
 }
 <script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
@@ -24,24 +24,22 @@
 
                         <div class="timeline">
                             <!-- timeline time label -->
-                            @foreach (var item in Model)
-                            {
+                           
                                 <div class="time-label">
-                                    <span class="bg-success">@item.ContentDate.ToLongDateString()</span>
+                                    <span class="bg-success">@Html.DisplayFor(x=>x.ContentDate.ToLongDateString())</span>
                                 </div>
                                 <!-- /.timeline-label -->
                                 <!-- timeline item -->
                                 <div>
-                                    <a class="fas fa-comment bg-yellow" href="/WriterPanelContent/MyContentDetails/@item.ContentID"><i @*class="fas fa-comment bg-yellow"*@></i></a>
+                                    <a class="fas fa-comment bg-yellow" href="/WriterPanelontent/MyContentDetails/"><i @*class="fas fa-comment bg-yellow"*@></i></a>
                                     <div class="timeline-item">
-                                        <h3 class="timeline-header"><a href="#">@item.Heading.HeadingName</a></h3>
+                                        <h3 class="timeline-header"><a href="#">@Html.DisplayFor(x=>x.Heading.HeadingName)</a></h3>
                                         <div class="timeline-body">
-                                           @item.ContentValue.Substring(0,10)...
+                                            @Html.DisplayFor(x => x.ContentValue)
                                         </div>
                                     </div>
                                 </div>
-                                <!-- END timeline item -->
-                            }
+                    
                         </div>
                     </div>
                     <!-- /.col -->

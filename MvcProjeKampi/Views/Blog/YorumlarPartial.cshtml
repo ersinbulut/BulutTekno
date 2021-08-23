@@ -1,0 +1,30 @@
+﻿@using EntityLayer.Concrete
+@model List<Comment>
+
+
+<div class="custombox clearfix">
+    <h4 class="small-title">Yorumlar</h4>
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="comments-list">
+                @foreach (var item2 in Model)
+                {
+                    <div class="media">
+                        <a class="media-left" href="/BlogTECH/#">
+                            <img src="@item2.ImageUrl" style="width:400px; height:125px;" alt="" class="rounded-circle">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading user_name">@item2.UserName <small>@item2.CommentDate.ToLongDateString()</small></h4>
+                            <p>@item2.CommentValue</p>
+                            <a href="/BlogTECH/#" class="btn btn-primary btn-sm">Yanıtla</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div><!-- end col -->
+
+    </div><!-- end row -->
+
+</div><!-- end custom-box -->
