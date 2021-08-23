@@ -6,115 +6,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Basic -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<!-- Mobile Metas -->
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Site Metas -->
-<title>Bulut Tekno</title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
+    <!-- Site Metas -->
+    <title>Bulut Tekno</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<!-- Site Icons -->
-<link rel="shortcut icon" href="~/BlogTECH/~/BlogTECH/images/favicon.ico" type="image/x-icon" />
-<link rel="apple-touch-icon" href="~/BlogTECH/images/apple-touch-icon.png">
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="~/BlogTECH/~/BlogTECH/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="~/BlogTECH/images/apple-touch-icon.png">
 
-<!-- Design fonts -->
-<link href="~/BlogTECH/https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Design fonts -->
+    <link href="~/BlogTECH/https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
-<!-- Bootstrap core CSS -->
-<link href="~/BlogTECH/css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="~/BlogTECH/css/bootstrap.css" rel="stylesheet">
 
-<!-- FontAwesome Icons core CSS -->
-<link href="~/BlogTECH/css/font-awesome.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons core CSS -->
+    <link href="~/BlogTECH/css/font-awesome.min.css" rel="stylesheet">
 
-<!-- Custom styles for this template -->
-<link href="~/BlogTECH/style.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="~/BlogTECH/style.css" rel="stylesheet">
 
-<!-- Responsive styles for this template -->
-<link href="~/BlogTECH/css/responsive.css" rel="stylesheet">
+    <!-- Responsive styles for this template -->
+    <link href="~/BlogTECH/css/responsive.css" rel="stylesheet">
 
-<!-- Colors for this template -->
-<link href="~/BlogTECH/css/colors.css" rel="stylesheet">
+    <!-- Colors for this template -->
+    <link href="~/BlogTECH/css/colors.css" rel="stylesheet">
 
-<!-- Version Tech CSS for this template -->
-<link href="~/BlogTECH/css/version/tech.css" rel="stylesheet">
+    <!-- Version Tech CSS for this template -->
+    <link href="~/BlogTECH/css/version/tech.css" rel="stylesheet">
 
-<!--[if lt IE 9]>
-  <script src="~/BlogTECH/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="~/BlogTECH/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <!--[if lt IE 9]>
+      <script src="~/BlogTECH/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="~/BlogTECH/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="~/AdminLTE/menu/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
 
     <div id="wrapper">
         <header class="tech-header header">
-            <div class="container-fluid">
-                <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a class="navbar-brand" href="/Home/HomePage/"><span class="text-white" style="font-size: 40px; font-family: 'Poppins', sans-serif; '">Bulut Tekno</span></a>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/Home/HomePage/">Anasayfa</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/Home/Blog/">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/Home/Video/">Videolar</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/Home/News/">Haberler</a>
-                            </li>
-                            @*<li class="nav-item">
-                                    <a class="nav-link" href="~/BlogTECH/tech-contact.html">Hakkımızda</a>
-                                </li>*@
-                            <li class="nav-item">
-                                <a class="nav-link" href="/Writer/Default/Headings/">Sözlük</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/Home/Contact/">İletişim</a>
-                            </li>
-                         
-                        </ul>
-                        <ul class="navbar-nav mr-2">
-                            <li>
-                                @using (Html.BeginForm("Search", "Home", FormMethod.Post))
-                                {
-                                    <input type="text" class="form-control mr-sm-2" name="p" placeholder="Sitede Ara" aria-label="Ara">
-                                }
-                                </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="~/BlogTECH/#"><i class="fa fa-rss"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="~/BlogTECH/#"><i class="fa fa-android"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="~/BlogTECH/#"><i class="fa fa-apple"></i></a>
-                            </li>
-                            @*<li class="nav-item">
-            <a class="btn btn-primary" href="~/Login/WriterRegister/">Kayıt Ol</a>
-        </li>
-        <li class="nav-item">
-            <a class="btn btn-primary" href="~/Login/WriterLogin/">Giriş Yap</a>
-        </li>*@
-                            <li class="login">
-                                <button type="button" class="btn login-btn text-uppercase " data-toggle="modal" data-target="#exampleModalCenter">
-                                    Giriş Yap
-                                </button>
+            <div class="wrapper" style="z-index:999; top:0px; height:70px;">
+                <nav>
+                    <input type="checkbox" id="show-search">
+                    <input type="checkbox" id="show-menu">
+                    <label for="show-menu" style="margin-top:10px;" class="menu-icon"><i class="fas fa-bars"></i></label>
+                    <div class="content">
+                        <div class="logo"><a href="#">Bulut Tekno</a></div>
+                        <ul class="links" >
+                            <li style="margin-top:10px;"><a href="/Home/HomePage/">Anasayfa</a></li>
+                            <li style="margin-top:10px;"><a href="/Home/Blog/">Blog</a></li>
+                            <li style="margin-top:10px;"><a href="/Home/Video/">Videolar</a></li>
+                            <li style="margin-top:10px;"><a href="/Home/News/">Haberler</a></li>
+                            <li style="margin-top:10px;"><a href="/Writer/Default/Headings/">Sözlük</a></li>
+                            <li style="margin-top:10px;"><a href="/Home/Contact/">İletişim</a></li>
+                            <li style="margin-top:10px;">
+                                <a class="go-icon" ><i class="fas fa-user" data-toggle="modal" data-target="#exampleModalCenter"></i></a>
                             </li>
                         </ul>
                     </div>
+                    <label for="show-search" style="margin-top:10px;" class="search-icon"><i class="fas fa-search"></i></label>
+                    <form action="/Home/Search/" method="post" class="search-box">
+                        <input type="text" name="p" placeholder="Aranacak bir şey yazın.." required>
+                        <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+                    </form>
                 </nav>
-            </div><!-- end container-fluid -->
+            </div>
         </header><!-- end market-header -->
         <div class="contanier-fluid">
             <!--/Login-->
@@ -122,7 +89,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header text-center">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
