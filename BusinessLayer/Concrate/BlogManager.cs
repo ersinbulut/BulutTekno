@@ -35,7 +35,7 @@ namespace BusinessLayer.Concrate
 
         public Blog GetByID(int id)
         {
-            return _BlogDal.Get(x => x.BlogID == id);
+            return _BlogDal.Get(x => x.WriterID == id);
         }
 
         public List<Blog> GetList()
@@ -46,6 +46,10 @@ namespace BusinessLayer.Concrate
         {
             return _BlogDal.List(x => x.BlogID == id);
         }
-       
+        public List<Blog> GetListByWriterID(int id)
+        {
+            return _BlogDal.List(x => x.WriterID == id);
+        }
+
     }
 }
