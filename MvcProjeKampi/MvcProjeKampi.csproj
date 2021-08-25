@@ -347,6 +347,7 @@
     <Content Include="AdminLTE\images\moskova.jfif" />
     <Content Include="AdminLTE\images\newyork.jpeg" />
     <Content Include="AdminLTE\images\paris.jfif" />
+    <Content Include="BlogTECH\upload\reklam1.jpeg" />
     <Content Include="AdminLTE\images\roma.jpg" />
     <Content Include="AdminLTE\index.html" />
     <Content Include="AdminLTE\index2.html" />
@@ -2246,6 +2247,7 @@
     <Content Include="BlogTECH\upload\o.jpg" />
     <Content Include="BlogTECH\upload\p.jpg" />
     <Content Include="BlogTECH\upload\r.jpg" />
+    <Content Include="BlogTECH\upload\reklam2.jpg" />
     <Content Include="BlogTECH\upload\s.jpg" />
     <Content Include="BlogTECH\upload\t.jpg" />
     <Content Include="BlogTECH\upload\tech_01.jpg" />
@@ -2285,6 +2287,9 @@
     <Content Include="BlogTECH\upload\tech_video_02.jpg" />
     <Content Include="BlogTECH\upload\tech_video_03.jpg" />
     <Content Include="BlogTECH\upload\v.jpg" />
+    <Content Include="BlogTECH\upload\video1.jfif" />
+    <Content Include="BlogTECH\upload\video1.png" />
+    <Content Include="BlogTECH\upload\video2.jpg" />
     <Content Include="BlogTECH\upload\y.jpg" />
     <Content Include="BlogTECH\upload\z.jpg" />
     <Content Include="BlogTECH\upload\ö.jpg" />
@@ -2813,6 +2818,9 @@
     <Content Include="Areas\Writer\Views\Content\ContentByHeading.cshtml" />
     <Content Include="Areas\Writer\Views\WriterPanelContent\MyContentDetails.cshtml" />
     <Content Include="Areas\Writer\Views\BlogWriter\Index.cshtml" />
+    <Content Include="Areas\Writer\Views\BlogWriter\BlogListPartial.cshtml" />
+    <Content Include="Areas\Writer\Views\BlogWriter\NewBlogPartial.cshtml" />
+    <Content Include="Areas\Writer\Views\BlogWriter\YorumlarPartial.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

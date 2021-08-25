@@ -14,6 +14,7 @@ namespace MvcProjeKampi.Areas.Writer.Controllers
     {
         BlogManager bm = new BlogManager(new EfBlogDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        CommentManager commentmanager = new CommentManager(new EfCommentDal());
         Context c = new Context();
         // GET: Writer/BlogWriter
         public ActionResult Index(string p)
@@ -29,9 +30,58 @@ namespace MvcProjeKampi.Areas.Writer.Controllers
             p = (string)Session["WriterMail"];
             var writeridinfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
             var values = bm.GetListByWriterID(writeridinfo);
+            ViewBag.wid = writeridinfo;
             return View(values);
         }
-       
+        public PartialViewResult BlogListPartial(string p)
+        {
+            List<SelectListItem> valuecategory = (from x in cm.GetList()
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.CategoryName,
+                                                      Value = x.CategoryID.ToString()
+                                                  }).ToList();
+            ViewBag.vlc = valuecategory;
+
+            p = (string)Session["WriterMail"];
+            var writeridinfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
+            var values = bm.GetListByWriterID(writeridinfo);
+            return PartialView(values);
+        }
+
+        public PartialViewResult NewBlogPartial()
+        {
+            List<SelectListItem> valuecategory = (from x in cm.GetList()
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.CategoryName,
+                                                      Value = x.CategoryID.ToString()
+                                                  }).ToList();
+            ViewBag.vlc = valuecategory;
+
+            return PartialView();
+        }
+
+        public PartialViewResult YorumlarPartial(int id)
+        {
+            var yorum = commentmanager.GetListByBlog(id);
+            return PartialView(yorum);
+        }
+
+        //[HttpGet]
+        //public ActionResult NewBlog()
+        //{
+
+
+        //    List<SelectListItem> valuecategory = (from x in cm.GetList()
+        //                                          select new SelectListItem
+        //                                          {
+        //                                              Text = x.CategoryName,
+        //                                              Value = x.CategoryID.ToString()
+        //                                          }).ToList();
+        //    ViewBag.vlc = valuecategory;
+        //    return View();
+        //}
         [HttpPost]
         public ActionResult NewBlog(Blog p)
         {

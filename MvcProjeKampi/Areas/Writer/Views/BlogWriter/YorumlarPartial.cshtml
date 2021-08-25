@@ -1,0 +1,29 @@
+﻿@*@using EntityLayer.Concrete
+@model List<Comment>*@
+
+@model EntityLayer.Concrete.Comment
+
+
+    <div class="media">
+        <img class="media-object avatar avatar-md mr-4" src="/AdminLT/assets/images/xs/avatar3.jpg" alt="" />
+        <div class="media-body">
+            <div class="media-heading">
+                <small class="float-right text-muted">@Html.DisplayFor(x=>x.CommentDate)</small>
+                <h5>@Html.DisplayFor(x => x.UserName)</h5>
+            </div>
+            <div>
+                @Html.DisplayFor(x => x.CommentValue)
+            </div>
+            @*<ul class="media-list">
+                    <li class="media mt-4">
+                        <img class="media-object avatar mr-4" src="/AdminLT/assets/images/xs/avatar1.jpg" alt="" />
+                        <div class="media-body">
+                            <strong>Debra Beck: </strong>
+                            Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus
+                            auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+                        </div>
+                    </li>
+                </ul>*@
+        </div>
+    </div>
+}

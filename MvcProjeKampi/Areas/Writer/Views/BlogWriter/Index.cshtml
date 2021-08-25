@@ -20,7 +20,7 @@
     <div class="container-fluid">
         <div class="row clearfix">
             <div class="col-lg-4 col-md-12">
-                @foreach (var item in Model)
+                @foreach (var item in Model.Skip(0).Take(1))
                 {
                     <div class="card">
                         <img class="card-img-top" src="@item.Writer.WriterImage" alt="Card image cap">
@@ -173,47 +173,28 @@
                     </div>
 
                     <div class="tab-pane fade show active" id="pills-blog" role="tabpanel" aria-labelledby="pills-blog-tab">
-                        @using (Html.BeginForm("NewBlog", "BlogWriter", "Writer", FormMethod.Post))
+
+                        @Html.Action("NewBlogPartial", "BlogWriter", "Writer")
+
+                        @foreach (var item2 in Model.OrderByDescending(x => x.BlogID))
                         {
-                            <div class="card">
-                                <div class="card-body">
 
-                                    @*@Html.HiddenFor(x => x.WriterID, new { @class = "form-control" })*@
-
-                                    <div class="form-group">
-                                        <label class="form-label">Başlık</label>
-                                        <input type="text" name="WriterName" class="form-control" placeholder="Blog Başlığı" value="">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="form-label">Kategori</label>
-                                        <select id="cars" name="CategoryID, (List<SelectListItem>)ViewBag.vlc">
-                                            <option value="CategoryID, (List<SelectListItem>)ViewBag.vlc">Volvo</option>
-                                        </select>
-                                    </div>
-                                 
-                                    <label class="form-label">İçerik</label>
-                                    <div class="summernote" name="MessageContent">
-
-                                    </div>
-                                    <div class="mt-4 text-right">
-                                        <button class="btn btn-warning"><i class="icon-link"></i></button>
-                                        <button class="btn btn-warning"><i class="icon-camera"></i></button>
-                                        <button type="submit" class="btn btn-primary">Yayınla</button>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                        @foreach (var item2 in Model)
-                        {
                             <div class="card blog_single_post">
                                 <div class="img-post">
-                                    <img class="d-block img-fluid" src="@item2.ImageUrl" alt="First slide">
+                                    <img class="d-block img-fluid" src="@item2.ImageUrl" alt="Blog Image">
                                 </div>
                                 <div class="card-body">
                                     <h4><a href="#">@item2.BlogTitle</a></h4>
                                     <p>
-                                        @item2.BlogDescription
+                                        @if (item2.BlogDescription.Length >= 13)
+                                        {
+                                          <p>  @Html.Raw(item2.BlogDescription.Substring(0, 13)) ...</p>
+                                        }
+                                        else
+                                        {
+                                            <p>@Html.Raw(item2.BlogDescription)</p>
+                                        }
+
                                     </p>
                                 </div>
                                 <div class="footer">
@@ -226,34 +207,11 @@
                                         <li><a href="javascript:void(0);" class="icon-bubbles"> 128</a></li>
                                     </ul>
                                 </div>
-                                <ul class="list-group card-list-group">
-                                    <li class="list-group-item py-5">
-                                        <div class="media">
-                                            <img class="media-object avatar avatar-md mr-4" src="/AdminLT/assets/images/xs/avatar3.jpg" alt="" />
-                                            <div class="media-body">
-                                                <div class="media-heading">
-                                                    <small class="float-right text-muted">4 min</small>
-                                                    <h5>Peter Richards</h5>
-                                                </div>
-                                                <div>
-                                                    Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras
-                                                    justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes,
-                                                    nascetur ridiculus mus.
-                                                </div>
-                                                <ul class="media-list">
-                                                    <li class="media mt-4">
-                                                        <img class="media-object avatar mr-4" src="/AdminLT/assets/images/xs/avatar1.jpg" alt="" />
-                                                        <div class="media-body">
-                                                            <strong>Debra Beck: </strong>
-                                                            Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus
-                                                            auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                                @*<ul class="list-group card-list-group">
+                                        <li class="list-group-item py-5">
+                                            @Html.Action("YorumlarPartial","BlogWriter",@item2.BlogID)
+                                        </li>
+                                    </ul>*@
                             </div>
                         }
                     </div>
