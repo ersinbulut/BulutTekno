@@ -2797,7 +2797,6 @@
     <Content Include="Areas\Admin\Views\AdminMessage\GetSendBoxMessageDetails.cshtml" />
     <Content Include="Areas\Admin\Views\AdminMessage\NewMessage.cshtml" />
     <Content Include="Areas\Writer\Views\web.config" />
-    <Content Include="Areas\Writer\Views\Shared\_WriterLayout.cshtml" />
     <Content Include="Areas\Writer\Views\WriterPanel\WriterProfile.cshtml" />
     <Content Include="Areas\Writer\Views\WriterPanel\MyHeading.cshtml" />
     <Content Include="Areas\Writer\Views\WriterPanel\NewHeading.cshtml" />
@@ -2821,6 +2820,9 @@
     <Content Include="Areas\Writer\Views\BlogWriter\BlogListPartial.cshtml" />
     <Content Include="Areas\Writer\Views\BlogWriter\NewBlogPartial.cshtml" />
     <Content Include="Areas\Writer\Views\BlogWriter\YorumlarPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminTalent\TalentList.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminTalent\AddTalent.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminTalent\EditTalent.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2873,6 +2875,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Writer\Data\" />
+    <Folder Include="Areas\Writer\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

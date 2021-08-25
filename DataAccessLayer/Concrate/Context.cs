@@ -22,5 +22,6 @@ namespace DataAccessLayer.Concrate
         public DbSet<Comment> Comments { get; set; }
         public DbSet<ToDoList> ToDoLists { get; set; }
         public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Talent> Talents { get; set; }
     }
 }

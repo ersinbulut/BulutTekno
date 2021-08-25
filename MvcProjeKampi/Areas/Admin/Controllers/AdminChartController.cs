@@ -1,4 +1,7 @@
-﻿using MvcProjeKampi.Models;
+﻿using BusinessLayer.Concrate;
+using DataAccessLayer.Concrate;
+using DataAccessLayer.EntityFramework;
+using MvcProjeKampi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +13,8 @@ namespace MvcProjeKampi.Areas.Admin.Controllers
     [Authorize]
     public class AdminChartController : Controller
     {
+        CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        Context c = new Context();
         // GET: Admin/AdminChart
         public ActionResult Index()
         {
@@ -23,28 +28,16 @@ namespace MvcProjeKampi.Areas.Admin.Controllers
 
         public List<CategoryClass> BlogList()
         {
-            List<CategoryClass> ct = new List<CategoryClass>();
-            ct.Add(new CategoryClass()
+            List<CategoryClass> cs2 = new List<CategoryClass>();
+            using (var c = new Context())
             {
-                CategoryName = "Yazılım",
-                CategoryCount = 8
-            });
-            ct.Add(new CategoryClass()
-            {
-                CategoryName = "Seyehat",
-                CategoryCount = 4
-            });
-            ct.Add(new CategoryClass()
-            {
-                CategoryName = "Teknoloji",
-                CategoryCount = 7
-            });
-            ct.Add(new CategoryClass()
-            {
-                CategoryName = "Spor",
-                CategoryCount = 1
-            });
-            return ct;
+                cs2 = c.Categories.Select(x => new CategoryClass
+                {
+                    CategoryName = x.CategoryName,
+                    CategoryCount = x.CategoryID
+                }).ToList();
+            }
+            return cs2;
         }
 
         //----------------
@@ -60,19 +53,17 @@ namespace MvcProjeKampi.Areas.Admin.Controllers
 
         public List<HeadingClass> HeadingList()
         {
-            List<HeadingClass> ct = new List<HeadingClass>();
-            ct.Add(new HeadingClass()
+            List<HeadingClass> cs2 = new List<HeadingClass>();
+            using (var c = new Context())
             {
-                HeadingName = "Breaking Bad",
-                HeadingCount = 3
-            });
-            ct.Add(new HeadingClass()
-            {
-                HeadingName = "Green Book",
-                HeadingCount = 1
-            });
+                cs2 = c.Headings.Select(x => new HeadingClass
+                {
+                    HeadingName = x.HeadingName,
+                    HeadingCount = x.HeadingID
+                }).ToList();
+            }
+            return cs2;
 
-            return ct;
         }
     }
 }

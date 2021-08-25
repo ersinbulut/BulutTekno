@@ -124,6 +124,10 @@
     <Compile Include="Migrations\202108232022596_mig_blogtableadd.designer.cs">
       <DependentUpon>202108232022596_mig_blogtableadd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108251838273_mig_talenttableadd.cs" />
+    <Compile Include="Migrations\202108251838273_mig_talenttableadd.designer.cs">
+      <DependentUpon>202108251838273_mig_talenttableadd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -170,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108232022596_mig_blogtableadd.resx">
       <DependentUpon>202108232022596_mig_blogtableadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108251838273_mig_talenttableadd.resx">
+      <DependentUpon>202108251838273_mig_talenttableadd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

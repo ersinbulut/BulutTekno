@@ -118,7 +118,7 @@ namespace MvcProjeKampi.Controllers
             FormsAuthentication.SignOut();
             Session.Abandon();
             //return RedirectToAction("Headings", "Default");
-            return RedirectToAction("Headings", "Writer/Default");
+            return RedirectToAction("WriterLogin");
         }
 
         public ActionResult AdminLogOut()

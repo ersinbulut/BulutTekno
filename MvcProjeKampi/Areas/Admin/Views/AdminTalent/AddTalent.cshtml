@@ -1,0 +1,46 @@
+﻿@model EntityLayer.Concrete.Talent
+
+@{
+    ViewBag.Title = "AddTalent";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+
+<h1>Yeni Yetenek Ekleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("AddTalent", "AdminTalent","Admin", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Açıklama")
+        @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Description)
+        <br />
+        @Html.Label("Yetenek")
+        @Html.TextAreaFor(x => x.TalentDescription, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.TalentDescription)
+        <br />
+        @Html.Label("Yüzde")
+        @Html.TextBoxFor(x => x.Percent, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Percent)
+        <br />
+        @Html.Label("Yüzde Değeri max 250")
+        @Html.TextBoxFor(x => x.PercentValue, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PercentValue)
+        <br />
+        @Html.Label("Yazar")
+        @Html.TextBoxFor(x => x.WriterID, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterID)
+        <br />
+        <button class="btn btn-primary" id="btn1">Ekle</button>
+    </div>
+}
+
+
+<script>
+    $('#btn1').click(function () {
+        swal("Tebrikler!", "Başarılı bir şekilde eklendi.", "success");
+    });
+</script>
+

@@ -32,5 +32,7 @@ namespace EntityLayer.Concrete
         public ICollection<Comment> Comments { get; set; }
 
         public ICollection<Blog> Blogs { get; set; }
+
+        public ICollection<Talent> Talents { get; set; }
     }
 }

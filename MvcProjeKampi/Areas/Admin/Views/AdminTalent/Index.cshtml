@@ -1,4 +1,7 @@
 ﻿
+@using EntityLayer.Concrete
+@model List<Talent>
+
 @{
     Layout = null;
 }
@@ -23,13 +26,13 @@
     <!--ResponsiveTabs-->
     <script src="~/AdminLTE/web/js/easyResponsiveTabs.js" type="text/javascript"></script>
     <script type="text/javascript">
-	$(document).ready(function () {
-		$('#horizontalTab').easyResponsiveTabs({
-			type: 'default', //Types: default, vertical, accordion
-			width: 'auto', //auto or any width like 600px
-			fit: true   // 100% fit in a container
-		});
-	});
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true   // 100% fit in a container
+            });
+        });
     </script>
     <!--//ResponsiveTabs-->
 </head>
@@ -48,11 +51,11 @@
                 </div>
                 <h3 class="title">Yeteneklerim</h3>
                 <div class="col-md-6 skills-right bar_group">
+                    @foreach (var item in Model)
+                    {
+                        <div class='bar_group__bar thin' label='@item.TalentDescription &nbsp;&nbsp; @item.Percent %' value='@item.PercentValue'></div>
+                    }
 
-                    <div class='bar_group__bar thin' label='C# &nbsp;&nbsp; 80%' value='200'></div>
-                    <div class='bar_group__bar thin' label='HTML &nbsp;&nbsp; 100%' value='250'></div>
-                    <div class='bar_group__bar thin' label='JAVA SCRİPT &nbsp;&nbsp; 72%' value='180'></div>
-                    <div class='bar_group__bar thin' label='SQL &nbsp;&nbsp; 88%' value='220'></div>
                 </div>
                 <!--bar-js-->
                 <script src="~/AdminLTE/web/js/bars.js"></script>
