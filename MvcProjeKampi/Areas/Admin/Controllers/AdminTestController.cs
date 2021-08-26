@@ -43,5 +43,10 @@ namespace MvcProjeKampi.Areas.Admin.Controllers
             //return RedirectToAction("ToDoList");
             return RedirectToAction("ToDoList", "Admin/AdminTest");
         }
+        public ActionResult Calendar()
+        {
+            return View();
+        }
+        
     }
 }

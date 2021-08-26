@@ -1,0 +1,155 @@
+﻿
+@{
+    ViewBag.Title = "Calendar";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<head>
+    <!-- Bootstrap Core and vandor -->
+    <link rel="stylesheet" href="~/AdminLT/assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/AdminLT/assets/plugins/fullcalendar/fullcalendar.min.css">
+
+    <!-- Core css -->
+    @*<link rel="stylesheet" href="~/AdminLT/assets/css/main.css" />*@
+    <link rel="stylesheet" href="~/AdminLT/assets/css/theme1.css" />
+</head>
+<h2>Takvim</h2>
+
+
+<div class="container-fluid">
+    <div class="row clearfix row-deck">
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="card-header bline">
+                    <h3 class="card-title">Takvim</h3>
+                    <div class="card-options">
+                        <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Add New Event popup -->
+<div class="modal fade" id="addNewEvent" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"><strong>Ekle</strong> bir etkinlik</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="control-label">Etkinlik Adı</label>
+                            <input class="form-control" placeholder="Enter name" type="text" name="category-name">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="control-label">Etkinlik Rengini Seçin</label>
+                            <select class="form-control" data-placeholder="Renk Seç..." name="category-color">
+                                <option value="success">Yeşil</option>
+                                <option value="danger">Kırmızı</option>
+                                <option value="info">Açık Mavi</option>
+                                <option value="primary">Mavi</option>
+                                <option value="warning">Sarı</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success save-event" data-dismiss="modal">Kaydet</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Add Direct Event popup -->
+<div class="modal fade" id="addDirectEvent" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Doğrudan Etkinlik Ekle</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Etkinlik Adı</label>
+                            <input class="form-control" name="event-name" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>
+                                Etkinlik tipi
+                            </label>
+                            <select name="event-bg" class="form-control">
+                                <option value="success">Yeşil</option>
+                                <option value="danger">Kırmızı</option>
+                                <option value="info">Açık Mavi</option>
+                                <option value="primary">Mavi</option>
+                                <option value="warning">Sarı</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn save-btn btn-success">Kaydet</button>
+                <button class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Event Edit Modal popup -->
+<div class="modal fade" id="eventEditModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Etkinlik Düzenle</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Etkinlik Adı</label>
+                            <input class="form-control" name="event-name" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>
+                                Etkinlik tipi
+                            </label>
+                            <select name="event-bg" class="form-control">
+                                <option value="success">Yeşil</option>
+                                <option value="danger">Kırmızı</option>
+                                <option value="info">Açık Mavi</option>
+                                <option value="primary">Mavi</option>
+                                <option value="warning">Sarı</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn mr-auto delete-btn btn-danger">Sil</button>
+                <button class="btn save-btn btn-success">Kaydet</button>
+                <button class="btn btn-default" data-dismiss="modal">İptal Et</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
+
+<script src="~/AdminLT/assets/bundles/fullcalendar.bundle.js"></script>
+
+<script src="~/AdminLT/assets/js/core.js"></script>
+<script src="~/AdminLT/assets/js/page/calendar.js"></script>

@@ -4,13 +4,21 @@
     ViewBag.Title = "WriterProfile";
     Layout = "~/Areas/Writer/Views/Shared/_WriterLayout.cshtml";
 }
+<head>
+<!-- Bootstrap Core and vandor -->
+<link rel="stylesheet" href="~/AdminLT/assets/plugins/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/AdminLT/assets/plugins/dropify/css/dropify.min.css">
 
+<!-- Core css -->
+<link rel="stylesheet" href="~/AdminLT/assets/css/main.css" />
+<link rel="stylesheet" href="~/AdminLT/assets/css/theme1.css" />
+</head>
 <div class="section-body mt-4">
     <div class="container-fluid">
         <div class="row clearfix">
             <div class="col-lg-4 col-md-12">
                 <div class="card">
-                    <img class="card-img-top" src="@Html.DisplayFor(x=>x.WriterImage)" alt="Card image cap">
+                    <img class="card-img-top" src="@Html.DisplayFor(x=>x.WriterImage)" width="60" height="260" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">@Html.DisplayFor(x => x.WriterName) @Html.DisplayFor(x => x.WriterSurname)</h5>
                         <p class="card-text">@Html.DisplayFor(x => x.WriterTitle)</p>
@@ -46,8 +54,8 @@
                             </div>
                         </div>
                     </div>
-                    @using (Html.BeginForm("EditWriter", "WriterPanel", "Writer", FormMethod.Post))
-                    { 
+                    @using (Html.BeginForm("EditWriter", "WriterPanel", "Writer", FormMethod.Post,new { enctype ="multipart/form-data"}))
+                    {
                         <div class="card-body">
                             <div class="row clearfix">
                                 <div class="col-sm-6 col-md-6">
@@ -80,9 +88,9 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-label">Resim Yolu</label>
-                                        @*<input type="text" name="WriterImage" class="form-control" placeholder="a.jpg" value="@Html.DisplayFor(x=>x.WriterImage)">*@
+                                        <input type="file" class="dropify" name="WriterImage">
+                                        <small class="text-danger">Önerilen resim boyutu 200 px x 40 px dir</small>
                                         @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(x => x.WriterImage)
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-md-6">
@@ -104,15 +112,15 @@
                                     <div class="form-group mb-0">
                                         <label class="form-label">Yazar Hakkında</label>
                                         @*<textarea rows="5" name="WriterAbout" class="form-control" placeholder="Açıklamanız" value="@Html.DisplayFor(x=>x.WriterAbout)"></textarea>*@
-                                        @Html.TextAreaFor(x => x.WriterAbout,5,1, new { @class = "form-control" })
+                                        @Html.TextAreaFor(x => x.WriterAbout, 5, 1, new { @class = "form-control" })
                                         @Html.ValidationMessageFor(x => x.WriterAbout)
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <div class="card-footer text-right">
-                        <button type="submit" id="btn3" class="btn btn-primary">Profili Güncelle</button>
-                    </div>
+                        <div class="card-footer text-right">
+                            <button type="submit" id="btn3" class="btn btn-primary">Profili Güncelle</button>
+                        </div>
                     }
 
                 </div>
@@ -134,7 +142,36 @@
     </script>
 
 
+    <script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
 
+    <script src="~/AdminLT/assets/plugins/dropify/js/dropify.min.js"></script>
+
+    <script src="~/AdminLT/assets/js/core.js"></script>
+    <script>
+        $(function () {
+            "use strict";
+
+            $('.dropify').dropify();
+
+            var drEvent = $('#dropify-event').dropify();
+            drEvent.on('dropify.beforeClear', function (event, element) {
+                return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+            });
+
+            drEvent.on('dropify.afterClear', function (event, element) {
+                alert('File deleted');
+            });
+
+            $('.dropify-fr').dropify({
+                messages: {
+                    default: 'Glissez-déposez un fichier ici ou cliquez',
+                    replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                    remove: 'Supprimer',
+                    error: 'Désolé, le fichier trop volumineux'
+                }
+            });
+        });
+    </script>
 
 
 

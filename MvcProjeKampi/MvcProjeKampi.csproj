@@ -2823,6 +2823,8 @@
     <Content Include="Areas\Admin\Views\AdminTalent\TalentList.cshtml" />
     <Content Include="Areas\Admin\Views\AdminTalent\AddTalent.cshtml" />
     <Content Include="Areas\Admin\Views\AdminTalent\EditTalent.cshtml" />
+    <Content Include="Areas\Writer\Views\Shared\_WriterLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminTest\Calendar.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2875,7 +2877,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Writer\Data\" />
-    <Folder Include="Areas\Writer\Views\Shared\" />
+    <Folder Include="Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
