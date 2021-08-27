@@ -2828,6 +2828,7 @@
     <Content Include="Areas\Admin\Views\AdminTest\Calendar.cshtml" />
     <Content Include="Areas\Admin\Views\AdminCategory\SubCategoryAdd.cshtml" />
     <Content Include="Areas\Admin\Views\AdminCategory\_CategoryList.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminTest\AdminProfile.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

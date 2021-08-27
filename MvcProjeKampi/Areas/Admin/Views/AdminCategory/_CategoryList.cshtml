@@ -36,9 +36,9 @@
                                         foreach (var item in category.Where(a => a.ParentID.Equals(parentID)))
                                         {
                                             <tr>
-                                                <td>╚ @item.ParentID - 1</td>
+                                                <td>╚ @item.ParentID -></td>
                                                 <td>
-                                                    <i class="icon-chevron-right" style="margin-left:10px;"></i>@item.CategoryName [@item.Count]
+                                                    <i class="icon-chevron-right" style="margin-left:10px;"></i>@item.CategoryName @*[@item.Count]*@
                                                 </td>
                                                 <td>durum</td>
                                                 <td>

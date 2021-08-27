@@ -50,7 +50,7 @@
                                         <div class="media-body">
                                             <div class="content">
                                                 <p class="h5">@item.Writer.WriterName @item.Writer.WriterSurname <small class="float-right text-muted">@item.ContentDate.ToLongDateString()</small></p>
-                                                <p>@item.ContentValue</p>
+                                                <p>@Html.Raw(item.ContentValue)</p>
                                             </div>
                                             <nav class="d-flex text-muted">
                                                 <a href="#" class="icon mr-3"><i class="fe fe-repeat"></i></a>
