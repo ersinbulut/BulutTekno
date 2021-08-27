@@ -1,15 +1,15 @@
 ﻿@model EntityLayer.Concrete.Category
 @{
-    ViewBag.Title = "AddCategory";
+    ViewBag.Title = "SubCategoryAdd";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="~/Scripts/jquery-3.4.1.js"></script>
 
-<h1>Yeni Kategori Ekleme Sayfası</h1>
+<h1>Alt Kategori Ekleme Sayfası</h1>
 <br />
-@using (Html.BeginForm("AddCategory", "AdminCategory", FormMethod.Post))
+@using (Html.BeginForm("SubCategoryAdd", "AdminCategory", FormMethod.Post))
 {
     <div class="form-group">
         @Html.Label("Kategori Adı")
@@ -20,15 +20,11 @@
         @Html.TextAreaFor(x => x.CategoryDesctription, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.CategoryDesctription)
         <br />
-              <button class="btn btn-primary" id="btn1">Kategori Ekle</button>
+        @Html.Label("Ana Kategori")
+        @Html.DropDownList("ParentID", null, htmlAttributes: new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ParentID, "", new { @class = "text-danger" })
+        <br />
+        <button class="btn btn-primary" id="btn1">Alt Kategori Ekle</button>
     </div>
 }
-
-
-<script>
-    $('#btn1').click(function () {
-        swal("Tebrikler!", "Başarılı bir şekilde eklendi.", "success");
-    });
-</script>
-
 

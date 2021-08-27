@@ -170,6 +170,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CategoryClass.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\ContactModel.cs" />
     <Compile Include="Models\HeadingClass.cs" />
     <Compile Include="Models\LoginCheck.cs" />
@@ -2825,6 +2826,8 @@
     <Content Include="Areas\Admin\Views\AdminTalent\EditTalent.cshtml" />
     <Content Include="Areas\Writer\Views\Shared\_WriterLayout.cshtml" />
     <Content Include="Areas\Admin\Views\AdminTest\Calendar.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminCategory\SubCategoryAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminCategory\_CategoryList.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

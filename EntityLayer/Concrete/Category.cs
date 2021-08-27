@@ -18,6 +18,8 @@ namespace EntityLayer.Concrete
         public bool CategoryStatus { get; set; }//
         public int ParentID { get; set; }
 
+        public int Count { get; set; }
+
         public ICollection<Heading> Headings { get; set; }
         public ICollection<Blog> Blogs { get; set; }
     }

@@ -1,0 +1,103 @@
+﻿
+
+@using MvcProjeKampi.Models
+@model IEnumerable<CategoryModel>
+@{
+    IEnumerable<CategoryModel> catList = Model;
+
+    int sayi = 0;
+    sayi++;
+}
+
+
+<br />
+
+<div class="section-body">
+    <div class="container-fluid">
+        <div class="tab-content taskboard">
+            <div class="tab-pane fade show active" id="TaskBoard-list" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-vcenter mb-0 table_custom spacing8 text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>ADI</th>
+                                        <th>Durum</th>
+                                        <th>SİL</th>
+                                        <th>GÜNCELLE</th>
+                                        <th>BAŞLIKLAR</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @helper GetTreeView(IEnumerable<CategoryModel> category, int parentID)
+                                    {
+                                        foreach (var item in category.Where(a => a.ParentID.Equals(parentID)))
+                                        {
+                                            <tr>
+                                                <td>╚ @item.ParentID - 1</td>
+                                                <td>
+                                                    <i class="icon-chevron-right" style="margin-left:10px;"></i>@item.CategoryName [@item.Count]
+                                                </td>
+                                                <td>durum</td>
+                                                <td>
+                                                    <a href="/Admin/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/Admin/AdminCategory/EditCategory/@item.CategoryID" class="btn btn-warning">Güncelle</a>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="btn btn-primary">Başlıklar</a>
+                                                </td>
+                                                @{var submenu = category.Where(a => a.ParentID.Equals(item.CategoryID)).Count();}
+
+                                                @if (submenu > 0)
+                                                {
+                                                    <td>
+                                                        @GetTreeView(category, item.CategoryID)
+                                                        //recursive call for populate sub items here
+                                                    </td>
+                                                }
+                                            </tr>
+                                        }
+                                    }
+
+                                    @foreach (var item2 in Model.Where(x => x.ParentID == 0).ToList())
+                                    {
+                                        //string categoryUrl = $"/Home/ProductList?categoryId={item.ParentId}&subCategoryId={item.Id}";
+                                        <tr>
+                                            <td>@item2.CategoryID</td>
+                                            <td>
+                                                <a style="color:blue;">@item2.CategoryName </a>
+                                            </td>
+                                            <td>durum</td>
+                                            <td>
+                                                <a href="/Admin/AdminCategory/DeleteCategory/@item2.CategoryID" class="btn btn-danger">Sil</a>
+                                            </td>
+                                            <td>
+                                                <a href="/Admin/AdminCategory/EditCategory/@item2.CategoryID" class="btn btn-warning">Güncelle</a>
+                                            </td>
+                                            <td>
+                                                <a href="#" class="btn btn-primary">Başlıklar</a>
+                                            </td>
+                                        </tr>
+
+                                        @GetTreeView(catList, item2.CategoryID)
+
+                                    }
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="/Admin/AdminCategory/AddCategory" class="btn btn-info">Yeni Kategori</a> |
+            <a href="/Admin/AdminCategory/SubCategoryAdd" class="btn btn-warning">Yeni Alt Kategori</a>
+        </div>
+    </div>
+</div>
+

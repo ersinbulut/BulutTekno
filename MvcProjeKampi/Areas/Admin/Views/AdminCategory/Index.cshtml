@@ -4,64 +4,10 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
+
 <script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
 <script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <h3>Kategoriler</h3>
 <br />
 
-<div class="section-body">
-    <div class="container-fluid">
-        <div class="tab-content taskboard">
-            <div class="tab-pane fade show active" id="TaskBoard-list" role="tabpanel">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="table-responsive">
-                            <table class="table table-hover table-vcenter mb-0 table_custom spacing8 text-nowrap">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>ADI</th>
-                                        <th>Durum</th>
-                                        <th>Parent</th>
-                                        <th>SİL</th>
-                                        <th>GÜNCELLE</th>
-                                        <th>BAŞLIKLAR</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var item in Model)
-                                    {
-                                        <tr>
-                                            <td>@item.CategoryID</td>
-                                            <td>
-                                                <h6 class="mb-0">@item.CategoryName</h6>
-                                            </td>
-                                            <td>
-                                                <h6 class="mb-0">@item.CategoryStatus</h6>
-                                            </td>
-                                            <td>
-                                                <h6 class="mb-0">@item.ParentID</h6>
-                                            </td>
-                                            <td>
-                                                <a href="/Admin/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a>
-                                            </td>
-                                            <td>
-                                                <a href="/Admin/AdminCategory/EditCategory/@item.CategoryID" class="btn btn-warning">Güncelle</a>
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-primary">Başlıklar</a>
-                                            </td>
-                                        </tr>
-                                    }
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a href="/Admin/AdminCategory/AddCategory" class="btn btn-info">Yeni Kategori</a>
-        </div>
-    </div>
-</div>
-
+@Html.Action("_CategoryList","AdminCategory","Admin")

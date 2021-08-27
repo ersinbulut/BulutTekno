@@ -128,6 +128,10 @@
     <Compile Include="Migrations\202108251838273_mig_talenttableadd.designer.cs">
       <DependentUpon>202108251838273_mig_talenttableadd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108270326538_mig_catedit1.cs" />
+    <Compile Include="Migrations\202108270326538_mig_catedit1.designer.cs">
+      <DependentUpon>202108270326538_mig_catedit1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -177,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108251838273_mig_talenttableadd.resx">
       <DependentUpon>202108251838273_mig_talenttableadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108270326538_mig_catedit1.resx">
+      <DependentUpon>202108270326538_mig_catedit1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

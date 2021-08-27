@@ -14,7 +14,7 @@ namespace MvcProjeKampi.Controllers
         // GET: İstatistik
         public ActionResult Index()
         {
-            return View( new State().GetModelStyle());
+            return View(new State().GetModelStyle());
         }
     }
 }

@@ -1,52 +1,67 @@
 ﻿@model MvcProjeKampi.Models.StateModelStyle
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
-
+<script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
+<script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <h2>Ödev</h2>
-<div class="small-box bg-info">
-    <div class="inner">
-        <h3>@Model.toplamkategori</h3>
 
-        <p>Toplam Kategori Sayısı</p>
-    </div>
-    <div class="icon">
-        <i class="ion ion-bag"></i>
-    </div>
-    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-</div>
-<div class="small-box bg-danger">
-    <div class="inner">
-        <h3>@Model.basliksayisi</h3>
+<div class="row">
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-info" style="width:252px; height:182px;">
+            <div class="inner">
+                <h3>@Model.toplamkategori</h3>
 
-        <p>Başlık tablosunda "yazılım" kategorisine ait başlık sayısı</p>
+                <p>Toplam Kategori Sayısı</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-bag"></i>
+            </div>
+        </div>
     </div>
-    <div class="icon">
-        <i class="ion ion-bag"></i>
-    </div>
-    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-</div>
-<div class="small-box bg-info">
-    <div class="inner">
-        <h3>@Model.yazarsayisi</h3>
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-success" style="width:252px; height:182px;">
+            <div class="inner">
+                <h3>@Model.basliksayisi<sup style="font-size: 20px">%</sup></h3>
 
-        <p>Yazar adında 'a' harfi geçen yazar sayısı</p>
+                <p>Başlık tablosunda "yazılım" kategorisine ait başlık sayısı</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+            </div>
+        </div>
     </div>
-    <div class="icon">
-        <i class="ion ion-bag"></i>
-    </div>
-    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-</div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-warning" style="width:252px; height:182px;">
+            <div class="inner">
+                <h3>@Model.yazarsayisi</h3>
 
-<div class="small-box bg-orange">
-    <div class="inner">
-        <h3>@Model.durum3</h3>
+                <p>Yazar adında 'a' harfi geçen yazar sayısı</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-person-add"></i>
+            </div>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-danger" style="width:252px; height:182px;">
+            <div class="inner">
+                <h3>@Model.durum3</h3>
 
-        <p>Kategori tablosunda durumu true olan kategoriler ile false olan kategoriler arasındaki sayısal fark</p>
+                <p>Kategori tablosunda durumu true olan kategoriler ile false olan kategoriler arasındaki sayısal fark</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+            </div>
+        </div>
     </div>
-    <div class="icon">
-        <i class="ion ion-bag"></i>
-    </div>
-    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+    <!-- ./col -->
 </div>

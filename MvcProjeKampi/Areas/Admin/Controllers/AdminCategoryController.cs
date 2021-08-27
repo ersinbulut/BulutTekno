@@ -1,8 +1,10 @@
 ﻿using BusinessLayer.Concrate;
 using BusinessLayer.ValidationRules;
+using DataAccessLayer.Concrate;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using MvcProjeKampi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,7 @@ namespace MvcProjeKampi.Areas.Admin.Controllers
     public class AdminCategoryController : Controller
     {
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        Context db = new Context();
         // GET: Admin/AdminCategory
         //[Authorize(Roles ="B")]
         public ActionResult Index()
@@ -49,6 +52,72 @@ namespace MvcProjeKampi.Areas.Admin.Controllers
             }
             return View();
         }
+
+        //[HttpGet]
+        //public ActionResult SubCategoryAdd()
+        //{
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public ActionResult SubCategoryAdd(Category cat)
+        //{
+        //    //cm.CategoryAddBL(cat);
+        //    CategoryValidator categoryValidator = new CategoryValidator();
+        //    ValidationResult result = categoryValidator.Validate(cat);
+        //    if (result.IsValid)//sonuç geçerliyse
+        //    {
+        //        cm.CategoryAdd(cat);
+        //        return RedirectToAction("Index");
+        //    }
+        //    else
+        //    {
+        //        foreach (var item in result.Errors)
+        //        {
+        //            ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+        //        }
+        //    }
+        //    return View();
+        //}
+
+        // GET: Category/Create
+        public ActionResult SubCategoryAdd()
+        {
+            ViewBag.ParentId = new SelectList(db.Categories, "CategoryID", "CategoryName");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SubCategoryAdd([Bind(Include = "CategoryID,CategoryName,CategoryDesctription,ParentID")] Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Categories.Add(category);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(category);
+        }
+
+        public PartialViewResult _CategoryList()
+        {
+            var kategoriler = db.Categories.Select(x => new CategoryModel()
+            //var kategoriler = db.Categories.Select(x => new Category()
+            {
+                CategoryID = x.CategoryID,
+                ParentID = x.ParentID,
+                CategoryName = x.CategoryName,
+                Count = x.Blogs.Count()
+            }
+            ).ToList();
+            return PartialView(kategoriler);
+
+            //List<Category> all = new List<Category>();
+            //all = db.Categories.OrderBy(a => a.ParentId).ToList();
+            //return PartialView(all);
+        }
+
 
         public ActionResult DeleteCategory(int id)
         {
