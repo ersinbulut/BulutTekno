@@ -38,6 +38,11 @@ namespace BusinessLayer.Concrate
             return _BlogDal.Get(x => x.WriterID == id);
         }
 
+        public Blog GetByID1(int id)
+        {
+            return _BlogDal.Get(x => x.BlogID == id);
+        }
+
         public List<Blog> GetList()
         {
             return _BlogDal.List();

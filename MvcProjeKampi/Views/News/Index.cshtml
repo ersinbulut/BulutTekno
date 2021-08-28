@@ -1,11 +1,10 @@
 ﻿@using EntityLayer.Concrete
-@model List<Heading>
+@model List<News>
 
 @{
-    ViewBag.Title = "News";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_BlogLayout.cshtml";
 }
-
 
 <section class="section">
     <div class="container">
@@ -14,7 +13,7 @@
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="page-wrapper">
                     <div class="blog-top clearfix">
-                        <h4 class="pull-left">Güncel Haberler <a href="~/BlogTECH/#"><i class="fa fa-rss"></i></a></h4>
+                        <h4 class="pull-left"> Güncel Haberler <a href="~/BlogTECH/#"><i class="fa fa-rss"></i></a></h4>
                     </div><!-- end blog-top -->
 
                     <div class="blog-list clearfix">
@@ -31,10 +30,10 @@
                                 </div><!-- end col -->
 
                                 <div class="blog-meta big-meta col-md-8">
-                                    <h4><a href="/Home/BlogDetails/@item.HeadingID" title="">@item.HeadingName</a></h4>
+                                    <h4><a href="/News/NewsDetails/@item.NewsID" title="">@item.NewsTitle</a></h4>
                                     <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
                                     <small class="firstsmall"><a class="bg-orange" href="~/BlogTECH/tech-category-01.html" title="">@item.Category.CategoryName</a></small>
-                                    <small><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingDate.ToLongDateString()</a></small>
+                                    <small><a href="~/BlogTECH/tech-single.html" title="">@item.NewsDate.ToLongDateString()</a></small>
                                     <small><a href="~/BlogTECH/tech-author.html" title="">@item.Writer.WriterName @item.Writer.WriterSurname Tarafından</a></small>
                                     <small><a href="~/BlogTECH/tech-single.html" title=""><i class="fa fa-eye"></i> 1114</a></small>
                                 </div><!-- end meta -->
@@ -67,10 +66,10 @@
                                 </div><!-- end col -->
 
                                 <div class="blog-meta big-meta col-md-8">
-                                    <h4><a href="/Home/BlogDetails/@item.HeadingID" title="">@item.HeadingName</a></h4>
+                                    <h4><a href="/News/NewsDetails/@item.NewsID" title="">@item.NewsTitle</a></h4>
                                     <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
                                     <small class="firstsmall"><a class="bg-orange" href="~/BlogTECH/tech-category-01.html" title="">@item.Category.CategoryName</a></small>
-                                    <small><a href="~/BlogTECH/tech-single.html" title="">@item.HeadingDate.ToLongDateString()</a></small>
+                                    <small><a href="~/BlogTECH/tech-single.html" title="">@item.NewsDate.ToLongDateString()</a></small>
                                     <small><a href="~/BlogTECH/tech-author.html" title="">@item.Writer.WriterName @item.Writer.WriterSurname Tarafından</a></small>
                                     <small><a href="~/BlogTECH/tech-single.html" title=""><i class="fa fa-eye"></i> 1114</a></small>
                                 </div><!-- end meta -->
@@ -105,73 +104,21 @@
             <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                 <div class="sidebar">
                     <div class="widget">
-                        <h2 class="widget-title">Bizi Takip Edin</h2>
-
-                        <div class="row text-center">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                <a href="~/BlogTECH/#" class="social-button facebook-button">
-                                    <i class="fa fa-facebook"></i>
-                                    <p>27k</p>
-                                </a>
-                            </div>
-
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                <a href="~/BlogTECH/#" class="social-button twitter-button">
-                                    <i class="fa fa-twitter"></i>
-                                    <p>98k</p>
-                                </a>
-                            </div>
-
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                <a href="~/BlogTECH/#" class="social-button google-button">
-                                    <i class="fa fa-google-plus"></i>
-                                    <p>17k</p>
-                                </a>
-                            </div>
-
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                <a href="~/BlogTECH/#" class="social-button youtube-button">
-                                    <i class="fa fa-youtube"></i>
-                                    <p>22k</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div><!-- end widget -->
-
-
-                    <div class="widget">
                         <div class="banner-spot clearfix">
                             <div class="banner-img">
-                                <img src="~/BlogTECH/upload/banner_07.jpg" alt="" class="img-fluid">
+                                <img src="~/BlogTECH/upload/reklam1.jpeg" alt="" class="img-fluid">
                             </div><!-- end banner-img -->
                         </div><!-- end banner -->
                     </div><!-- end widget -->
-
-
-
                     <div class="widget">
                         <h2 class="widget-title">Trend Videolar</h2>
                         <div class="trend-videos">
-                            <div class="blog-box">
-                                <div class="post-media">
-                                    <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/tech_video_01.jpg" alt="" class="img-fluid">
-                                        <div class="hovereffect">
-                                            <span class="videohover"></span>
-                                        </div><!-- end hover -->
-                                    </a>
-                                </div><!-- end media -->
-                                <div class="blog-meta">
-                                    <h4><a href="~/BlogTECH/tech-single.html" title="">Sizin için en iyi 10 dizüstü bilgisayar sunumlarını hazırladık</a></h4>
-                                </div><!-- end meta -->
-                            </div><!-- end blog-box -->
-
                             <hr class="invis">
 
                             <div class="blog-box">
                                 <div class="post-media">
                                     <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/tech_video_02.jpg" alt="" class="img-fluid">
+                                        <img src="~/BlogTECH/upload/video1.png" style="width:800px;height:160px;" alt="" class="img-fluid">
                                         <div class="hovereffect">
                                             <span class="videohover"></span>
                                         </div><!-- end hover -->
@@ -187,7 +134,7 @@
                             <div class="blog-box">
                                 <div class="post-media">
                                     <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/tech_video_03.jpg" alt="" class="img-fluid">
+                                        <img src="~/BlogTECH/upload/video2.jpg" style="width:800px;height:160px;" alt="" class="img-fluid">
                                         <div class="hovereffect">
                                             <span class="videohover"></span>
                                         </div><!-- end hover -->
@@ -280,12 +227,44 @@
                         </div><!-- end blog-list -->
                     </div><!-- end widget -->
 
+                    <div class="widget">
+                        <h2 class="widget-title">Bizi Takip Edin</h2>
 
+                        <div class="row text-center">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="~/BlogTECH/#" class="social-button facebook-button">
+                                    <i class="fa fa-facebook"></i>
+                                    <p>27k</p>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="~/BlogTECH/#" class="social-button twitter-button">
+                                    <i class="fa fa-twitter"></i>
+                                    <p>98k</p>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="~/BlogTECH/#" class="social-button google-button">
+                                    <i class="fa fa-google-plus"></i>
+                                    <p>17k</p>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="~/BlogTECH/#" class="social-button youtube-button">
+                                    <i class="fa fa-youtube"></i>
+                                    <p>22k</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div><!-- end widget -->
 
                     <div class="widget">
                         <div class="banner-spot clearfix">
                             <div class="banner-img">
-                                <img src="~/BlogTECH/upload/banner_03.jpg" alt="" class="img-fluid">
+                                <img src="~/BlogTECH/upload/reklam2.jpg" alt="" class="img-fluid">
                             </div><!-- end banner-img -->
                         </div><!-- end banner -->
                     </div><!-- end widget -->
@@ -294,4 +273,6 @@
         </div><!-- end row -->
     </div><!-- end container -->
 </section>
+
+
 

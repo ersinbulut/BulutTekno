@@ -23,5 +23,7 @@ namespace DataAccessLayer.Concrate
         public DbSet<ToDoList> ToDoLists { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Talent> Talents { get; set; }
+        public DbSet<Video> Videos { get; set; }
+        public DbSet<News> News { get; set; }
     }
 }

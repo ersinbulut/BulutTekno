@@ -41,16 +41,31 @@ namespace BusinessLayer.Concrate
         {
             return _commentDal.Get(x => x.BlogID == id);
         }
+        public Comment GetByID2(int id)
+        {
+            return _commentDal.Get(x => x.VideoID == id);
+        }
+        public Comment GetByID3(int id)
+        {
+            return _commentDal.Get(x => x.NewsID == id);
+        }
         public List<Comment> GetListByContent(int id)
         {
             return _commentDal.List(x => x.ContentID == id);
+        }
+        public List<Comment> GetListByVideo(int id)
+        {
+            return _commentDal.List(x => x.VideoID == id);
+        }
+        public List<Comment> GetListByNews(int id)
+        {
+            return _commentDal.List(x => x.NewsID == id);
         }
 
         public List<Comment> GetListByBlog(int id)
         {
             return _commentDal.List(x => x.BlogID == id);
         }
-
 
         public List<Comment> GetList()
         {

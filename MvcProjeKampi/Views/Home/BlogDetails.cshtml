@@ -56,7 +56,7 @@
                         </div><!-- end media -->
 
                         <div class="blog-content">
-                        @Html.Raw(item.ContentValue)
+                            @Html.Raw(item.ContentValue)
                         </div><!-- end content -->
 
                         <div class="blog-title-area">
@@ -120,37 +120,41 @@
                         <hr class="invis1">
 
                         <!--<div class="custombox clearfix">
-                            <h4 class="small-title">Ayrıca beğenebilirsiniz</h4>
-                            <div class="row">
-                                foreach (var item2 in Model.OrderByDescending(x=>x.ContentID).Skip(0).Take(2))
-                                {
-                                    <div class="col-lg-6">
-                                        <div class="blog-box">
-                                            <div class="post-media">
-                                                <a href="/Home/BlogDetails/item.HeadingID" title="">
-                                                    <img src="item2.Heading.ImageUrl" alt="" class="img-fluid">
-                                                    <div class="hovereffect">
-                                                        <span class=""></span>
-                                                    </div>--><!-- end hover -->
-                                                <!--</a>
-                                            </div>--><!-- end media -->
-                                            <!--<div class="blog-meta">
-                                                <h4><a href="/Home/BlogDetails/item.HeadingID" title="">item2.Heading.HeadingName</a></h4>
-                                                <small><a href="/BlogTECH/blog-category-01.html" title="">item2.Heading.Category.CategoryName</a></small>
-                                                <small><a href="/BlogTECH/blog-category-01.html" title="">item2.Heading.HeadingDate.ToLongDateString()</a></small>
-                                            </div>--><!-- end meta -->
-                                        <!--</div>--><!-- end blog-box -->
-                                    <!--</div>--><!-- end col -->
-                                <!--}
+                <h4 class="small-title">Ayrıca beğenebilirsiniz</h4>
+                <div class="row">
+                    foreach (var item2 in Model.OrderByDescending(x=>x.ContentID).Skip(0).Take(2))
+                    {
+                        <div class="col-lg-6">
+                            <div class="blog-box">
+                                <div class="post-media">
+                                    <a href="/Home/BlogDetails/item.HeadingID" title="">
+                                        <img src="item2.Heading.ImageUrl" alt="" class="img-fluid">
+                                        <div class="hovereffect">
+                                            <span class=""></span>
+                                        </div>-->
+                        <!-- end hover -->
+                        <!--</a>
+            </div>-->
+                        <!-- end media -->
+                        <!--<div class="blog-meta">
+                <h4><a href="/Home/BlogDetails/item.HeadingID" title="">item2.Heading.HeadingName</a></h4>
+                <small><a href="/BlogTECH/blog-category-01.html" title="">item2.Heading.Category.CategoryName</a></small>
+                <small><a href="/BlogTECH/blog-category-01.html" title="">item2.Heading.HeadingDate.ToLongDateString()</a></small>
+            </div>-->
+                        <!-- end meta -->
+                        <!--</div>--><!-- end blog-box -->
+                        <!--</div>--><!-- end col -->
+                        <!--}
 
 
 
-                            </div>--><!-- end row -->
+            </div>-->
+                        <!-- end row -->
                         <!--</div>--><!-- end custom-box -->
 
                         <hr class="invis1">
 
-                    @Html.Action("YorumlarPartial","Home",(object)ViewBag.dgr.ToString())
+                        @Html.Action("YorumlarPartial", "Home", (object)ViewBag.dgr.ToString())
 
                         <hr class="invis1">
 
@@ -179,34 +183,19 @@
                         <div class="widget">
                             <div class="banner-spot clearfix">
                                 <div class="banner-img">
-                                    <img src="/BlogTECH/upload/banner_07.jpg" alt="" class="img-fluid">
+                                    <img src="~/BlogTECH/upload/reklam1.jpeg" alt="" class="img-fluid">
                                 </div><!-- end banner-img -->
                             </div><!-- end banner -->
                         </div><!-- end widget -->
-
                         <div class="widget">
                             <h2 class="widget-title">Trend Videolar</h2>
                             <div class="trend-videos">
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="~/BlogTECH/tech-single.html" title="">
-                                            <img src="~/BlogTECH/upload/tech_video_01.jpg" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span class="videohover"></span>
-                                            </div><!-- end hover -->
-                                        </a>
-                                    </div><!-- end media -->
-                                    <div class="blog-meta">
-                                        <h4><a href="~/BlogTECH/tech-single.html" title="">Sizin için en iyi 10 dizüstü bilgisayar sunumlarını hazırladık</a></h4>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
                                 <hr class="invis">
 
                                 <div class="blog-box">
                                     <div class="post-media">
                                         <a href="~/BlogTECH/tech-single.html" title="">
-                                            <img src="~/BlogTECH/upload/tech_video_02.jpg" alt="" class="img-fluid">
+                                            <img src="~/BlogTECH/upload/video1.png" style="width:800px;height:160px;" alt="" class="img-fluid">
                                             <div class="hovereffect">
                                                 <span class="videohover"></span>
                                             </div><!-- end hover -->
@@ -222,7 +211,7 @@
                                 <div class="blog-box">
                                     <div class="post-media">
                                         <a href="~/BlogTECH/tech-single.html" title="">
-                                            <img src="~/BlogTECH/upload/tech_video_03.jpg" alt="" class="img-fluid">
+                                            <img src="~/BlogTECH/upload/video2.jpg" style="width:800px;height:160px;" alt="" class="img-fluid">
                                             <div class="hovereffect">
                                                 <span class="videohover"></span>
                                             </div><!-- end hover -->
@@ -352,7 +341,7 @@
                         <div class="widget">
                             <div class="banner-spot clearfix">
                                 <div class="banner-img">
-                                    <img src="~/BlogTECH/upload/banner_03.jpg" alt="" class="img-fluid">
+                                    <img src="~/BlogTECH/upload/reklam2.jpg" alt="" class="img-fluid">
                                 </div><!-- end banner-img -->
                             </div><!-- end banner -->
                         </div><!-- end widget -->

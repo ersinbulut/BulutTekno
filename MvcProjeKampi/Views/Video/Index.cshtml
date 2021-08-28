@@ -1,70 +1,58 @@
 ﻿@using EntityLayer.Concrete
-@model List<Heading>
+@model List<Video>
 
 @{
-    ViewBag.Title = "Blog";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_BlogLayout.cshtml";
 }
-
-<div class="page-title lb single-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <h2><i class="fa fa-gears bg-orange"></i> Blog <small class="hidden-xs-down hidden-sm-down">Buluttekno </small></h2>
-            </div><!-- end col -->
-            <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
-                    <li class="breadcrumb-item active"><a href="#">Blog</a></li>
-                </ol>
-            </div><!-- end col -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</div><!-- end page-title -->
 
 <section class="section">
     <div class="container">
         <div class="row">
-
-
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="page-wrapper">
-                    <div class="blog-grid-system">
-                        <div class="row">
-                            @foreach (var item in Model.Skip(0).Take(6))
-                            {
-                                <div class="col-md-6">
-                                    <div class="blog-box">
-                                        <div class="post-media">
-                                            <a href="tech-single.html" title="">
-                                                <img src="@item.ImageUrl" style="width:800px; height:260px;" alt="" class="img-fluid">
-                                                <div class="hovereffect">
-                                                    <span></span>
-                                                </div><!-- end hover -->
-                                            </a>
-                                        </div><!-- end media -->
-                                        <div class="blog-meta big-meta">
-                                            <span class="color-orange"><a href="tech-category-01.html" title="">@item.Category.CategoryName</a></span>
-                                            <h4><a href="/Home/BlogDetails/@item.HeadingID" title="">@item.HeadingName</a></h4>
-                                            <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
-                                            <small><a href="tech-single.html" title="">@item.HeadingDate.ToLongDateString()</a></small>
-                                            <small><a href="tech-author.html" title="">@item.Writer.WriterName @item.Writer.WriterSurname Tarafından</a></small>
-                                            <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 2887</a></small>
-                                        </div><!-- end meta -->
-                                    </div><!-- end blog-box -->
-                                </div><!-- end col -->
-                            }
+                    <div class="blog-custom-build">
+                        @foreach (var item in Model.OrderByDescending(x=>x.VideoID))
+                        {
+                            <div class="blog-box">
+                                <div class="post-media">
+                                    <a href="~/BlogTECH/tech-single.html" title="">
+                                        <img src="@item.ImageUrl" alt="" style="width:800px; height:460px;" class="img-fluid">
+                                        <div class="hovereffect">
+                                            <span class="videohover"></span>
+                                        </div>
+                                        <!-- end hover -->
+                                    </a>
+                                </div>
+                                <!-- end media -->
+                                <div class="blog-meta big-meta text-center">
+                                    <div class="post-sharing">
+                                        <ul class="list-inline">
+                                            <li><a href="~/BlogTECH/#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
+                                            <li><a href="~/BlogTECH/#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
+                                            <li><a href="~/BlogTECH/#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
+                                        </ul>
+                                    </div><!-- end post-sharing -->
+                                    <h4><a href="/Video/VideoDetails/@item.VideoID" title="">@item.VideoTitle</a></h4>
+                                    <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enimcerat elicerat eli nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                    <small><a href="~/BlogTECH/tech-category.html" title="">@item.Category.CategoryName</a></small>
+                                    <small><a href="~/BlogTECH/tech-single.html" title="">@item.VideoDate.ToLongDateString()</a></small>
+                                    <small><a href="~/BlogTECH/tech-author.html" title="">@item.Writer.WriterName @item.Writer.WriterSurname Tarafından</a></small>
+                                    <small><a href="~/BlogTECH/#" title=""><i class="fa fa-eye"></i> 1114</a></small>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+                        }
+                        <hr class="invis">
 
-                        </div><!-- end row -->
-                    </div><!-- end blog-grid-system -->
+                    </div><!-- end blog-custom-build -->
                 </div><!-- end page-wrapper -->
 
-                <hr class="invis3">
+                <hr class="invis">
 
                 <div class="row">
                     <div class="col-md-12">
                         <nav aria-label="Page navigation">
-                            <ul class="pagination justify-content-start">
+                            <ul class="pagination justify-content-center">
                                 <li class="page-item"><a class="page-link" href="#">1</a></li>
                                 <li class="page-item"><a class="page-link" href="#">2</a></li>
                                 <li class="page-item"><a class="page-link" href="#">3</a></li>
@@ -82,33 +70,19 @@
                     <div class="widget">
                         <div class="banner-spot clearfix">
                             <div class="banner-img">
-                                <img src="~/BlogTECH/upload/banner_07.jpg" alt="" class="img-fluid">
+                                <img src="~/BlogTECH/upload/reklam1.jpeg" alt="" class="img-fluid">
                             </div><!-- end banner-img -->
                         </div><!-- end banner -->
                     </div><!-- end widget -->
                     <div class="widget">
                         <h2 class="widget-title">Trend Videolar</h2>
                         <div class="trend-videos">
-                            <div class="blog-box">
-                                <div class="post-media">
-                                    <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/tech_video_01.jpg" alt="" class="img-fluid">
-                                        <div class="hovereffect">
-                                            <span class="videohover"></span>
-                                        </div><!-- end hover -->
-                                    </a>
-                                </div><!-- end media -->
-                                <div class="blog-meta">
-                                    <h4><a href="~/BlogTECH/tech-single.html" title="">Sizin için en iyi 10 dizüstü bilgisayar sunumlarını hazırladık</a></h4>
-                                </div><!-- end meta -->
-                            </div><!-- end blog-box -->
-
                             <hr class="invis">
 
                             <div class="blog-box">
                                 <div class="post-media">
                                     <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/tech_video_02.jpg" alt="" class="img-fluid">
+                                        <img src="~/BlogTECH/upload/video1.png" style="width:800px;height:160px;" alt="" class="img-fluid">
                                         <div class="hovereffect">
                                             <span class="videohover"></span>
                                         </div><!-- end hover -->
@@ -124,7 +98,7 @@
                             <div class="blog-box">
                                 <div class="post-media">
                                     <a href="~/BlogTECH/tech-single.html" title="">
-                                        <img src="~/BlogTECH/upload/tech_video_03.jpg" alt="" class="img-fluid">
+                                        <img src="~/BlogTECH/upload/video2.jpg" style="width:800px;height:160px;" alt="" class="img-fluid">
                                         <div class="hovereffect">
                                             <span class="videohover"></span>
                                         </div><!-- end hover -->
@@ -254,12 +228,15 @@
                     <div class="widget">
                         <div class="banner-spot clearfix">
                             <div class="banner-img">
-                                <img src="~/BlogTECH/upload/banner_03.jpg" alt="" class="img-fluid">
+                                <img src="~/BlogTECH/upload/reklam2.jpg" alt="" class="img-fluid">
                             </div><!-- end banner-img -->
                         </div><!-- end banner -->
                     </div><!-- end widget -->
                 </div><!-- end sidebar -->
             </div><!-- end col -->
-        </div><!-- end row -->
+        </div>
     </div><!-- end container -->
 </section>
+
+
+

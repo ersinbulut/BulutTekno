@@ -22,13 +22,28 @@
 
 <script>
     $('#btn2').click(function () {
-        swal("Mvc Proje Kampı","...Ders96!");
+        swal("Mvc Proje Kampı", "...Ders96!");
     });
 </script>
 
 <script>
     $('#btn3').click(function () {
-        swal("Tebrikler!", "Başarılı bir şekilde eklendi.", "success");
+        swal({
+            title: "Emin misin?",
+            text: "Bir kez silindiğinde, bu hayali dosyayı kurtaramayacaksınız!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Poof!Hayali dosyanız silindi!", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Hayali dosyanız güvende!");
+                }
+            });
     });
 </script>
 

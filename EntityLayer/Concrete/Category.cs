@@ -22,5 +22,7 @@ namespace EntityLayer.Concrete
 
         public ICollection<Heading> Headings { get; set; }
         public ICollection<Blog> Blogs { get; set; }
+        public ICollection<Video> Videos { get; set; }
+        public ICollection<News> News { get; set; }
     }
 }

@@ -43,10 +43,6 @@ namespace MvcProjeKampi.Controllers
             return RedirectToAction("Contact");
         }
 
-        public ActionResult Test()
-        {
-            return View();
-        }
         //[AllowAnonymous]
         //[Route("Home/Anasayfa/")]
         public ActionResult HomePage()
@@ -88,16 +84,6 @@ namespace MvcProjeKampi.Controllers
             return JavaScript(msg);
         }
 
-        public ActionResult Blog()
-        {
-            var headingvalues = hm.GetList();
-            return View(headingvalues);
-        }
-        public ActionResult Video()
-        {
-            var headingvalues = hm.GetList();
-            return View(headingvalues);
-        }
         public ActionResult News()
         {
             var headingvalues = hm.GetList();

@@ -64,7 +64,9 @@
     <Compile Include="Abstract\IHeadingService.cs" />
     <Compile Include="Abstract\IImageFileService.cs" />
     <Compile Include="Abstract\IMessageService.cs" />
+    <Compile Include="Abstract\INewsService.cs" />
     <Compile Include="Abstract\IToDoListService.cs" />
+    <Compile Include="Abstract\IVideoService.cs" />
     <Compile Include="Abstract\IWriterLoginService.cs" />
     <Compile Include="Abstract\IWriterService.cs" />
     <Compile Include="Concrate\AboutManager.cs" />
@@ -77,7 +79,9 @@
     <Compile Include="Concrate\HeadingManager.cs" />
     <Compile Include="Concrate\IImageFileManager.cs" />
     <Compile Include="Concrate\MessageManager.cs" />
+    <Compile Include="Concrate\NewsManager.cs" />
     <Compile Include="Concrate\ToDoListManager.cs" />
+    <Compile Include="Concrate\VideoManager.cs" />
     <Compile Include="Concrate\WriterLoginManager.cs" />
     <Compile Include="Concrate\WriterManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

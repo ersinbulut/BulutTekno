@@ -10,9 +10,9 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Areas.Writer.Controllers
 {
-    public class BlogWriterController : Controller
+    public class NewsWriterController : Controller
     {
-        BlogManager bm = new BlogManager(new EfBlogDal());
+        NewsManager nm = new NewsManager(new EfNewsDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
         CommentManager commentmanager = new CommentManager(new EfCommentDal());
         Context c = new Context();
@@ -29,11 +29,11 @@ namespace MvcProjeKampi.Areas.Writer.Controllers
 
             p = (string)Session["WriterMail"];
             var writeridinfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
-            var values = bm.GetListByWriterID(writeridinfo);
+            var values = nm.GetListByWriterID(writeridinfo);
             ViewBag.wid = writeridinfo;
             return View(values);
         }
-        public PartialViewResult BlogListPartial(string p)
+        public PartialViewResult NewsListPartial(string p)
         {
             List<SelectListItem> valuecategory = (from x in cm.GetList()
                                                   select new SelectListItem
@@ -45,11 +45,11 @@ namespace MvcProjeKampi.Areas.Writer.Controllers
 
             p = (string)Session["WriterMail"];
             var writeridinfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
-            var values = bm.GetListByWriterID(writeridinfo);
+            var values = nm.GetListByWriterID(writeridinfo);
             return PartialView(values);
         }
 
-        public PartialViewResult NewBlogPartial()
+        public PartialViewResult NewNewsPartial()
         {
             List<SelectListItem> valuecategory = (from x in cm.GetList()
                                                   select new SelectListItem
@@ -64,44 +64,28 @@ namespace MvcProjeKampi.Areas.Writer.Controllers
 
         public PartialViewResult YorumlarPartial(int id)
         {
-            var yorum = commentmanager.GetListByBlog(id);
+            var yorum = commentmanager.GetListByNews(id);
             return PartialView(yorum);
         }
 
-        //[HttpGet]
-        //public ActionResult NewBlog()
-        //{
-
-
-        //    List<SelectListItem> valuecategory = (from x in cm.GetList()
-        //                                          select new SelectListItem
-        //                                          {
-        //                                              Text = x.CategoryName,
-        //                                              Value = x.CategoryID.ToString()
-        //                                          }).ToList();
-        //    ViewBag.vlc = valuecategory;
-        //    return View();
-        //}
         [HttpPost]
-        public ActionResult NewBlog(Blog p)
+        public ActionResult NewNews(News p)
         {
             string writermailinfo = (string)Session["WriterMail"];
             var writeridinfo = c.Writers.Where(x => x.WriterMail == writermailinfo).Select(y => y.WriterID).FirstOrDefault();
             ViewBag.d = writeridinfo;
-            p.BlogDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            p.NewsDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             p.WriterID = writeridinfo;
-            p.BlogStatus = true;
-            bm.BlogAdd(p);
+            p.NewsStatus = true;
+            nm.NewsAdd(p);
             return RedirectToAction("Index");
         }
-
-        public ActionResult DeleteBlog(int id)
+        public ActionResult DeleteNews(int id)
         {
-            var deger = bm.GetByID1(id);
-            bm.BlogDelete(deger);
+            var deger = nm.GetByID(id);
+            nm.NewsDelete(deger);
             return RedirectToAction("Index");
         }
-
-
+        
     }
 }

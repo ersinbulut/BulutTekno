@@ -35,5 +35,12 @@ namespace EntityLayer.Concrete
         public int? BlogID { get; set; }
         public virtual Blog Blog { get; set; }
 
+        public int? VideoID { get; set; }
+        public virtual Video Video { get; set; }
+
+
+        public int? NewsID { get; set; }
+        public virtual News News { get; set; }
+
     }
 }

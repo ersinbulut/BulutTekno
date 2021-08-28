@@ -1,8 +1,8 @@
 ﻿@using EntityLayer.Concrete
-@model List<Blog>
+@model List<News>
 
 @{
-    ViewBag.Title = "BlogDetails";
+    ViewBag.Title = "NewsDetails";
     Layout = "~/Views/Shared/_BlogLayout.cshtml";
 }
 
@@ -19,7 +19,7 @@
     <br />
 }
 <section class="section single-wrapper">
-    @foreach (var item in Model.OrderByDescending(x => x.BlogID).ToList().Skip(0).Take(1))
+    @foreach (var item in Model.OrderByDescending(x => x.NewsID).ToList().Skip(0).Take(1))
     {
         <div class="container">
             <div class="row">
@@ -28,16 +28,16 @@
                         <div class="blog-title-area text-center">
                             <ol class="breadcrumb hidden-xs-down">
                                 <li class="breadcrumb-item"><a href="/Home/HomePage/">Anasayfa</a></li>
-                                <li class="breadcrumb-item"><a href="/Blog/Index/">Blog</a></li>
-                                <li class="breadcrumb-item active">@item.BlogTitle</li>
+                                <li class="breadcrumb-item"><a href="/News/Index/">Haberler</a></li>
+                                <li class="breadcrumb-item active">@item.NewsTitle</li>
                             </ol>
 
                             <span class="color-orange"><a href="/BlogTECH/tech-category-01.html" title="">Teknoloji</a></span>
 
-                            <h3>@item.BlogTitle</h3>
+                            <h3>@item.NewsTitle</h3>
 
                             <div class="blog-meta big-meta">
-                                <small><a href="/BlogTECH/tech-single.html" title=""> @item.BlogDate.ToLongDateString()</a></small>
+                                <small><a href="/BlogTECH/tech-single.html" title=""> @item.NewsDate.ToLongDateString()</a></small>
                                 <small><a href="/BlogTECH/tech-author.html" title="">@item.Writer.WriterName @item.Writer.WriterSurname Tarafından</a></small>
                                 <small><a href="/BlogTECH/#" title=""><i class="fa fa-eye"></i> 2344</a></small>
                             </div><!-- end meta -->
@@ -56,7 +56,7 @@
                         </div><!-- end media -->
 
                         <div class="blog-content">
-                            @Html.Raw(item.BlogDescription)
+                            @Html.Raw(item.NewsDescription)
                         </div><!-- end content -->
 
                         <div class="blog-title-area">
@@ -120,27 +120,27 @@
                         <hr class="invis1">
 
                         <!--<div class="custombox clearfix">
-                <h4 class="small-title">Ayrıca beğenebilirsiniz</h4>
-                <div class="row">
-                    foreach (var item2 in Model.OrderByDescending(x=>x.ContentID).Skip(0).Take(2))
-                    {
-                        <div class="col-lg-6">
-                            <div class="blog-box">
-                                <div class="post-media">
-                                    <a href="/Home/BlogDetails/item.HeadingID" title="">
-                                        <img src="item2.Heading.ImageUrl" alt="" class="img-fluid">
-                                        <div class="hovereffect">
-                                            <span class=""></span>
-                                        </div>-->
+                        <h4 class="small-title">Ayrıca beğenebilirsiniz</h4>
+                        <div class="row">
+                            foreach (var item2 in Model.OrderByDescending(x=>x.ContentID).Skip(0).Take(2))
+                            {
+                                <div class="col-lg-6">
+                                    <div class="blog-box">
+                                        <div class="post-media">
+                                            <a href="/Home/BlogDetails/item.HeadingID" title="">
+                                                <img src="item2.Heading.ImageUrl" alt="" class="img-fluid">
+                                                <div class="hovereffect">
+                                                    <span class=""></span>
+                                                </div>-->
                         <!-- end hover -->
                         <!--</a>
-            </div>-->
+                        </div>-->
                         <!-- end media -->
                         <!--<div class="blog-meta">
-                <h4><a href="/Home/BlogDetails/item.HeadingID" title="">item2.Heading.HeadingName</a></h4>
-                <small><a href="/BlogTECH/blog-category-01.html" title="">item2.Heading.Category.CategoryName</a></small>
-                <small><a href="/BlogTECH/blog-category-01.html" title="">item2.Heading.HeadingDate.ToLongDateString()</a></small>
-            </div>-->
+                            <h4><a href="/Home/BlogDetails/item.HeadingID" title="">item2.Heading.HeadingName</a></h4>
+                            <small><a href="/BlogTECH/blog-category-01.html" title="">item2.Heading.Category.CategoryName</a></small>
+                            <small><a href="/BlogTECH/blog-category-01.html" title="">item2.Heading.HeadingDate.ToLongDateString()</a></small>
+                        </div>-->
                         <!-- end meta -->
                         <!--</div>--><!-- end blog-box -->
                         <!--</div>--><!-- end col -->
@@ -148,13 +148,13 @@
 
 
 
-            </div>-->
+                        </div>-->
                         <!-- end row -->
                         <!--</div>--><!-- end custom-box -->
 
                         <hr class="invis1">
 
-                        @Html.Action("YorumlarPartial", "Blog", (object)ViewBag.dgr.ToString())
+                        @Html.Action("YorumlarPartial", "News", (object)ViewBag.dgr.ToString())
 
                         <hr class="invis1">
 
@@ -162,8 +162,8 @@
                             <h4 class="small-title">Cevap Bırak</h4>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form action="/Blog/Comment/" method="post" class="form-wrapper">
-                                        @Html.Hidden("BlogID", (object)ViewBag.dgr.ToString())
+                                    <form action="/News/Comment/" method="post" class="form-wrapper">
+                                        @Html.Hidden("NewsID", (object)ViewBag.dgr.ToString())
                                         <input type="text" name="UserName" class="form-control" placeholder="Adınız">
                                         <input type="text" name="Email" class="form-control" placeholder="Eposta adresiniz">
 
@@ -351,6 +351,7 @@
         </div><!-- end container -->
     }
 </section>
+
 
 
 

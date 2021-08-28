@@ -34,5 +34,7 @@ namespace EntityLayer.Concrete
         public ICollection<Blog> Blogs { get; set; }
 
         public ICollection<Talent> Talents { get; set; }
+        public ICollection<Video> Videos { get; set; }
+        public ICollection<News> News { get; set; }
     }
 }

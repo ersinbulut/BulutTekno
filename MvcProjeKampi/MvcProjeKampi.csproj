@@ -157,6 +157,8 @@
     <Compile Include="Areas\Writer\Controllers\BlogWriterController.cs" />
     <Compile Include="Areas\Writer\Controllers\ContentController.cs" />
     <Compile Include="Areas\Writer\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Writer\Controllers\NewsWriterController.cs" />
+    <Compile Include="Areas\Writer\Controllers\VideoWriterController.cs" />
     <Compile Include="Areas\Writer\Controllers\WriterPanelContentController.cs" />
     <Compile Include="Areas\Writer\Controllers\WriterPanelController.cs" />
     <Compile Include="Areas\Writer\Controllers\WriterPanelMessageController.cs" />
@@ -165,6 +167,8 @@
     <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Controllers\İstatistikController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -348,6 +352,9 @@
     <Content Include="AdminLTE\images\moskova.jfif" />
     <Content Include="AdminLTE\images\newyork.jpeg" />
     <Content Include="AdminLTE\images\paris.jfif" />
+    <Content Include="BlogTECH\upload\a12.png" />
+    <Content Include="BlogTECH\upload\aa13.png" />
+    <Content Include="BlogTECH\upload\b12.jpg" />
     <Content Include="BlogTECH\upload\reklam1.jpeg" />
     <Content Include="AdminLTE\images\roma.jpg" />
     <Content Include="AdminLTE\index.html" />
@@ -2829,6 +2836,14 @@
     <Content Include="Areas\Admin\Views\AdminCategory\SubCategoryAdd.cshtml" />
     <Content Include="Areas\Admin\Views\AdminCategory\_CategoryList.cshtml" />
     <Content Include="Areas\Admin\Views\AdminTest\AdminProfile.cshtml" />
+    <Content Include="Areas\Writer\Views\VideoWriter\Index.cshtml" />
+    <Content Include="Areas\Writer\Views\VideoWriter\VideoListPartial.cshtml" />
+    <Content Include="Areas\Writer\Views\VideoWriter\NewVideoPartial.cshtml" />
+    <Content Include="Areas\Writer\Views\VideoWriter\YorumlarPartial.cshtml" />
+    <Content Include="Areas\Writer\Views\NewsWriter\Index.cshtml" />
+    <Content Include="Areas\Writer\Views\NewsWriter\NewsListPartial.cshtml" />
+    <Content Include="Areas\Writer\Views\NewsWriter\NewNewsPartial.cshtml" />
+    <Content Include="Areas\Writer\Views\NewsWriter\YorumlarPartial.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2854,7 +2869,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\İstatistik\Index.cshtml" />
     <Content Include="Views\ErrorPage\Page404.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
@@ -2864,9 +2878,6 @@
     <Content Include="Views\Shared\_BlogLayout.cshtml" />
     <Content Include="Views\Home\BlogDetails.cshtml" />
     <Content Include="Views\Login\RegisterLogin.cshtml" />
-    <Content Include="Views\Home\Blog.cshtml" />
-    <Content Include="Views\Home\Video.cshtml" />
-    <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\Yorumlar.cshtml" />
     <Content Include="Views\Home\YorumlarPartial.cshtml" />
@@ -2874,6 +2885,14 @@
     <Content Include="Views\Blog\BlogDetails.cshtml" />
     <Content Include="Views\Blog\Yorumlar.cshtml" />
     <Content Include="Views\Blog\YorumlarPartial.cshtml" />
+    <Content Include="Views\Video\Index.cshtml" />
+    <Content Include="Views\Video\VideoDetails.cshtml" />
+    <Content Include="Views\Video\Yorumlar.cshtml" />
+    <Content Include="Views\Video\YorumlarPartial.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\News\NewsDetails.cshtml" />
+    <Content Include="Views\News\Yorumlar.cshtml" />
+    <Content Include="Views\News\YorumlarPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\login-form-19\fonts\" />
