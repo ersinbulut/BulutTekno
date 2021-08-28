@@ -17,7 +17,7 @@
                     </div><!-- end blog-top -->
 
                     <div class="blog-list clearfix">
-                        @foreach (var item in Model.Skip(0).Take(3))
+                        @foreach (var item in Model.Skip(0).Take(3).OrderByDescending(x=>x.NewsID))
                         {
                             <div class="blog-box row">
                                 <div class="col-md-4">
@@ -53,7 +53,7 @@
 
                         <hr class="invis">
 
-                        @foreach (var item in Model.Skip(3).Take(7))
+                        @foreach (var item in Model.Skip(3).Take(7).OrderByDescending(x => x.NewsID))
                         {
                             <div class="blog-box row">
                                 <div class="col-md-4">
