@@ -70,9 +70,42 @@
                             <li style="margin-top:10px;"><a href="/News/Index/"><i class="fas fa-newspaper"></i> Haberler</a></li>
                             <li style="margin-top:10px;"><a href="/Writer/Default/Headings/"><i class="fas fa-book"></i> Sözlük</a></li>
                             <li style="margin-top:10px;"><a href="/Home/Contact/"><i class="fas fa-book-open"></i> İletişim</a></li>
-                            <li style="margin-top:10px;">
-                                <a class="go-icon" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-user" ></i> Giriş Yap</a>
-                            </li>
+
+                            @if (this.User.Identity.Name == "ersinbulut")//kullanıcı rolü admin ise
+                            {
+                                <li style="margin-top:10px;">
+                                    <a href="#" class="desktop-link"><i class="fas fa-user"></i> Hesabım</a>
+                                    <input type="checkbox" id="show-services">
+                                    <label for="show-services"><i class="fas fa-user"></i> Hesabım</label>
+                                    <ul>
+                                        <li><a href="/Admin/AdminCategory/Index/" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i>  Admin Paneli</a></li>
+                                        <li><a href="/Account/UserProfile/"><i class="fas fa-user"></i>   Profilim</a></li>
+                                        <li><a href="/Login/WriterLogin/" target="_blank"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Yazar Girişi</a></li>
+                                        <li><a href="/Account/LogOut/"><i class="fa fa-sign-out-alt"></i>  Oturumu Kapat</a></li>
+                                    </ul>
+                                </li>
+                            }
+                            else if (this.User.Identity.Name == "kamilbulut")
+                            {
+                                <li style="margin-top:10px;">
+                                    <a href="#" class="desktop-link"><i class="fas fa-user"></i> Hesabım</a>
+                                    <input type="checkbox" id="show-services">
+                                    <label for="show-services"><i class="fas fa-user"></i> Hesabım</label>
+                                    <ul>
+                                        <li><a href="/Account/UserProfile/"><i class="fas fa-user"></i>   Profilim</a></li>
+                                        <li><a href="/Login/WriterLogin/" target="_blank"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Yazar Girişi</a></li>
+                                        <li><a href="/Account/Logout/"><i class="fa fa-sign-out-alt"></i>  Oturumu Kapat</a></li>
+                                    </ul>
+                                </li>
+                            }
+
+                            else
+                            {
+                                <li style="margin-top:10px;">
+                                    <a class="go-icon" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-user"></i> Giriş Yap</a>
+                                </li>
+                            }
+
                         </ul>
                     </div>
                     <label for="show-search" style="margin-top:10px;" class="search-icon"><i class="fas fa-search"></i></label>
@@ -89,7 +122,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header text-center">
-                            <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -97,19 +130,28 @@
 
                             <div class="login px-4 mx-auto mw-100">
                                 <h5 class="text-center mb-4">Giriş Yap</h5>
-                                <form action="/Login/WriterLogin/" method="post">
+
+                                <form action="/Account/Login/" method="post">
+                                    @Html.AntiForgeryToken()
+
+
+                                    @*<form action="/Login/WriterLogin/" method="post">*@
                                     <div class="form-group">
-                                        <label class="mb-2">Eposta</label>
-                                        <input type="email" name="WriterMail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="info@gmail.com" required="">
-                                        <small id="emailHelp" class="form-text text-muted">E-postanızı asla başka biriyle paylaşmayacağız.</small>
+                                        <label class="mb-2">Kullanıcı Adı</label>
+                                        <input type="text" name="Username" class="form-control" placeholder="AdSoyad" required="">
                                     </div>
+                                    @*<div class="form-group">
+                                            <label class="mb-2">Eposta</label>
+                                            <input type="email" name="WriterMail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="info@gmail.com" required="">
+                                            <small id="emailHelp" class="form-text text-muted">E-postanızı asla başka biriyle paylaşmayacağız.</small>
+                                        </div>*@
                                     <div class="form-group">
                                         <label class="mb-2">Şifre</label>
-                                        <input type="password" name="WriterPassword" class="form-control" id="exampleInputPassword1" placeholder="******" required="">
-                                        <small id="emailHelp" class="form-text text-muted"><a href="#">Şifremi Unuttum</a></small>
+                                        <input type="password" name="Password" class="form-control" id="exampleInputPassword1" placeholder="******" required="">
+                                        <small id="emailHelp" class="form-text text-muted"><a href="~/AdminLTE/web1/#" data-toggle="modal" data-target="#exampleModalCenter3">Şifremi Unuttum</a></small>
                                     </div>
                                     <div class="form-check mb-2">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" style="margin-left:3px;">
+                                        <input type="checkbox" class="form-check-input" name="RememberMe" id="exampleCheck1" style="margin-left:3px;">
                                         <label class="form-check-label" for="exampleCheck1">Beni Hatırla</label>
                                     </div>
                                     <button type="submit" class="btn btn-primary submit mb-4">Giriş Yap</button>
@@ -117,6 +159,7 @@
                                         <a href="~/AdminLTE/web1/#" data-toggle="modal" data-target="#exampleModalCenter2"> Bir hesabınız yok mu?</a>
                                     </p>
                                 </form>
+
                             </div>
                         </div>
 
@@ -136,24 +179,57 @@
                         <div class="modal-body">
                             <div class="login px-4 mx-auto mw-100">
                                 <h5 class="text-center mb-4">Kayıt Ol</h5>
-                                <form action="/Login/WriterLogin/" method="post">
-                                    <div class="form-group">
-                                        <label>Adınız</label>
 
-                                        <input type="text" class="form-control" id="validationDefault01" placeholder="" required="">
+                                <form action="/Account/Register/" method="post">
+                                    @Html.AntiForgeryToken()
+
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        <label>Ad</label>
+
+                                        <input type="text" class="form-control" name="Name" id="validationDefault01" placeholder="Ad" required="">
                                     </div>
                                     <div class="form-group">
-                                        <label>Soyadınız</label>
-                                        <input type="text" class="form-control" id="validationDefault02" placeholder="" required="">
+                                        <label>Soyad</label>
+                                        <input type="text" class="form-control" name="Surname" id="validationDefault02" placeholder="Sayad" required="">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Kullanıcı Adı</label>
+                                        <input type="text" class="form-control" name="Username" id="validationDefault02" placeholder="Kullanıcı Adı" required="">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Kullanıcı Adı</label>
+                                        <input type="text" class="form-control" name="Email" id="validationDefault02" placeholder="Email" required="">
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputUsername">Doğum Tarihi</label>
+                                        <div class="controls">
+                                            @*@Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })*@
+                                            <input type="date" class="form-control" name="DateOfBirth" />
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputUsername">Cinsiyet</label>
+                                        <div class="controls">
+                                            @*@Html.RadioButtonFor(model => model.Gender, "Erkek")Erkek
+                                                @Html.RadioButtonFor(model => model.Gender, "Kadın")Kadın*@
+                                            <input type="radio" name="Gender" value="Erkek" /> Erkek
+                                            <input type="radio" name="Gender" value="Kadın" /> Kadın
+                                        </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="mb-2">Şifre</label>
-                                        <input type="password" class="form-control" id="password1" placeholder="" required="">
+                                        <input type="password" class="form-control" name="Password" id="password1" placeholder="Şifre" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Şifre Tekrar</label>
-                                        <input type="password" class="form-control" id="password2" placeholder="" required="">
+                                        <input type="password" class="form-control" name="RePassword" id="password2" placeholder="Şifre Tekrar" required="">
                                     </div>
 
                                     <button type="submit" class="btn btn-primary submit mb-4">Kaydol</button>
@@ -171,6 +247,34 @@
                 </div>
             </div>
             <!--//Register-->
+            <!--/RecoverPassword-->
+            <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="login px-4 mx-auto mw-100">
+                                <h5 class="text-center mb-4">Şifremi Unuttum</h5>
+                                <form action="/Account/RecoverPassword/" method="post">
+                                    <div class="form-group">
+                                        <label>E posta Adresiniz</label>
+                                        <input type="text" name="Email" class="form-control" placeholder="info@gmail.com" required="">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary submit mb-4">Şifremi Gönder</button>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--//RecoverPassword-->
 
             @RenderBody()
         </div>

@@ -114,7 +114,7 @@ namespace MvcProjeKampi.Controllers
                     var emailService = new EmailService();
                     var body = $"Merhaba <b>{user.Name}  {user.Surname}</b> <br/> Hesabınızı aktif etmek için aşağıdaki linke tıklayınız" +
                         $"<br/><a href='{SiteUrl}/Account/Activation?code={user.ActivationCode}'>Aktivasyon Linki</a>";
-                    await emailService.SendAsync(new IdentityMessage() { Body = body, Subject = "Sitemize Hoşgeldiniz" }, user.Email);
+                    await emailService.SendAsync(new IdentityMessage() { Body = body, Subject = "Buluttekno'ya Hoşgeldiniz" }, user.Email);
 
                     if (RoleManager.RoleExists("user"))
                     {
@@ -156,6 +156,7 @@ namespace MvcProjeKampi.Controllers
                         return Redirect(ReturnUrl);
                     }
                     return RedirectToAction("HomePage", "Home");
+                    //return RedirectToAction("MyContent", "WriterPanelContent", new { Area = "Writer" });
                 }
                 else
                 {
@@ -168,6 +169,8 @@ namespace MvcProjeKampi.Controllers
         {
             var autManager = HttpContext.GetOwinContext().Authentication;
             autManager.SignOut();
+            //var aut = Request.IsAuthenticated == false;
+            //aut.ToString();
             return RedirectToAction("HomePage", "Home");
         }
 
@@ -219,15 +222,23 @@ namespace MvcProjeKampi.Controllers
             if (Request.Files != null && Request.Files.Count > 0)
             {
                 var file = Request.Files[0];
-                if (file.ContentLength > 0)
-                {
-                    var folder = Server.MapPath("~/Content/Images");
-                    var fileName = Guid.NewGuid() + ".jpg";
-                    file.SaveAs(Path.Combine(folder, fileName));
+                //if (file.ContentLength > 0)
+                //{
+                //    var folder = Server.MapPath("~/Content/Images");
+                //    var fileName = Guid.NewGuid() + ".jpg";
+                //    file.SaveAs(Path.Combine(folder, fileName));
 
-                    var filePath = "Content/Images/" + fileName;
-                    user.Image = filePath;
-                    user.Image = model.UserProfileViewModel.ProfileImageName;
+                //    var filePath = "Content/Images/" + fileName;
+                //    user.Image = filePath;
+                //    user.Image = model.UserProfileViewModel.Image;
+                //}
+                if (Request.Files.Count > 0)
+                {
+                    string dosyaadi = Path.GetFileName(Request.Files[0].FileName);
+                    string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                    string yol = "~/Image/" + dosyaadi + uzanti;
+                    Request.Files[0].SaveAs(Server.MapPath(yol));
+                    user.Image = "/Image/" + dosyaadi + uzanti;
                 }
             }
             /**/
@@ -271,7 +282,7 @@ namespace MvcProjeKampi.Controllers
                 var emailService = new EmailService();
                 var body = $"Merhaba <b>{user.Name}  {user.Surname}</b> <br/> <p>Hesabınızın şifresi güncellenmiştir.</p>";
                 await emailService.SendAsync(new IdentityMessage() { Body = body, Subject = "Şifre Değişikliği" }, user.Email);
-                return RedirectToAction("Logout", "Account");
+                return RedirectToAction("LogOut", "Account");
             }
             return View("UserProfile", model);
 

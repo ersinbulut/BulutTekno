@@ -29,10 +29,13 @@ namespace MvcProjeKampi.Services.Senders
 
         public EmailService()
         {
-            this.SenderMail = "eticaretprojem.123@gmail.com";
-            this.Password = "eticaret.123";
-            this.Smtp = "smtp.gmail.com";
-            this.SmtpPort = 587;
+            //this.SenderMail = "eticaretprojem.123@gmail.com";
+            //this.Password = "eticaret.123";
+            this.SenderMail="bulutteknoinfo@gmail.com";
+            this.Password="Bulut6161";
+
+            this.Smtp="smtp.gmail.com";
+            this.SmtpPort=587;
         }
         public EmailService(string senderMail, string password, string smtp, int smtpport)
         {

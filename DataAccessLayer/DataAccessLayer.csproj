@@ -149,6 +149,7 @@
     <Compile Include="Abstract\IVideoDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrate\Context.cs" />
+    <Compile Include="Concrate\DataInitializer.cs" />
     <Compile Include="Concrate\Identity\ApplicationRole.cs" />
     <Compile Include="Concrate\Identity\ApplicationUser.cs" />
     <Compile Include="Concrate\Identity\IdentityDataContext.cs" />
@@ -234,6 +235,10 @@
     <Compile Include="Migrations\202108272016303_mig_newsadd.designer.cs">
       <DependentUpon>202108272016303_mig_newsadd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108291721128_mig_contentedit1.cs" />
+    <Compile Include="Migrations\202108291721128_mig_contentedit1.designer.cs">
+      <DependentUpon>202108291721128_mig_contentedit1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -295,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108272016303_mig_newsadd.resx">
       <DependentUpon>202108272016303_mig_newsadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108291721128_mig_contentedit1.resx">
+      <DependentUpon>202108291721128_mig_contentedit1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

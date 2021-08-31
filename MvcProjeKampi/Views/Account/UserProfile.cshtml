@@ -1,0 +1,210 @@
+﻿@using MvcProjeKampi.Identity
+@model MvcProjeKampi.ViewModels.ProfilePasswordViewModel
+
+@{
+    ViewBag.Title = "UserProfile";
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+
+
+<head>
+    <!-- Bootstrap Core and vandor -->
+    <link rel="stylesheet" href="~/AdminLT/assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/AdminLT/assets/plugins/dropify/css/dropify.min.css">
+
+    <!-- Core css -->
+    @*<link rel="stylesheet" href="~/AdminLT/assets/css/main.css" />
+        <link rel="stylesheet" href="~/AdminLT/assets/css/theme1.css" />*@
+</head>
+<div class="section-body mt-4">
+    @if (TempData["mesaj"] != null)
+    {
+        @*<div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4>	<i class="icon fa fa-check"></i> Başarılı!</h4>
+                Bilgileriniz Kaydedildi..
+            </div>*@
+        <div class="alert alert-success alert-dismissable" style="float:right; width:250px; margin-top:60px;">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4>	<i class="icon fa fa-check"></i> Başarılı!</h4>
+            Bilgileriniz Kaydedildi..
+        </div>
+        <br />
+    }
+
+    <div class="container" style="margin-top:100px;">
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-12">
+                <div class="card">
+                    <img class="card-img-top" src="@Html.DisplayFor(x => x.UserProfileViewModel.Image)" width="60" height="260" alt="Profil Resmi">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(x => x.UserProfileViewModel.Name) @Html.DisplayFor(x => x.UserProfileViewModel.Surname)</h5>
+                        <p class="card-text">@Html.DisplayFor(x => x.UserProfileViewModel.Email)</p>
+                        <p class="card-text">@Html.DisplayFor(x => x.UserProfileViewModel.DateOfBirth)</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">@Html.DisplayFor(x => x.UserProfileViewModel.Email)</li>
+                        <li class="list-group-item">+90(@Html.DisplayFor(x => x.UserProfileViewModel.PhoneNumber))</li>
+                        <li class="list-group-item">@DateTime.Now.ToLongDateString()</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Profili Düzenle</h3>
+                        <div class="card-options">
+                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                            <div class="item-action dropdown ml-2">
+                                <a href="javascript:void(0)" data-toggle="dropdown"><i class="fe fe-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
+                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-share-alt"></i> Share </a>
+                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-copy"></i> Copy to</a>
+                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-folder"></i> Move to</a>
+                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-edit"></i> Rename</a>
+                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-trash"></i> Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @using (Html.BeginForm("UpdateProfile", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(x => x.UserProfileViewModel.Id)
+                        @Html.HiddenFor(x => x.UserProfileViewModel.Username)
+                        <div class="card-body">
+                            <div class="row clearfix">
+                                <div class="col-sm-6 col-md-6">
+
+                                    <div class="form-group">
+                                        <label class="form-label">Kullanıcı Adı</label>
+                                        @Html.TextBoxFor(x => x.UserProfileViewModel.Name, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.UserProfileViewModel.Name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Kullanıcı Soyadı</label>
+                                        @Html.TextBoxFor(x => x.UserProfileViewModel.Surname, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.UserProfileViewModel.Surname)
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Doğum Tarihi</label>
+                                        @Html.TextBoxFor(model => model.UserProfileViewModel.DateOfBirth, "", new { @class = "text-danger form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <br />
+                                    <div class="form-group">
+                                        <label class="form-label">Cinsiyet</label>
+                                        @Html.RadioButtonFor(model => model.UserProfileViewModel.Gender, "Erkek")Erkek
+                                        @Html.RadioButtonFor(model => model.UserProfileViewModel.Gender, "Kadın")Kadın
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Email</label>
+                                        @Html.TextBoxFor(model => model.UserProfileViewModel.Email, "", new { @class = "text-danger form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Tekefon Numarası</label>
+                                        @Html.TextBoxFor(model => model.UserProfileViewModel.PhoneNumber, "", new { @class = "text-danger form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Resim Yolu</label>
+                                        <input type="file" class="dropify" name="WriterImage">
+                                        <small class="text-danger">Önerilen resim boyutu 200 px x 40 px dir</small>
+                                        @Html.TextBoxFor(x => x.UserProfileViewModel.Image, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button type="submit" id="btn3" class="btn btn-primary">Profili Güncelle</button>
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+        </div>
+    </div><br /><br />
+
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+
+
+    <script>
+        $('#btn3').click(function () {
+            swal("Başarılı", "Değişiklikler Uygulandı.", "success");
+        });
+    </script>
+
+
+    <script src="~/AdminLT/assets/bundles/lib.vendor.bundle.js"></script>
+
+    <script src="~/AdminLT/assets/plugins/dropify/js/dropify.min.js"></script>
+
+    <script src="~/AdminLT/assets/js/core.js"></script>
+    <script>
+        $(function () {
+            "use strict";
+
+            $('.dropify').dropify();
+
+            var drEvent = $('#dropify-event').dropify();
+            drEvent.on('dropify.beforeClear', function (event, element) {
+                return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+            });
+
+            drEvent.on('dropify.afterClear', function (event, element) {
+                alert('File deleted');
+            });
+
+            $('.dropify-fr').dropify({
+                messages: {
+                    default: 'Glissez-déposez un fichier ici ou cliquez',
+                    replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                    remove: 'Supprimer',
+                    error: 'Désolé, le fichier trop volumineux'
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

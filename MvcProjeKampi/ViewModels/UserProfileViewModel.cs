@@ -31,6 +31,6 @@ namespace MvcProjeKampi.ViewModels
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> DateOfBirth { get; set; }//dogum tarihi
         public string Gender { get; set; }//cinsiyet
-        public string ProfileImageName { get; set; }
+        public string Image { get; set; }
     }
 }

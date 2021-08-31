@@ -1,6 +1,14 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿//using Microsoft.AspNet.Identity.EntityFramework;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Web;
+
+using MvcProjeKampi.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -10,7 +18,7 @@ namespace MvcProjeKampi.Identity
     {
         public IdentityDataContext() : base("IdentityConnection")
         {
-            //Database.SetInitializer(new IdentityInitializer());
+            Database.SetInitializer(new IdentityInitializer());
         }
 
         public System.Data.Entity.DbSet<MvcProjeKampi.Identity.ApplicationRole> IdentityRoles { get; set; }

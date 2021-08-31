@@ -28,6 +28,7 @@ namespace EntityLayer.Concrete
 
         public bool ContentStatus { get; set; }
 
+        public string UserName { get; set; }
 
         public int? HeadingID { get; set; }
         public virtual Heading Heading { get; set; }
@@ -36,5 +37,7 @@ namespace EntityLayer.Concrete
         public virtual WriterUser Writer { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
+
+
     }
 }
