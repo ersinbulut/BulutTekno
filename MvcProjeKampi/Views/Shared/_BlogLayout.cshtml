@@ -70,39 +70,41 @@
                             <li style="margin-top:10px;"><a href="/News/Index/"><i class="fas fa-newspaper"></i> Haberler</a></li>
                             <li style="margin-top:10px;"><a href="/Writer/Default/Headings/"><i class="fas fa-book"></i> Sözlük</a></li>
                             <li style="margin-top:10px;"><a href="/Home/Contact/"><i class="fas fa-book-open"></i> İletişim</a></li>
-
-                            @if (this.User.Identity.Name == "ersinbulut")//kullanıcı rolü admin ise
+                            @if (Request.IsAuthenticated)//true ise kullanıcı login olmuş demek
                             {
-                                <li style="margin-top:10px;">
-                                    <a href="#" class="desktop-link"><i class="fas fa-user"></i> Hesabım</a>
-                                    <input type="checkbox" id="show-services">
-                                    <label for="show-services"><i class="fas fa-user"></i> Hesabım</label>
-                                    <ul>
-                                        <li><a href="/Admin/AdminCategory/Index/" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i>  Admin Paneli</a></li>
-                                        <li><a href="/Account/UserProfile/"><i class="fas fa-user"></i>   Profilim</a></li>
-                                        <li><a href="/Login/WriterLogin/" target="_blank"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Yazar Girişi</a></li>
-                                        <li><a href="/Account/LogOut/"><i class="fa fa-sign-out-alt"></i>  Oturumu Kapat</a></li>
-                                    </ul>
-                                </li>
+                                if (this.User.IsInRole("admin"))//kullanıcı rolü admin ise
+                                {
+                                    <li style="margin-top:10px;">
+                                        <a href="#" class="desktop-link"><i class="fas fa-user"></i> Hesabım</a>
+                                        <input type="checkbox" id="show-services">
+                                        <label for="show-services"><i class="fas fa-user"></i> Hesabım</label>
+                                        <ul>
+                                            <li><a href="/Admin/AdminCategory/Index/" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i>  Admin Paneli</a></li>
+                                            <li><a href="/Account/UserProfile/"><i class="fas fa-user"></i>   Profilim</a></li>
+                                            <li><a href="/Login/WriterLogin/" target="_blank"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Yazar Girişi</a></li>
+                                            <li><a href="/Account/LogOut/"><i class="fa fa-sign-out-alt"></i>  Oturumu Kapat</a></li>
+                                        </ul>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li style="margin-top:10px;">
+                                        <a href="#" class="desktop-link"><i class="fas fa-user"></i> Hesabım</a>
+                                        <input type="checkbox" id="show-services">
+                                        <label for="show-services"><i class="fas fa-user"></i> Hesabım</label>
+                                        <ul>
+                                            <li><a href="/Account/UserProfile/"><i class="fas fa-user"></i>   Profilim</a></li>
+                                            <li><a href="/Login/WriterLogin/" target="_blank"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Yazar Girişi</a></li>
+                                            <li><a href="/Account/Logout/"><i class="fa fa-sign-out-alt"></i>  Oturumu Kapat</a></li>
+                                        </ul>
+                                    </li>
+                                }
                             }
-                            else if (this.User.Identity.Name == "kamilbulut")
-                            {
-                                <li style="margin-top:10px;">
-                                    <a href="#" class="desktop-link"><i class="fas fa-user"></i> Hesabım</a>
-                                    <input type="checkbox" id="show-services">
-                                    <label for="show-services"><i class="fas fa-user"></i> Hesabım</label>
-                                    <ul>
-                                        <li><a href="/Account/UserProfile/"><i class="fas fa-user"></i>   Profilim</a></li>
-                                        <li><a href="/Login/WriterLogin/" target="_blank"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Yazar Girişi</a></li>
-                                        <li><a href="/Account/Logout/"><i class="fa fa-sign-out-alt"></i>  Oturumu Kapat</a></li>
-                                    </ul>
-                                </li>
-                            }
-
                             else
                             {
-                                <li style="margin-top:10px;">
-                                    <a class="go-icon" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-user"></i> Giriş Yap</a>
+                                <li style = "margin-top:10px;" >
+                                <a class="go-icon" data-toggle="modal" data-target="#exampleModalCenter">
+                                <i class="fas fa-user"></i> Giriş Yap</a>
                                 </li>
                             }
 
