@@ -51,93 +51,163 @@
                 </div>
             </div>
             <div class="col-lg-8 col-md-12">
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Profili Düzenle</h3>
-                        <div class="card-options">
-                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
-                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
-                            <div class="item-action dropdown ml-2">
-                                <a href="javascript:void(0)" data-toggle="dropdown"><i class="fe fe-more-vertical"></i></a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
-                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-share-alt"></i> Share </a>
-                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-copy"></i> Copy to</a>
-                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-folder"></i> Move to</a>
-                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-edit"></i> Rename</a>
-                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-trash"></i> Delete</a>
+                <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-blog-tab" data-toggle="pill" href="#pills-blog" role="tab" aria-controls="pills-blog" aria-selected="true">Profilimi Düzenle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-timeline-tab" data-toggle="pill" href="#pills-timeline" role="tab" aria-controls="pills-timeline" aria-selected="true">Şifremi Değiştir</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade" id="pills-timeline" role="tabpanel" aria-labelledby="pills-timeline-tab">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title" style="text-align:center;">Şifre Güncelleme</h3>
+                                <div class="card-options">
+                                    <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                                    <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                                    <div class="item-action dropdown ml-2">
+                                        <a href="javascript:void(0)" data-toggle="dropdown"><i class="fe fe-more-vertical"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-share-alt"></i> Share </a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-copy"></i> Copy to</a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-folder"></i> Move to</a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-edit"></i> Rename</a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-trash"></i> Delete</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            @using (Html.BeginForm("ChangePassword", "Account", FormMethod.Post, new { @class = "form-horizontal" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="card-body">
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="form-group">
+                                                <label class="form-label">Eski Şifre</label>
+                                                @Html.PasswordFor(x => x.changePasswordView.OldPassword, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(x => x.changePasswordView.OldPassword, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label">Yeni Şifre</label>
+                                                @Html.PasswordFor(x => x.changePasswordView.NewPassword, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(x => x.changePasswordView.NewPassword)
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label">Yeni Şifre Tekrar</label>
+                                                @Html.PasswordFor(x => x.changePasswordView.ReNewPassword, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(x => x.changePasswordView.ReNewPassword)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-right">
+                                    <button type="submit" id="btn3" class="btn btn-primary">Şifreyi Güncelle</button>
+                                </div>
+                            }
+
                         </div>
                     </div>
-                    @using (Html.BeginForm("UpdateProfile", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        @Html.HiddenFor(x => x.UserProfileViewModel.Id)
-                        @Html.HiddenFor(x => x.UserProfileViewModel.Username)
-                        <div class="card-body">
-                            <div class="row clearfix">
-                                <div class="col-sm-6 col-md-6">
 
-                                    <div class="form-group">
-                                        <label class="form-label">Kullanıcı Adı</label>
-                                        @Html.TextBoxFor(x => x.UserProfileViewModel.Name, new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(x => x.UserProfileViewModel.Name, "", new { @class = "text-danger" })
+                    <div class="tab-pane fade show active" id="pills-blog" role="tabpanel" aria-labelledby="pills-blog-tab">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title" style="text-align:center;">Kullanıcı Bilgileri</h3>
+                                <div class="card-options">
+                                    <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                                    <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                                    <div class="item-action dropdown ml-2">
+                                        <a href="javascript:void(0)" data-toggle="dropdown"><i class="fe fe-more-vertical"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-share-alt"></i> Share </a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-copy"></i> Copy to</a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-folder"></i> Move to</a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-edit"></i> Rename</a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-trash"></i> Delete</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label">Kullanıcı Soyadı</label>
-                                        @Html.TextBoxFor(x => x.UserProfileViewModel.Surname, new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(x => x.UserProfileViewModel.Surname)
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label">Doğum Tarihi</label>
-                                        @Html.TextBoxFor(model => model.UserProfileViewModel.DateOfBirth, "", new { @class = "text-danger form-control" })
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <br />
-                                    <div class="form-group">
-                                        <label class="form-label">Cinsiyet</label>
-                                        @Html.RadioButtonFor(model => model.UserProfileViewModel.Gender, "Erkek")Erkek
-                                        @Html.RadioButtonFor(model => model.UserProfileViewModel.Gender, "Kadın")Kadın
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label">Email</label>
-                                        @Html.TextBoxFor(model => model.UserProfileViewModel.Email, "", new { @class = "text-danger form-control" })
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label">Tekefon Numarası</label>
-                                        @Html.TextBoxFor(model => model.UserProfileViewModel.PhoneNumber, "", new { @class = "text-danger form-control" })
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="form-label">Resim Yolu</label>
-                                        <input type="file" class="dropify" name="WriterImage">
-                                        <small class="text-danger">Önerilen resim boyutu 200 px x 40 px dir</small>
-                                        @Html.TextBoxFor(x => x.UserProfileViewModel.Image, new { @class = "form-control" })
-                                    </div>
-                                </div>
-
                             </div>
-                        </div>
-                        <div class="card-footer text-right">
-                            <button type="submit" id="btn3" class="btn btn-primary">Profili Güncelle</button>
-                        </div>
-                    }
+                            @using (Html.BeginForm("UpdateProfile", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.HiddenFor(x => x.UserProfileViewModel.Id)
+                                @Html.HiddenFor(x => x.UserProfileViewModel.Username)
+                                <div class="card-body">
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6 col-md-6">
 
+                                            <div class="form-group">
+                                                <label class="form-label">Kullanıcı Adı</label>
+                                                @Html.TextBoxFor(x => x.UserProfileViewModel.Name, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(x => x.UserProfileViewModel.Name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label">Kullanıcı Soyadı</label>
+                                                @Html.TextBoxFor(x => x.UserProfileViewModel.Surname, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(x => x.UserProfileViewModel.Surname)
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label">Doğum Tarihi</label>@Html.EditorFor(x => x.UserProfileViewModel.DateOfBirth)
+                                                @Html.TextBoxFor(model => model.UserProfileViewModel.DateOfBirth, "", new { @class = "text-danger form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <br />
+                                            <div class="form-group">
+                                                <label class="form-label">Cinsiyet</label>
+                                                @Html.RadioButtonFor(model => model.UserProfileViewModel.Gender, "Erkek")Erkek
+                                                @Html.RadioButtonFor(model => model.UserProfileViewModel.Gender, "Kadın")Kadın
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label">Email</label>
+                                                @Html.TextBoxFor(model => model.UserProfileViewModel.Email, "", new { @class = "text-danger form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label">Tekefon Numarası</label>
+                                                @Html.TextBoxFor(model => model.UserProfileViewModel.PhoneNumber, "", new { @class = "text-danger form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="form-label">Resim Yolu</label>
+                                                <input type="file" class="dropify" name="Image">
+                                                <small class="text-danger">Önerilen resim boyutu 200 px x 40 px</small>
+                                                @*@Html.TextBoxFor(x => x.UserProfileViewModel.Image, new { @class = "form-control" })*@
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="card-footer text-right">
+                                    <button type="submit" id="btn3" class="btn btn-primary">Profili Güncelle</button>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
                 </div>
+
 
             </div>
         </div>

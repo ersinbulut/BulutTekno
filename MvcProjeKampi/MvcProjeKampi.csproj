@@ -446,6 +446,7 @@
     <Content Include="AdminLTE\images\moskova.jfif" />
     <Content Include="AdminLTE\images\newyork.jpeg" />
     <Content Include="AdminLTE\images\paris.jfif" />
+    <Content Include="AdminLTE\login-form-20\images\bg1.jpg" />
     <Content Include="BlogTECH\upload\a12.png" />
     <Content Include="BlogTECH\upload\aa13.png" />
     <Content Include="BlogTECH\upload\b12.jpg" />
@@ -2947,6 +2948,7 @@
     <Content Include="Areas\Writer\Views\NewsWriter\NewsListPartial.cshtml" />
     <Content Include="Areas\Writer\Views\NewsWriter\NewNewsPartial.cshtml" />
     <Content Include="Areas\Writer\Views\NewsWriter\YorumlarPartial.cshtml" />
+    <Content Include="Image\aa.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -3016,7 +3018,6 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Writer\Data\" />
     <Folder Include="Content\Images\" />
-    <Folder Include="Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

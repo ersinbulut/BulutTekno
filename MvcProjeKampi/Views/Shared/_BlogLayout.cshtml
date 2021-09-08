@@ -86,27 +86,29 @@
                                         </ul>
                                     </li>
                                 }
-                                else
+                                else if (this.User.IsInRole("user"))
                                 {
                                     <li style="margin-top:10px;">
                                         <a href="#" class="desktop-link"><i class="fas fa-user"></i> Hesabım</a>
                                         <input type="checkbox" id="show-services">
                                         <label for="show-services"><i class="fas fa-user"></i> Hesabım</label>
                                         <ul>
-                                            <li><a href="/Account/UserProfile/"><i class="fas fa-user"></i>   Profilim</a></li>
+                                            <li><a href="/Account/UserProfile/"><i class="fas fa-user"></i>  Profilim</a></li>
                                             <li><a href="/Login/WriterLogin/" target="_blank"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Yazar Girişi</a></li>
                                             <li><a href="/Account/Logout/"><i class="fa fa-sign-out-alt"></i>  Oturumu Kapat</a></li>
                                         </ul>
                                     </li>
                                 }
+                                else
+                                {
+                                    <li style="margin-top:10px;">
+                                        <a class="go-icon" data-toggle="modal" data-target="#exampleModalCenter">
+                                            <i class="fas fa-user"></i> Giriş Yap
+                                        </a>
+                                    </li>
+                                }
                             }
-                            else
-                            {
-                                <li style = "margin-top:10px;" >
-                                <a class="go-icon" data-toggle="modal" data-target="#exampleModalCenter">
-                                <i class="fas fa-user"></i> Giriş Yap</a>
-                                </li>
-                            }
+
 
                         </ul>
                     </div>
@@ -262,6 +264,7 @@
                             <div class="login px-4 mx-auto mw-100">
                                 <h5 class="text-center mb-4">Şifremi Unuttum</h5>
                                 <form action="/Account/RecoverPassword/" method="post">
+                                    @Html.AntiForgeryToken()
                                     <div class="form-group">
                                         <label>E posta Adresiniz</label>
                                         <input type="text" name="Email" class="form-control" placeholder="info@gmail.com" required="">

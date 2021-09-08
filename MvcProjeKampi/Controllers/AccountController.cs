@@ -112,7 +112,7 @@ namespace MvcProjeKampi.Controllers
 
                     //mail gönder
                     var emailService = new EmailService();
-                    var body = $"Merhaba <b>{user.Name}  {user.Surname}</b> <br/> Hesabınızı aktif etmek için aşağıdaki linke tıklayınız" +
+                    var body = $" Merhaba <b>{user.Name}  {user.Surname}</b> <br/> <img src='https://hltgmbz.files.wordpress.com/2017/02/bulut-bilisim-nedir.png'/> <br/> Hesabınızı aktif etmek için aşağıdaki linke tıklayınız" +
                         $"<br/><a href='{SiteUrl}/Account/Activation?code={user.ActivationCode}'>Aktivasyon Linki</a>";
                     await emailService.SendAsync(new IdentityMessage() { Body = body, Subject = "Buluttekno'ya Hoşgeldiniz" }, user.Email);
 
@@ -280,7 +280,7 @@ namespace MvcProjeKampi.Controllers
             if (result.Succeeded)
             {//mail gönder
                 var emailService = new EmailService();
-                var body = $"Merhaba <b>{user.Name}  {user.Surname}</b> <br/> <p>Hesabınızın şifresi güncellenmiştir.</p>";
+                var body = $"Merhaba <b>{user.Name}  {user.Surname}</b> <br/> <img src='https://teknosafari.net/wp-content/uploads/2020/11/2020nin-en-kotu-sifreleri-aciklandi-birinci-degismedi-857864.jpg.png'/> <br/> <p>Hesabınızın şifresi güncellenmiştir.</p>";
                 await emailService.SendAsync(new IdentityMessage() { Body = body, Subject = "Şifre Değişikliği" }, user.Email);
                 return RedirectToAction("LogOut", "Account");
             }
@@ -356,7 +356,7 @@ namespace MvcProjeKampi.Controllers
                 TempData["mesaj1"] = "Yeni şifreniz mail adresinize gönderildi.";
                 //mail gönder
                 var emailService = new EmailService();
-                var body = $"Merhaba <b>{user.Name}  {user.Surname}</b> <br/>Hesabınızın parolası sıfırlanmıştır" +
+                var body = $"Merhaba <b>{user.Name}  {user.Surname}</b>  <br/> <img src='https://seyler.ekstat.com/img/max/800/B/BUEx2TmxNk1mGX7Z-637159932195466977.jpg'/> <br/>Hesabınızın parolası sıfırlanmıştır" +
                     $"<br/>Yeni parolanız: <b>{newPassword}</b><br/><p>Yukarıdaki parolayı kullanarak sisteminize giriş yapabilirsiniz.</p>";
                 emailService.Send(new IdentityMessage() { Body = body, Subject = $"{user.UserName} Şifre Kurtarma" }, user.Email);
 
